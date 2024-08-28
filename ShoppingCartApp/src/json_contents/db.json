@@ -1,0 +1,26 @@
+{
+    "users": [
+      {
+        "username": "user1",
+        "password": "password1"
+      },
+      {
+        "username": "user2",
+        "password": "password2"
+      }
+    ],
+    "products": [
+      {
+        "name": "Product 1",
+        "description": "Description for product 1",
+        "price": 10.0
+      },
+      {
+        "name": "Product 2",
+        "description": "Description for product 2",
+        "price": 20.0
+      }
+    ]
+   
+  }
+  
