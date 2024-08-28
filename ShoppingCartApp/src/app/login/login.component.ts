@@ -7,25 +7,36 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],  // Add ReactiveFormsModule and CommonModule here
+  imports: [ReactiveFormsModule, CommonModule],  // Ensure ReactiveFormsModule and CommonModule are imported
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
   loginForm: FormGroup;
+  forgotPasswordForm: FormGroup;
   errorMessage: string | null = null;
+  forgotPasswordErrorMessage: string | null = null;
+  isLoginMode = true; // Flag to switch between login and forgot password forms
 
   constructor(
     private fb: FormBuilder,
     private http: HttpClient,
     private router: Router
   ) {
+    // Initialize login form
     this.loginForm = this.fb.group({
       username: ['', Validators.required],
       password: ['', Validators.required]
     });
+
+    // Initialize forgot password form
+    this.forgotPasswordForm = this.fb.group({
+      username: ['', Validators.required],
+      newPassword: ['', Validators.required]
+    });
   }
 
+  // Submit handler for the login form
   onSubmit(): void {
     if (this.loginForm.valid) {
       const { username, password } = this.loginForm.value;
@@ -33,7 +44,11 @@ export class LoginComponent {
       this.http.get<any[]>('http://localhost:3000/users').subscribe(users => {
         const user = users.find(u => u.username === username && u.password === password);
         if (user) {
-          this.router.navigate(['/dashboard']);
+          if (user.isAdmin) {
+            this.router.navigate(['/dashboard']); // Redirect to the dashboard if the user is an admin
+          } else {
+            this.router.navigate(['/product-page']); // Redirect to the product page if the user is not an admin
+          }
         } else {
           this.errorMessage = 'Invalid username or password';
         }
@@ -41,5 +56,50 @@ export class LoginComponent {
         this.errorMessage = 'An error occurred. Please try again later.';
       });
     }
+  }
+
+  // Submit handler for the forgot password form
+  onForgotPasswordSubmit(): void {
+    if (this.forgotPasswordForm.valid) {
+      const { username, newPassword } = this.forgotPasswordForm.value;
+
+      // Fetch current users from db.json
+      this.http.get<any[]>('http://localhost:3000/users').subscribe(users => {
+        const user = users.find(u => u.username === username);
+        if (user) {
+          // Update the user's password
+          user.password = newPassword;
+
+          // Make an HTTP PUT request to update the user's password in db.json
+          this.http.put(`http://localhost:3000/users/${user.id}`, user).subscribe(
+            () => {
+              alert('Password reset successful!');
+              this.switchToLogin();
+            },
+            error => {
+              this.forgotPasswordErrorMessage = 'Failed to reset password. Please try again later.';
+            }
+          );
+        } else {
+          this.forgotPasswordErrorMessage = 'Username not found.';
+        }
+      }, error => {
+        this.forgotPasswordErrorMessage = 'An error occurred. Please try again later.';
+      });
+    }
+  }
+
+  // Switch to the forgot password form
+  switchToForgotPassword(event: Event): void {
+    event.preventDefault(); // Prevent default anchor behavior
+    this.isLoginMode = false;
+    this.errorMessage = null; // Clear previous errors
+  }
+
+  // Switch back to the login form
+  switchToLogin(event?: Event): void {
+    if (event) event.preventDefault(); // Prevent default anchor behavior if event is present
+    this.isLoginMode = true;
+    this.forgotPasswordErrorMessage = null; // Clear previous errors
   }
 }

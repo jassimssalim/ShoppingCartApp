@@ -1,26 +1,28 @@
 {
-    "users": [
-      {
-        "username": "user1",
-        "password": "password1"
-      },
-      {
-        "username": "user2",
-        "password": "password2"
-      }
-    ],
-    "products": [
-      {
-        "name": "Product 1",
-        "description": "Description for product 1",
-        "price": 10.0
-      },
-      {
-        "name": "Product 2",
-        "description": "Description for product 2",
-        "price": 20.0
-      }
-    ]
-   
-  }
-  
+  "users": [
+    {
+      "id": "1",
+      "username": "user1",
+      "password": "456",
+      "isAdmin": true
+    },
+    {
+      "id": "2",
+      "username": "user2",
+      "password": "456",
+      "isAdmin": false
+    }
+  ],
+  "products": [
+    {
+      "name": "Product 1",
+      "description": "Description for product 1",
+      "price": 10
+    },
+    {
+      "name": "Product 2",
+      "description": "Description for product 2",
+      "price": 20
+    }
+  ]
+}

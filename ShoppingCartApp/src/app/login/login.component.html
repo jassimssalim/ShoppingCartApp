@@ -1,17 +1,69 @@
-
-
-
-
-<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+<div *ngIf="isLoginMode; else forgotPasswordTemplate">
+  <!-- Login Form -->
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div>
       <label for="username">Username</label>
       <input id="username" formControlName="username" type="text" />
+
+
+
+      <!-- Error message for username -->
+      <div *ngIf="loginForm.get('username')?.touched && loginForm.get('username')?.invalid" class="error">
+        Username is required.
+      </div>
     </div>
+
     <div>
       <label for="password">Password</label>
       <input id="password" formControlName="password" type="password" />
+      <!-- Error message for password -->
+      <div *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid" class="error">
+        Password is required.
+      </div>
     </div>
+
     <button type="submit">Login</button>
+
+    <!-- General error message -->
     <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+    <!-- Forgot Password Link -->
+    <div>
+      <a href="#" (click)="switchToForgotPassword($event)">Forgot Password?</a>
+    </div>
   </form>
-  
+</div>
+
+<!-- Forgot Password Template -->
+<ng-template #forgotPasswordTemplate>
+  <!-- Forgot Password Form -->
+  <form [formGroup]="forgotPasswordForm" (ngSubmit)="onForgotPasswordSubmit()">
+    <div>
+      <label for="username">Username</label>
+      <input id="username" formControlName="username" type="text" />
+      <!-- Error message for username -->
+      <div *ngIf="forgotPasswordForm.get('username')?.touched && forgotPasswordForm.get('username')?.invalid" class="error">
+        Username is required.
+      </div>
+    </div>
+
+    <div>
+      <label for="newPassword">New Password</label>
+      <input id="newPassword" formControlName="newPassword" type="password" />
+      <!-- Error message for new password -->
+      <div *ngIf="forgotPasswordForm.get('newPassword')?.touched && forgotPasswordForm.get('newPassword')?.invalid" class="error">
+        New password is required.
+      </div>
+    </div>
+
+    <button type="submit">Reset Password</button>
+
+    <!-- General error message for forgot password -->
+    <div *ngIf="forgotPasswordErrorMessage" class="error">{{ forgotPasswordErrorMessage }}</div>
+
+    <!-- Back to Login Link -->
+    <div>
+      <a href="#" (click)="switchToLogin($event)">Back to Login</a>
+    </div>
+  </form>
+</ng-template>
