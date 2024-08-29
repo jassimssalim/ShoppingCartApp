@@ -115,6 +115,7 @@ a {
 }
 
 .links {
+    font-weight: 550;
     display: flex;
     justify-content: space-between; /* Distribute space between the links */
     margin-top: 10px; /* Space above the links */
@@ -133,3 +134,22 @@ a {
 .sign-up-link {
     margin-left: auto; /* Push the Sign Up link to the right */
 }
+
+
+/*pop toaster */
+
+.toaster {
+    position: fixed;
+    top: 20px; /* Position at the top */
+    right: 28%; /* Adjust horizontal position as needed */
+    background-color: #000F80;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1000; /* Ensure it appears above other elements */
+    display: block; /* Ensure it is visible */
+  }
+  
+  
+  
+  

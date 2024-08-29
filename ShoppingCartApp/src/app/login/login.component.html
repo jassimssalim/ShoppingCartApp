@@ -38,28 +38,28 @@
           <form [formGroup]="forgotPasswordForm" (ngSubmit)="onForgotPasswordSubmit()">
               <div>
                   <label for="username">Username</label>
-                  <input id="username" formControlName="username" type="text" />
+                  <input id="username" formControlName="username" type="text" placeholder="Enter your username"/>
                   <div *ngIf="forgotPasswordForm.get('username')?.touched && forgotPasswordForm.get('username')?.invalid" class="error">
                       Username is required.
                   </div>
               </div>
               <div>
                   <label for="email">Email</label>
-                  <input id="email" formControlName="email" type="email" />
+                  <input id="email" formControlName="email" type="email" placeholder="Enter your registered email" />
                   <div *ngIf="forgotPasswordForm.get('email')?.touched && forgotPasswordForm.get('email')?.invalid" class="error">
                       Valid email is required.
                   </div>
               </div>
               <div>
-                  <label for="phone">Phone</label>
-                  <input id="phone" formControlName="phone" type="tel" />
+                  <label for="phone">Phone Number</label>
+                  <input id="phone" formControlName="phone" type="tel" placeholder="Enter your phone number" />
                   <div *ngIf="forgotPasswordForm.get('phone')?.touched && forgotPasswordForm.get('phone')?.invalid" class="error">
                       Phone number is required.
                   </div>
               </div>
               <div>
                   <label for="newPassword">New Password</label>
-                  <input id="newPassword" formControlName="newPassword" type="password" />
+                  <input id="newPassword" formControlName="newPassword" type="password" placeholder="Set your new password" />
                   <div *ngIf="forgotPasswordForm.get('newPassword')?.touched && forgotPasswordForm.get('newPassword')?.invalid" class="error">
                       New password is required.
                   </div>
@@ -72,6 +72,11 @@
           </form>
       </ng-template>
   </div>
+
+  <div id="toaster" class="toaster" *ngIf="isShowPop;">
+    <p id="toaster-message">Your password has been changed. You can now log in with your new password..</p>
+  </div>
+  
   <div class="black-side">
     <img src="shop.svg" alt="Logo"style="width: auto; height: 600px; margin-top: 48px" />
 
