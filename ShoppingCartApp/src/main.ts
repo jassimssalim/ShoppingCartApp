@@ -4,7 +4,7 @@ import { provideHttpClient } from '@angular/common/http';
 import { AppComponent } from './app/app.component';
 import { LoginComponent } from './app/login/login.component';
 import { DashboardComponent } from './app/dashboard-admin/dashboard.component';
-import { ProductPageComponent } from './app/product-page/product-page.component';
+import { UserPageComponent } from './app/user-page/user-page.component';
 
 
 bootstrapApplication(AppComponent, {
@@ -12,7 +12,7 @@ bootstrapApplication(AppComponent, {
     provideRouter([
       { path: '', component: LoginComponent },
       { path: 'dashboard', component: DashboardComponent  },
-      {path: 'product-page', component: ProductPageComponent}
+      {path: 'user-page', component: UserPageComponent}
 
     ]),
     provideHttpClient()

@@ -4,9 +4,9 @@ import { Component } from '@angular/core';
   selector: 'app-product-page',
   standalone: true,
   imports: [],
-  templateUrl: './product-page.component.html',
-  styleUrl: './product-page.component.css'
+  templateUrl: './user-page.component.html',
+  styleUrl: './user-page.component.css'
 })
-export class ProductPageComponent {
+export class UserPageComponent {
 
 }
