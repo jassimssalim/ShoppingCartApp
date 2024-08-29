@@ -40,7 +40,20 @@ export class LoginComponent {
 
   // Submit handler for the login form
   onSubmit(): void {
+
+
+//clicking login when empty
+  const username = this.loginForm.get('username')?.value;
+  const password = this.loginForm.get('password')?.value;
+  if (!username && !password) {
+   // alert('Please enter both username and password.');
+    this.forgotPasswordErrorMessage = 'Please fill out all fields correctly.';
+    return;
+  }
+
+    //login form
     if (this.loginForm.valid) {
+      
       const { username, password } = this.loginForm.value;
 
       this.http.get<any[]>('http://localhost:3000/users').subscribe(users => {
