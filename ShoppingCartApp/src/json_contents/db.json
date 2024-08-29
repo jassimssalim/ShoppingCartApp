@@ -3,13 +3,17 @@
     {
       "id": "1",
       "username": "user1",
-      "password": "456",
+      "password": "jeje",
+      "email": "test@gmail.com",
+      "phone": "123456",
       "isAdmin": true
     },
     {
       "id": "2",
       "username": "user2",
-      "password": "456",
+      "password": "test",
+      "email": "test@gmail.com",
+      "phone": "123456",
       "isAdmin": false
     }
   ],

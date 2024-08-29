@@ -29,9 +29,11 @@ export class LoginComponent {
       password: ['', Validators.required]
     });
 
-    // Initialize forgot password form
+    // Initialize forgot password form with email and phone number fields
     this.forgotPasswordForm = this.fb.group({
       username: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      phone: ['', Validators.required],
       newPassword: ['', Validators.required]
     });
   }
@@ -61,16 +63,13 @@ export class LoginComponent {
   // Submit handler for the forgot password form
   onForgotPasswordSubmit(): void {
     if (this.forgotPasswordForm.valid) {
-      const { username, newPassword } = this.forgotPasswordForm.value;
+      const { username, email, phone, newPassword } = this.forgotPasswordForm.value;
 
-      // Fetch current users from db.json
       this.http.get<any[]>('http://localhost:3000/users').subscribe(users => {
-        const user = users.find(u => u.username === username);
+        const user = users.find(u => u.username === username && u.email === email && u.phone === phone);
         if (user) {
-          // Update the user's password
           user.password = newPassword;
 
-          // Make an HTTP PUT request to update the user's password in db.json
           this.http.put(`http://localhost:3000/users/${user.id}`, user).subscribe(
             () => {
               alert('Password reset successful!');
@@ -81,11 +80,13 @@ export class LoginComponent {
             }
           );
         } else {
-          this.forgotPasswordErrorMessage = 'Username not found.';
+          this.forgotPasswordErrorMessage = 'No matching user found with the provided details.';
         }
       }, error => {
         this.forgotPasswordErrorMessage = 'An error occurred. Please try again later.';
       });
+    } else {
+      this.forgotPasswordErrorMessage = 'Please fill out all fields correctly.';
     }
   }
 
