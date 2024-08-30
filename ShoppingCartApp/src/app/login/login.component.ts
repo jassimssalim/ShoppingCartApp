@@ -155,4 +155,8 @@ if (!username || !password) {
     this.isLoginMode = true;
     this.forgotPasswordErrorMessage = null; // Clear previous errors
   }
+  // Redirect button for register html
+  goToRegister(): void {
+    this.router.navigate(['/register']);
+  }
 }
