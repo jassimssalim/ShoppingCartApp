@@ -19,12 +19,17 @@
             "polyfills": [
               "zone.js"
             ],
+            "assets": [
+              "src/assets",
+              "src/favicon.ico"
+            ],
+
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
+                
                 "glob": "**/*",
-                "input": "public",
-                "output": "/"
+                "input": "public"
               }
             ],
             "styles": [
@@ -83,11 +88,18 @@
               "zone.js",
               "zone.js/testing"
             ],
+
+            "assets": [
+              "src/assets",
+              "src/favicon.ico"
+            ],
             "tsConfig": "tsconfig.spec.json",
             "assets": [
               {
                 "glob": "**/*",
                 "input": "public"
+                
+
               }
             ],
             "styles": [

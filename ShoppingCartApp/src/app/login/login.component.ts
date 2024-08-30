@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
 import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
+import { ChangeDetectorRef } from '@angular/core';
+
 
 @Component({
   selector: 'app-login',
@@ -16,12 +18,14 @@ export class LoginComponent {
   forgotPasswordForm: FormGroup;
   errorMessage: string | null = null;
   forgotPasswordErrorMessage: string | null = null;
-  isLoginMode = true; // Flag to switch between login and forgot password forms
+  isLoginMode = true; 
+  isShowPop = false;
 
   constructor(
     private fb: FormBuilder,
     private http: HttpClient,
-    private router: Router
+    private router: Router,
+    private cdr: ChangeDetectorRef
   ) {
     // Initialize login form
     this.loginForm = this.fb.group({
@@ -40,7 +44,25 @@ export class LoginComponent {
 
   // Submit handler for the login form
   onSubmit(): void {
+
+
+//clicking login when empty
+const username = this.loginForm.get('username')?.value;
+const password = this.loginForm.get('password')?.value;
+if (!username || !password) {
+  this.forgotPasswordErrorMessage = 'Please fill out all fields.';
+  
+  setTimeout(() => {
+    this.forgotPasswordErrorMessage = '';
+  }, 3000);
+
+  return;
+}
+
+
+    //login form
     if (this.loginForm.valid) {
+      
       const { username, password } = this.loginForm.value;
 
       this.http.get<any[]>('http://localhost:3000/users').subscribe(users => {
@@ -53,6 +75,10 @@ export class LoginComponent {
           }
         } else {
           this.errorMessage = 'Invalid username or password';
+
+          setTimeout(() => {
+            this.errorMessage = '';
+          }, 3000);
         }
       }, error => {
         this.errorMessage = 'An error occurred. Please try again later.';
@@ -72,21 +98,47 @@ export class LoginComponent {
 
           this.http.put(`http://localhost:3000/users/${user.id}`, user).subscribe(
             () => {
-              alert('Password reset successful!');
+
+
+              this.isShowPop = true;
               this.switchToLogin();
+
+              this.cdr.detectChanges(); // force  trigger
+
+              console.log(this.isShowPop)
+
+              
+              setTimeout(() => {
+                this.isShowPop = false;
+              }, 3000);
             },
             error => {
               this.forgotPasswordErrorMessage = 'Failed to reset password. Please try again later.';
+              console.error('Update failed', error);
+
+              setTimeout(() => {
+                this.forgotPasswordErrorMessage = '';
+              }, 3000);
+            
             }
           );
         } else {
           this.forgotPasswordErrorMessage = 'No matching user found with the provided details.';
+       
+          setTimeout(() => {
+            this.forgotPasswordErrorMessage = '';
+          }, 3000);
+       
         }
       }, error => {
         this.forgotPasswordErrorMessage = 'An error occurred. Please try again later.';
       });
     } else {
       this.forgotPasswordErrorMessage = 'Please fill out all fields correctly.';
+      setTimeout(() => {
+        this.forgotPasswordErrorMessage = '';
+      }, 3000);
+    
     }
   }
 

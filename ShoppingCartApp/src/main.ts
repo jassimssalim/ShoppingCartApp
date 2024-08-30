@@ -3,8 +3,8 @@ import { provideRouter } from '@angular/router';
 import { provideHttpClient } from '@angular/common/http';
 import { AppComponent } from './app/app.component';
 import { LoginComponent } from './app/login/login.component';
-import { DashboardAdminComponent } from './app/admin-page/dashboard-admin.component';
-import { UserPageComponent } from './app/user-page/user-page.component';
+import { DashboardAdminComponent } from './app/admin/component/admin-page/dashboard-admin.component';
+import { UserPageComponent } from './app/user/component/user-page/user-page.component';
 
 
 bootstrapApplication(AppComponent, {
