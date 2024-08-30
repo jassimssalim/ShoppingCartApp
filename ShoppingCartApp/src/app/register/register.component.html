@@ -1,1 +1,92 @@
-<p>register works!</p>
+<div class="container">
+    <div class="register-container">
+      <h1 class="headTitle">Create a New Account</h1>
+  
+      <!-- Registration Form -->
+      <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <div>
+          <label for="username">Username</label>
+          <input
+            id="username"
+            formControlName="username"
+            type="text"
+            placeholder="Enter your username"
+          />
+          <div
+            *ngIf="
+              registerForm.get('username')?.touched &&
+              registerForm.get('username')?.invalid
+            "
+            class="error"
+          >
+            Username is required.
+          </div>
+        </div>
+  
+        <div>
+          <label for="email">Email</label>
+          <input
+            id="email"
+            formControlName="email"
+            type="email"
+            placeholder="Enter your email"
+          />
+          <div
+            *ngIf="
+              registerForm.get('email')?.touched &&
+              registerForm.get('email')?.invalid
+            "
+            class="error"
+          >
+            Valid email is required.
+          </div>
+        </div>
+  
+        <div>
+          <label for="password">Password</label>
+          <input
+            id="password"
+            formControlName="password"
+            type="password"
+            placeholder="Enter your password"
+          />
+          <div
+            *ngIf="
+              registerForm.get('password')?.touched &&
+              registerForm.get('password')?.invalid
+            "
+            class="error"
+          >
+            Password is required.
+          </div>
+        </div>
+  
+        <div>
+          <label for="confirmPassword">Confirm Password</label>
+          <input
+            id="confirmPassword"
+            formControlName="confirmPassword"
+            type="password"
+            placeholder="Confirm your password"
+          />
+          <div
+            *ngIf="
+              registerForm.get('confirmPassword')?.touched &&
+              registerForm.get('confirmPassword')?.invalid
+            "
+            class="error"
+          >
+            Confirmation password is required.
+          </div>
+          <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+        </div>
+  
+        <button type="submit">Register</button>
+      </form>
+  
+      <div class="links">
+        <a href="#" [routerLink]="['/login']">Already have an account? Login</a>
+      </div>
+    </div>
+  </div>
+  

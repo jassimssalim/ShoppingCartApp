@@ -25,7 +25,7 @@
               <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
               <div class="links">
                 <a href="#" (click)="switchToForgotPassword($event)">Forgot Password?</a>
-                <a href="#"  class="sign-up-link">Sign Up</a>
+                <a (click)="goToRegister()" [routerLink]="'/register'"  >Sign Up</a>
             </div>
             
              
@@ -83,13 +83,6 @@
   </div>
 
 
-<<<<<<< Updated upstream
-=======
-    <!-- Register Link -->
-    <button [routerLink]="['/register']">Register</button>
 
-    <!-- General error message -->
-    <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
->>>>>>> Stashed changes
 
 </div>

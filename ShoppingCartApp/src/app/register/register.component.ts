@@ -1,19 +1,16 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-register',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule],
+  imports: [ReactiveFormsModule, CommonModule, RouterModule],
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css'],
-  template: `
-    <!-- Your template code here -->
-    <a [routerLink]="['/register']">Register</a>
-  `,
 })
 export class RegisterComponent {
   registerForm: FormGroup;
@@ -26,7 +23,7 @@ export class RegisterComponent {
   ) {
     this.registerForm = this.fb.group({
       username: ['', Validators.required],
-      // email: ['', Validators.required, Validators.email],
+      email: ['', Validators.required, Validators.email],
       password: ['', Validators.required],
       confirmPassword: ['', Validators.required]
     });
