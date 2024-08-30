@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    height: 100vh; /* Full viewport height */
+    width: 100vw; /* Full viewport width */
+    overflow: hidden !important;
+    font-family: "Helvetica Now Text Medium", Helvetica, Arial, sans-serif;
+
+}
+
+.login-container {
+    width: 50%; /* Occupies half of the viewport width */
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff; /* White background for the login form */
+    padding: 20px; /* Add padding around the content */
+    box-sizing: border-box; /* Ensure padding does not affect width */
+    position: relative; /* Ensure it is positioned relative to the container */
+    max-height: 100vh; /* Prevent exceeding viewport height */
+}
+
+.headTitle {
+    margin-bottom: 20px; /* Space between heading and form */
+    font-size: 1.7rem; /* Adjust font size as needed */
+    color: #008000; /* Text color */
+    text-align: center; /* Center-align the heading text */
+}
+.black-side {
+    width: 48%;
+    height: 100vh;
+    background-color: #000;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+
+form {
+    background-color: #ffffff; /* White background for the form */
+    border-radius: 0; /* Remove rounded corners to make the form flush with edges */
+    box-shadow: none; /* Remove shadow to integrate better with the background */
+    padding: 20px; /* Adjust padding to your preference */
+    width: 450px; /* Full width of the container */
+    max-width: 500px; /* Set maximum width for the form */
+    height: auto; /* Auto height based on content */
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+/* Form Element Styling */
+form div {
+    margin-bottom: 15px; /* Adjust space between form elements */
+}
+
+form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+form input {
+    width: 100%; /* Make input fields take the full width of their container */
+    padding: 15px; /* Increase padding for larger input fields */
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px; /* Adjust font size as needed */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+button {
+    width: 100%; /* Make button take the full width of its container */
+    padding: 15px; /* Increase padding for larger button */
+    border: none;
+    border-radius: 4px;
+    background-color: #707072;
+    color: #ffffff;
+    font-size: 16px; /* Adjust font size as needed */
+    cursor: pointer;
+    transition: background-color 0.3s;
+    box-sizing: border-box; /* Include padding in width calculation */
+    margin-top: 15px; /* Add space above the button */
+}
+
+button:hover {
+    background-color: #008000;
+}
+
+.error {
+    color: red;
+    font-size: 0.9em;
+}
+
+a {
+    color: blue;
+    cursor: pointer;
+    text-decoration: none; /* Remove underline */
+}
+
+.links {
+    font-weight: 550;
+    display: flex;
+    justify-content: space-between; /* Distribute space between the links */
+    margin-top: 10px; /* Space above the links */
+    width: 100%; /* Ensure the container takes the full width of the form */
+}
+
+.links a {
+    color: blue;
+    font-size: 14px; /* Adjust font size as needed */
+}
+
+.links a:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.sign-up-link {
+    margin-left: auto; /* Push the Sign Up link to the right */
+}
+
+
+/*pop toaster */
+
+.toaster {
+    position: fixed;
+    top: 20px; /* Position at the top */
+    right: 28%; /* Adjust horizontal position as needed */
+    background-color: #000F80;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1000; /* Ensure it appears above other elements */
+    display: block; /* Ensure it is visible */
+  }
+  
+  
+  
+  

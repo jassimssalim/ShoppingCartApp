@@ -4,12 +4,12 @@ import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { ChangeDetectorRef } from '@angular/core';
-import { RouterModule } from '@angular/router'; // Import RouterModule
+import { RouterModule } from '@angular/router'; 
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, RouterModule],  // Add RouterModule to imports array
+  imports: [ReactiveFormsModule, CommonModule, RouterModule],  
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
@@ -24,7 +24,7 @@ export class LoginComponent {
   constructor(
     private fb: FormBuilder,
     private http: HttpClient,
-    private router: Router, // Use Router for navigation
+    private router: Router, 
     private cdr: ChangeDetectorRef
   ) {
     // Initialize login form
@@ -139,8 +139,10 @@ export class LoginComponent {
   }
 
   // Redirect to the register page
-  goToRegister(): void {
+  goToRegister(event?: Event): void {
+    if (event) event.preventDefault();
     //event.preventDefault();
+    //this.isLoginMode = true;
     this.router.navigate(['/register']);
   }
 }
