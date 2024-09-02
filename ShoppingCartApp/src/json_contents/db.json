@@ -3,49 +3,57 @@
     {
       "id": "1",
       "username": "user1",
-      "password": "dsa",
+      "password": "456",
       "email": "test@gmail.com",
-      "phone": "123456",
-      "isAdmin": true
+      "isAdmin": true,
+      "cart": [
+        {
+          "productName": "Product 1",
+          "orderQuantity": 3
+        },
+        {
+          "productName": "Product 2",
+          "orderQuantity": 5
+        }
+      ],
+      "pendingOrders": [
+        {
+          "items": [
+            {
+              "productName": "Product 1",
+              "orderQuantity": 3
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "productName": "Product 1",
+              "orderQuantity": 3
+            },
+            {
+              "productName": "Product 2",
+              "orderQuantity": 1
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "2",
       "username": "user2",
-      "password": "test",
-      "email": "test@gmail.com",
-      "phone": "123456",
-      "isAdmin": false
+      "password": "456",
+      "email": "user3@gmail.com",
+      "isAdmin": false,
+      "cart": [],
+      "pendingOrders": []
     },
     {
       "id": "3",
-      "username": "user3",
-      "password": "mle",
-      "email": "user3@gmail.com",
-      "phone": "123",
-      "isAdmin": false
-    },
-    {
-      "id": "4",
-      "username": "user4",
-      "password": "mle",
-      "email": "user4@gmail.com",
-      "phone": "123",
-      "isAdmin": false
-    },
-    {
-      "id": "5",
-      "username": "user5",
-      "password": "mle",
-      "email": "user5@gmail.com",
-      "phone": "123",
-      "isAdmin": false
-    },
-    {
-      "id": "6",
-      "username": "user6",
-      "password": "mle",
-      "email": "user6@gmail.com",
-      "phone": "123",
+      "username": "user9",
+      "password": "mle3",
+      "email": "test@gmail.com",
+      "phone": "09345678910",
       "isAdmin": false
     }
   ],
@@ -54,13 +62,13 @@
       "name": "Product 1",
       "description": "Description for product 1",
       "price": 10,
-      "id": "2d37"
+      "id": "bdbf"
     },
     {
       "name": "Product 2",
       "description": "Description for product 2",
       "price": 20,
-      "id": "5da9"
+      "id": "f968"
     }
   ]
 }

@@ -38,7 +38,6 @@ export class RegisterComponent {
     }
     const { username, email, phone, password, confirmPassword, isAdmin } = this.registerForm.value;
 
-      // Check if passwords match
       if (password !== confirmPassword) {
         this.errorMessage = 'Passwords do not match.';
         return;
@@ -61,13 +60,12 @@ export class RegisterComponent {
     }
 
 registerUser(userData: any): void {
-    // Assuming your json-server is running on localhost:3000 and uses the /users endpoint
     this.http.post('http://localhost:3000/users', userData).subscribe(
       response => {
         console.log('User registered successfully', response);
-        this.errorMessage = null; // Clear any error messages
+        this.errorMessage = null; 
         alert('Registration successful!');
-        this.router.navigate(['']); // Navigate to the login page or any other route
+        this.router.navigate(['']); 
       },
       error => {
         this.errorMessage = 'Failed to register user. Please try again.';
@@ -81,9 +79,7 @@ registerUser(userData: any): void {
     return new Promise((resolve, reject) => {
       this.http.get<any[]>('http://localhost:3000/users').subscribe(
         users => {
-          // Find the highest existing ID
           const maxId = users.reduce((max, user) => Math.max(max, +user.id), 0);
-          // Increment the highest ID for the new user
           const newId = (maxId + 1).toString();
           resolve(newId);
         },
