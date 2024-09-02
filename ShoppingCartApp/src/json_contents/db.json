@@ -45,8 +45,38 @@
       "password": "456",
       "email": "user3@gmail.com",
       "isAdmin": false,
-      "cart": [],
-      "pendingOrders": []
+      "cart": [
+        {
+          "productName": "Product 1",
+          "orderQuantity": 3
+        },
+        {
+          "productName": "Product 2",
+          "orderQuantity": 5
+        }
+      ],
+      "pendingOrders": [
+        {
+          "items": [
+            {
+              "productName": "Product 1",
+              "orderQuantity": 3
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "productName": "Product 1",
+              "orderQuantity": 3
+            },
+            {
+              "productName": "Product 2",
+              "orderQuantity": 1
+            }
+          ]
+        }
+      ]
     },
     {
       "id": "3",
@@ -67,7 +97,7 @@
     {
       "name": "Product 2",
       "description": "Description for product 2",
-      "price": 20,
+      "price": 25,
       "id": "f968"
     }
   ]

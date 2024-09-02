@@ -65,7 +65,7 @@ export class LoginComponent {
           if (user.isAdmin) {
             this.router.navigate(['/dashboard']); // Redirect to the dashboard if the user is an admin
           } else {
-            this.router.navigate(['/user-page']); // Redirect to the product page if the user is not an admin
+            this.router.navigate(['/user-page', username]); // Redirect to the product page if the user is not an admin
           }
         } else {
           this.errorMessage = 'Invalid username or password';
