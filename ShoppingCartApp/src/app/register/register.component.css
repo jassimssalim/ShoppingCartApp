@@ -8,6 +8,12 @@ html, body {
     height: 100%;
     width: 100%;
 }
+.headTitle {
+    margin-bottom: 20px; /* Space between heading and form */
+    font-size: 1.7rem; /* Adjust font size as needed */
+    color: #008000; /* Text color */
+    text-align: center; /* Center-align the heading text */
+}
 
 .container {
     display: flex;
@@ -15,28 +21,22 @@ html, body {
     width: 100vw; /* Full viewport width */
     overflow: hidden !important;
     font-family: "Helvetica Now Text Medium", Helvetica, Arial, sans-serif;
-
 }
 
-.login-container {
+
+.register-container {
     width: 50%; /* Occupies half of the viewport width */
     display: flex;
     flex-direction: column; /* Stack children vertically */
     justify-content: center;
     align-items: center;
-    background-color: #ffffff; /* White background for the login form */
+    background-color: #ffffff; /* White background for the form */
     padding: 20px; /* Add padding around the content */
     box-sizing: border-box; /* Ensure padding does not affect width */
     position: relative; /* Ensure it is positioned relative to the container */
     max-height: 100vh; /* Prevent exceeding viewport height */
 }
 
-.headTitle {
-    margin-bottom: 20px; /* Space between heading and form */
-    font-size: 1.7rem; /* Adjust font size as needed */
-    color: #008000; /* Text color */
-    text-align: center; /* Center-align the heading text */
-}
 .black-side {
     width: 48%;
     height: 100vh;
@@ -50,7 +50,7 @@ html, body {
     z-index: -1;
 }
 
-
+/* Form Element Styling */
 form {
     background-color: #ffffff; /* White background for the form */
     border-radius: 0; /* Remove rounded corners to make the form flush with edges */
@@ -131,13 +131,7 @@ a {
     text-decoration: underline; /* Underline on hover */
 }
 
-.sign-up-link {
-    margin-left: auto; /* Push the Sign Up link to the right */
-}
-
-
-/*pop toaster */
-
+/* Pop toaster */
 .toaster {
     position: fixed;
     top: 20px; /* Position at the top */
@@ -148,8 +142,4 @@ a {
     border-radius: 5px;
     z-index: 1000; /* Ensure it appears above other elements */
     display: block; /* Ensure it is visible */
-  }
-  
-  
-  
-  
+}
