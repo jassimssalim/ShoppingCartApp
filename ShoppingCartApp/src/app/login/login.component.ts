@@ -6,6 +6,7 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectorRef } from '@angular/core';
 import { RouterModule } from '@angular/router'; 
 import { ProfileService } from '../user-page/components/profile/profile.service';
+import { UserService } from '../user-page/user-page.service';
 
 @Component({
   selector: 'app-login',
@@ -27,7 +28,8 @@ export class LoginComponent {
     private http: HttpClient,
     private router: Router, 
     private profileService: ProfileService,
-    private cdr: ChangeDetectorRef
+    private cdr: ChangeDetectorRef,
+    private userService: UserService
   ) {
     // Initialize login form
     this.loginForm = this.fb.group({
@@ -48,104 +50,93 @@ export class LoginComponent {
   onSubmit(): void {
     const username = this.loginForm.get('username')?.value;
     const password = this.loginForm.get('password')?.value;
-    if (!username || !password) {
-      this.forgotPasswordErrorMessage = 'Please fill out all fields.';
-  
-      setTimeout(() => {
-        this.forgotPasswordErrorMessage = '';
-      }, 3000);
 
+    if (this.loginForm.invalid) {
+      this.errorMessage = 'Please fill out all fields.';
+      setTimeout(() => this.errorMessage = '', 3000);
       return;
     }
 
-    if (this.loginForm.valid) {
-      const { username, password } = this.loginForm.value;
+    this.http.get<any[]>('http://localhost:3000/users').subscribe(users => {
+      const user = users.find(u => u.username === username && u.password === password);
 
-      this.http.get<any[]>('http://localhost:3000/users').subscribe(users => {
-        const user = users.find(u => u.username === username && u.password === password);
-        if (user) {
-          this.profileService.setCurrentUserId(user.id);
-          if (user.isAdmin) {
-            this.router.navigate(['/dashboard-admin']); // Redirect to the dashboard if the user is an admin
-          } else {
-            this.router.navigate(['/user-page', username]); // Redirect to the product page if the user is not an admin
-          }
+      if (user) {
+        // Set the username in the UserService
+        this.userService.setUser(username);
+
+        // Redirect based on user role
+        if (user.isAdmin) {
+          this.router.navigate(['/dashboard-admin']);
         } else {
-          this.errorMessage = 'Invalid username or password';
-          setTimeout(() => {
-            this.errorMessage = '';
-          }, 3000);
+          this.router.navigate(['/user-page', username]);
         }
-      }, error => {
-        this.errorMessage = 'An error occurred. Please try again later.';
-      });
-    }
+      } else {
+        this.errorMessage = 'Invalid username or password';
+        setTimeout(() => this.errorMessage = '', 3000);
+      }
+    }, error => {
+      this.errorMessage = 'An error occurred. Please try again later.';
+      setTimeout(() => this.errorMessage = '', 3000);
+    });
   }
 
   // Submit handler for the forgot password form
   onForgotPasswordSubmit(): void {
-    if (this.forgotPasswordForm.valid) {
-      const { username, email, phone, newPassword } = this.forgotPasswordForm.value;
-
-      this.http.get<any[]>('http://localhost:3000/users').subscribe(users => {
-        const user = users.find(u => u.username === username && u.email === email && u.phone === phone);
-        if (user) {
-          user.password = newPassword;
-
-          this.http.put(`http://localhost:3000/users/${user.id}`, user).subscribe(
-            () => {
-              this.isShowPop = true;
-              this.switchToLogin();
-              this.cdr.detectChanges(); // Force view update
-
-              setTimeout(() => {
-                this.isShowPop = false;
-              }, 3000);
-            },
-            error => {
-              this.forgotPasswordErrorMessage = 'Failed to reset password. Please try again later.';
-              console.error('Update failed', error);
-              setTimeout(() => {
-                this.forgotPasswordErrorMessage = '';
-              }, 3000);
-            }
-          );
-        } else {
-          this.forgotPasswordErrorMessage = 'No matching user found with the provided details.';
-          setTimeout(() => {
-            this.forgotPasswordErrorMessage = '';
-          }, 3000);
-        }
-      }, error => {
-        this.forgotPasswordErrorMessage = 'An error occurred. Please try again later.';
-      });
-    } else {
+    if (this.forgotPasswordForm.invalid) {
       this.forgotPasswordErrorMessage = 'Please fill out all fields correctly.';
-      setTimeout(() => {
-        this.forgotPasswordErrorMessage = '';
-      }, 3000);
+      setTimeout(() => this.forgotPasswordErrorMessage = '', 3000);
+      return;
     }
+
+    const { username, email, phone, newPassword } = this.forgotPasswordForm.value;
+
+    this.http.get<any[]>('http://localhost:3000/users').subscribe(users => {
+      const user = users.find(u => u.username === username && u.email === email && u.phone === phone);
+
+      if (user) {
+        user.password = newPassword;
+
+        this.http.put(`http://localhost:3000/users/${user.id}`, user).subscribe(
+          () => {
+            this.isShowPop = true;
+            this.switchToLogin();
+            this.cdr.detectChanges(); // Force view update
+
+            setTimeout(() => this.isShowPop = false, 3000);
+          },
+          error => {
+            this.forgotPasswordErrorMessage = 'Failed to reset password. Please try again later.';
+            console.error('Update failed', error);
+            setTimeout(() => this.forgotPasswordErrorMessage = '', 3000);
+          }
+        );
+      } else {
+        this.forgotPasswordErrorMessage = 'No matching user found with the provided details.';
+        setTimeout(() => this.forgotPasswordErrorMessage = '', 3000);
+      }
+    }, error => {
+      this.forgotPasswordErrorMessage = 'An error occurred. Please try again later.';
+      setTimeout(() => this.forgotPasswordErrorMessage = '', 3000);
+    });
   }
 
   // Switch to the forgot password form
   switchToForgotPassword(event: Event): void {
-    event.preventDefault(); // Prevent default anchor behavior
+    event.preventDefault();
     this.isLoginMode = false;
-    this.errorMessage = null; // Clear previous errors
+    this.errorMessage = null;
   }
 
   // Switch back to the login form
   switchToLogin(event?: Event): void {
-    if (event) event.preventDefault(); // Prevent default anchor behavior if event is present
+    if (event) event.preventDefault();
     this.isLoginMode = true;
-    this.forgotPasswordErrorMessage = null; // Clear previous errors
+    this.forgotPasswordErrorMessage = null;
   }
 
   // Redirect to the register page
   goToRegister(event?: Event): void {
     if (event) event.preventDefault();
-    //event.preventDefault();
-    //this.isLoginMode = true;
     this.router.navigate(['/register']);
   }
 }

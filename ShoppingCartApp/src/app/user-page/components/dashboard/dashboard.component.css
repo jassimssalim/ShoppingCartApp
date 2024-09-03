@@ -1,14 +1,101 @@
 :host {
-    display: block;
-    background-color: white  !important ;
-    font-family: "Helvetica Now Text Medium", Helvetica, Arial, sans-serif;
+  display: block;
+  background-color: white !important;
+  font-family: "Helvetica Now Text Medium", Helvetica, Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
 
-  }
-  
+/* Make sure the body and html have no margin */
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
 /* General container for the dashboard */
 .dashboard-container {
   padding: 20px;
   background-color: #f4f4f4;
+}
+
+/* Navigation bar styling */
+.navbar {
+  position: fixed; 
+  top: 0; 
+  left: 0;
+  height: 60px;
+  width: 100%; 
+  background-color: #333;
+  padding: 10px 20px;
+  z-index: 1000; 
+  box-sizing: border-box;
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+}
+
+/* Icon styling */
+.navbar-icon {
+  height: 1.4em; 
+  margin-right: 15px; 
+}
+
+.navbar h1{
+  color:white;
+  font-size: 23px;
+
+}
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: flex-end; 
+  align-items: center; 
+  margin: 0;
+  padding: 0;
+  flex-grow: 1; 
+}
+
+.nav-links li {
+  display: inline-block;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+ 
+  padding: 5px 27px; /* Reduce padding for less space between links */
+  font-weight: bold;
+  font-size: 14px; /* Smaller font size */
+}
+
+.nav-links a.active,
+.nav-links a:hover {
+  background-color: #008000;
+  border-radius: 4px;
+   width: 40px;
+}
+
+/* welcome part */
+
+.wc {
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  color: #008000;
+}
+.wc h1 {
+  margin: 10px; 
+  
+}
+
+.addcart {
+  margin-left: 50%; 
+  margin-right: 220px;
+}
+
+
+.dashboard-container {
+  padding-top: 80px; 
 }
 
 /* Filter section styling */

@@ -1,4 +1,25 @@
 <div class="dashboard-container">
+  <div class="navbar">
+    <!-- Icon on the left side -->
+     <h1>CartiFy!</h1>
+    <img src="greenicon.png" alt="Green Icon" class="navbar-icon">
+
+    <!-- Navigation links -->
+    <ul class="nav-links">
+      <li><a href="user-page/cart/:username">MyCart</a></li>
+      <li><a href="user-page/profile/:username">MyProfile</a></li>
+    </ul>
+  </div>
+
+
+      <!-- Welcome User -->
+      <div class="wc">
+        <h1>Welcome {{ username }}!</h1>
+        <h4 class="addcart">add to cart items on going</h4>
+      </div>
+
+ 
+
   <!-- Filter Section -->
   <div class="filter-section">
     <div class="filter">
@@ -7,8 +28,7 @@
         <option value="all">All Categories</option>
         <option value="electronics">Electronics</option>
         <option value="clothing">Clothing</option>
-        <option value="clothing">TEST</option>
-
+        <option value="test">Test</option>
       </select>
     </div>
     <div class="filter">

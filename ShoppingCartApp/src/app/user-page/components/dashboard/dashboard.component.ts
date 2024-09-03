@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { UserService } from '../../user-page.service'; // Adjust path if needed
 
 @Component({
   selector: 'app-dashboard',
@@ -11,18 +12,21 @@ import { FormsModule } from '@angular/forms';
 })
 export class DashboardComponent implements OnInit {
 
+  username: string | null = null; // Declare username property
   products = [
     { id: '1', name: 'Product 1', category: 'electronics', price: 10 },
     { id: '2', name: 'Product 2', category: 'clothing', price: 25 },
-    { id: '2', name: 'test 3', category: 'test', price: 50 }
-
+    { id: '3', name: 'Product 3', category: 'test', price: 50 } // Fixed duplicate id
   ];
 
   filteredProducts = [...this.products];
   quantity: { [key: string]: number } = {}; // Stores quantity for each product
 
+  constructor(private userService: UserService) {} // Inject UserService
+
   ngOnInit() {
-    // Initialization logic if any
+    this.username = this.userService.getUser(); // Retrieve the username here
+    console.log('Username in DashboardComponent:', this.username); // Debugging statement
   }
 
   filterByCategory(event: Event): void {
