@@ -1,1 +1,38 @@
-<p>dashboard works!</p>
+<div class="dashboard-container">
+  <!-- Filter Section -->
+  <div class="filter-section">
+    <div class="filter">
+      <h5>Filter by Category</h5>
+      <select (change)="filterByCategory($event)">
+        <option value="all">All Categories</option>
+        <option value="electronics">Electronics</option>
+        <option value="clothing">Clothing</option>
+      </select>
+    </div>
+    <div class="filter">
+      <h5>Filter by Price Range</h5>
+      <select (change)="filterByPriceRange($event)">
+        <option value="all">All Price Ranges</option>
+        <option value="0-10">Under $10</option>
+        <option value="11-25">$11 - $25</option>
+        <option value="26-50">$26 - $50</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Products Section -->
+  <div class="products-section">
+    <div class="product-card" *ngFor="let product of filteredProducts">
+      <div class="product-details">
+        <h5>{{ product.name }}</h5>
+        <p>Category: {{ product.category }}</p>
+        <p>Price: ${{ product.price }}</p>
+        <div class="quantity-container">
+          <label for="quantity-{{ product.id }}">Quantity</label>
+          <input id="quantity-{{ product.id }}" type="number" [(ngModel)]="quantity[product.id]" min="1" placeholder="Quantity" />
+        </div>
+        <button class="add-to-cart-btn" (click)="addToCart(product)">Add to Cart</button>
+      </div>
+    </div>
+  </div>
+</div>
