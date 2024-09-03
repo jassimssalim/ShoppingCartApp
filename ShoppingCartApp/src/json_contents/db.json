@@ -55,6 +55,14 @@
       "email": "test@gmail.com",
       "phone": "09345678910",
       "isAdmin": false
+    },
+    {
+      "id": "4",
+      "username": "check1",
+      "password": "123",
+      "email": "check@gmail.com",
+      "phone": "123",
+      "isAdmin": false
     }
   ],
   "products": [
