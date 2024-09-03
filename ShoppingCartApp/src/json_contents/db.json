@@ -6,38 +6,8 @@
       "password": "456",
       "email": "test@gmail.com",
       "isAdmin": true,
-      "cart": [
-        {
-          "productName": "Product 1",
-          "orderQuantity": 3
-        },
-        {
-          "productName": "Product 2",
-          "orderQuantity": 5
-        }
-      ],
-      "pendingOrders": [
-        {
-          "items": [
-            {
-              "productName": "Product 1",
-              "orderQuantity": 3
-            }
-          ]
-        },
-        {
-          "items": [
-            {
-              "productName": "Product 1",
-              "orderQuantity": 3
-            },
-            {
-              "productName": "Product 2",
-              "orderQuantity": 1
-            }
-          ]
-        }
-      ]
+      "cart": [],
+      "pendingOrders": []
     },
     {
       "id": "2",
