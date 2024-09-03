@@ -1,0 +1,28 @@
+<p>checkout works!</p>
+
+<!-- Cart items table -->
+<table id="cart-table">
+    <thead>
+        <tr>
+            <th>Item Name</th>
+            <th>Price (PHP)</th>
+            <th>Quantity</th>
+            <th>Subtotal (PHP)</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let item of cartList; trackBy: trackByProductName">
+            <td>{{ item.productName }}</td>
+            <td>{{ getPrice(item.productName) }}</td>
+            <td>{{ item.orderQuantity }}</td>
+            <td>{{ calculateSubtotal(item.productName) }}</td>
+        </tr>
+    </tbody>
+</table>
+
+<!-- Total payment summary -->
+<p>Total: {{ getTotalPayment() }} PHP</p>
+
+<div class="cart-actions">
+    <button (click)="confirmOrder()" class="checkout-button">Confirm Order</button>
+  </div>

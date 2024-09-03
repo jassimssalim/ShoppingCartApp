@@ -11,7 +11,7 @@
             <label for="quantity">Quantity: </label>
             <input id="quantity" formControlName="quantity" type="number" [placeholder]="editItemQuantity" />
             <div *ngIf="editForm.get('quantity')?.touched && editForm.get('quantity')?.invalid" class="error">
-                Quantity is required and must be a number.
+                Quantity must be greater than 0.
             </div>
         </div>
         <button type="submit" class="btn btn-primary">Edit</button>
@@ -48,3 +48,7 @@
 
 <!-- Total payment summary -->
 <p>Total: {{ getTotalPayment() }} PHP</p>
+
+<div class="cart-actions">
+    <button [disabled]="checkoutDisabled" (click)="goToCheckout($event)" class="checkout-button">Checkout</button>
+  </div>

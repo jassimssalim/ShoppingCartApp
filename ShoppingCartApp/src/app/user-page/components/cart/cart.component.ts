@@ -26,6 +26,7 @@ export class CartComponent {
   editItemQuantity: number = 0;
   userData: any;
   productsList: any[] = [];
+  checkoutDisabled: any;
 
   constructor(
     private router: Router,
@@ -36,7 +37,7 @@ export class CartComponent {
   ) {
     
     this.editForm = this.fb.group({
-      quantity: ['', [Validators.required, Validators.pattern("^[0-9]*$")]]
+      quantity: ['', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.min(1)]]
     });
   }
 
@@ -55,6 +56,13 @@ export class CartComponent {
       const user = users.find(u => u.username === this.user);
       this.userData = user;
       this.cartList = user.cart;
+      let length = this.cartList.length;
+      console.log ("length: ", length)
+      if (length > 0) {
+        this.checkoutDisabled = false;
+      } else {
+        this.checkoutDisabled = true;
+      };
     });
   }
 
@@ -133,5 +141,10 @@ export class CartComponent {
   
   trackByProductName(index: number, item: any): string {
     return item.productName;
+  }
+
+  goToCheckout(event?: Event): void {
+    if (event) event.preventDefault();
+    this.router.navigate(['/user-page/checkout', this.user]);
   }
 }

@@ -16,15 +16,15 @@
       "email": "user3@gmail.com",
       "isAdmin": false,
       "cart": [
-        {
-          "productName": "Product 1",
-          "orderQuantity": 3
-        },
-        {
-          "productName": "Product 2",
-          "orderQuantity": 5
-        }
-      ],
+          {
+            "productName": "Product 1",
+            "orderQuantity": 3
+          },
+          {
+            "productName": "Product 2",
+            "orderQuantity": 5
+          }
+        ],
       "pendingOrders": [
         {
           "items": [
@@ -54,7 +54,9 @@
       "password": "mle3",
       "email": "test@gmail.com",
       "phone": "09345678910",
-      "isAdmin": false
+      "isAdmin": false,
+      "cart": [],
+      "pendingOrders": []
     },
     {
       "id": "4",
@@ -62,7 +64,9 @@
       "password": "mle",
       "email": "newuser1@yahoo.com",
       "phone": "09345678910",
-      "isAdmin": false
+      "isAdmin": false,
+      "cart": [],
+      "pendingOrders": []
     }
   ],
   "products": [
