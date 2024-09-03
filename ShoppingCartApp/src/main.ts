@@ -8,6 +8,7 @@ import { UserPageComponent } from './app/user-page/user-page.component';
 import { DashboardComponent } from './app/user-page/components/dashboard/dashboard.component';
 import { CartComponent } from './app/user-page/components/cart/cart.component';
 import { DashboardAdminComponent } from './app/admin-page/dashboard-admin.component';
+import { ProfileComponent } from './app/user-page/components/profile/profile.component';
 
 bootstrapApplication(AppComponent, {
   providers: [
@@ -24,7 +25,8 @@ bootstrapApplication(AppComponent, {
           { path: '', component: DashboardComponent }  // Default child route
         ]
       },
-      { path: 'user-page/cart/:username', component: CartComponent }
+      { path: 'user-page/cart/:username', component: CartComponent },
+      { path: 'user-page/profile/:username', component: ProfileComponent },
     ]),
     provideHttpClient(withFetch())
   ]

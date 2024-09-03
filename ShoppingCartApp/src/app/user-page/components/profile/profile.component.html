@@ -1,0 +1,36 @@
+<p>profile works!</p>
+<div class="profile-container">
+    <h2>User Profile</h2>
+    <form [formGroup]="profileForm" (ngSubmit)="onSave()">
+      <div>
+        <label for="username">Username:</label>
+        <input id="username" formControlName="username" readonly />
+      </div>
+      <div>
+        <label for="firstName">First Name:</label>
+        <input id="firstName" formControlName="firstName" />
+      </div>
+      <div>
+        <label for="middleName">Middle Name:</label>
+        <input id="middleName" formControlName="middleName" />
+      </div>
+      <div>
+        <label for="lastName">Last Name:</label>
+        <input id="lastName" formControlName="lastName" />
+      </div>
+      <div>
+        <label for="email">Email:</label>
+        <input id="email" type="email" formControlName="email" />
+      </div>
+      <div>
+        <label for="birthDate">Birth Date:</label>
+        <input id="birthDate" type="date" formControlName="birthDate" />
+      </div>
+      <div>
+        <label for="interest">Interests:</label>
+        <input id="interest" formControlName="interest" />
+      </div>
+      <button type="submit">Save</button>
+    </form>
+  </div>
+  

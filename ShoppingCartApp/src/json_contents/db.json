@@ -9,11 +9,11 @@
       "isAdmin": false,
       "cart": [],
       "pendingOrders": [],
-      "firstname": "",
-      "middlename": "",
-      "lastname": "",
-      "birthdate": "",
-      "interest": ""
+      "firstName": "Jose",
+      "middleName": "Protacio",
+      "lastName": "Rizal",
+      "birthDate": "2024-09-19",
+      "interest": "books and net"
     },
     {
       "id": "2",
@@ -97,6 +97,51 @@
       "lastName": "",
       "birthDate": "2024-09-03",
       "interest": ""
+    },
+    {
+      "id": "8",
+      "username": "newuser5",
+      "password": "mle",
+      "email": "jprizals@gmail.com",
+      "phone": "09345678910",
+      "isAdmin": false,
+      "cart": [],
+      "pendingOrders": [],
+      "firstName": "",
+      "middleName": "",
+      "lastName": "",
+      "birthDate": "2024-09-03",
+      "interest": ""
+    },
+    {
+      "id": "9",
+      "username": "newuser6",
+      "password": "mle",
+      "email": "jprizal@gmail.com",
+      "phone": "0999846461616",
+      "isAdmin": false,
+      "cart": [],
+      "pendingOrders": [],
+      "firstName": "Jose",
+      "middleName": "Protacio",
+      "lastName": "Rizal",
+      "birthDate": "2024-09-08",
+      "interest": "books"
+    },
+    {
+      "id": "10",
+      "username": "newuser7",
+      "password": "mle",
+      "email": "jpmanalo@gmail.com",
+      "phone": "09345678910",
+      "isAdmin": false,
+      "cart": [],
+      "pendingOrders": [],
+      "firstName": "Jose",
+      "middleName": "Protacio",
+      "lastName": "Manalo",
+      "birthDate": "1999-03-04",
+      "interest": "comedy"
     }
   ]
 }

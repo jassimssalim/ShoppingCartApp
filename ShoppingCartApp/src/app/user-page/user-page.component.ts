@@ -33,4 +33,11 @@ export class UserPageComponent implements OnInit {
     if (event) event.preventDefault();
     this.router.navigate(['/user-page/cart', this.user]);
   }
+
+  goToProfile(event?: Event): void {
+    if (event) event.preventDefault();
+    //event.preventDefault();
+    //this.isLoginMode = true;
+    this.router.navigate(['/user-page/profile', this.user]);
+  }
 }
