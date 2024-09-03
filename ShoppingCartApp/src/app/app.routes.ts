@@ -3,8 +3,14 @@ import { RegisterComponent } from './register/register.component';
 import { CartComponent } from './user-page/components/cart/cart.component';
 import { UserPageComponent } from './user-page/user-page.component';
 import { DashboardComponent } from './user-page/components/dashboard/dashboard.component';
+import { DashboardAdminComponent } from './admin-page/dashboard-admin.component';
 
 export const routes: Routes = [
+    {
+        path: 'admin-dashboard',
+        component: DashboardAdminComponent 
+    },
+    
     {
         path: 'register',
         component: RegisterComponent 

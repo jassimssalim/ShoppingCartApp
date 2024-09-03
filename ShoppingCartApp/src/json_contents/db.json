@@ -26,15 +26,7 @@
       "password": "123",
       "email": "test@gmail.com",
       "phone": "09345678910",
-      "isAdmin": false
-    },
-    {
-      "id": "4",
-      "username": "1",
-      "password": "123",
-      "email": "test@gmail.com",
-      "phone": "21",
-      "isAdmin": false
+      "isAdmin": true
     }
   ]
 

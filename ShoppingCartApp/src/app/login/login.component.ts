@@ -63,7 +63,7 @@ export class LoginComponent {
         const user = users.find(u => u.username === username && u.password === password);
         if (user) {
           if (user.isAdmin) {
-            this.router.navigate(['/dashboard']); // Redirect to the dashboard if the user is an admin
+            this.router.navigate(['/dashboard-admin']); // Redirect to the dashboard if the user is an admin
           } else {
             this.router.navigate(['/user-page', username]); // Redirect to the product page if the user is not an admin
           }

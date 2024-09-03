@@ -7,11 +7,15 @@ import { RegisterComponent } from './app/register/register.component';
 import { UserPageComponent } from './app/user-page/user-page.component';
 import { DashboardComponent } from './app/user-page/components/dashboard/dashboard.component';
 import { CartComponent } from './app/user-page/components/cart/cart.component';
+import { DashboardAdminComponent } from './app/admin-page/dashboard-admin.component';
 
 bootstrapApplication(AppComponent, {
   providers: [
     provideRouter([
       { path: '', component: LoginComponent },
+      
+      { path: 'dashboard-admin', component: DashboardAdminComponent},
+
       { path: 'register', component: RegisterComponent },
       {
         path: 'user-page/:username',
