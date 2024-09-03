@@ -12,12 +12,12 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
   standalone: true,
   imports: [ReactiveFormsModule, CommonModule, RouterModule],
   templateUrl: './cart.component.html',
-  styleUrl: './cart.component.css'
+  styleUrls: ['./cart.component.css'] 
 })
 export class CartComponent {
   
-  private user:any;
-  cartList:any[] = [];
+  public user: any; 
+  cartList: any[] = [];
   editForm: FormGroup;
   editItemMode = false; 
   deleteItemMode = false;
@@ -26,95 +26,82 @@ export class CartComponent {
   editItemQuantity: number = 0;
   userData: any;
   productsList: any[] = [];
-  
 
   constructor(
     private router: Router,
-    private http:HttpClient,
-    private route:ActivatedRoute,
-    private cartService : CartService,
-    private fb: FormBuilder,
-  ){
-    // Initialize login form
+    private http: HttpClient,
+    private route: ActivatedRoute,
+    private cartService: CartService,
+    private fb: FormBuilder
+  ) {
+    
     this.editForm = this.fb.group({
       quantity: ['', [Validators.required, Validators.pattern("^[0-9]*$")]]
     });
   }
 
-  ngOnInit(){
-      const username = this.route.snapshot.paramMap.get('username');
-      this.user = username
+  ngOnInit() {
+    const username = this.route.snapshot.paramMap.get('username');
+    this.user = username;
 
-      this.getCartList();
-      this.getProductList();
-
+    this.getCartList();
+    this.getProductList();
   }
 
-  getCartList(){
-    console.log("get cart executed")
+  getCartList() {
+    console.log("get cart executed");
 
     this.cartService.getUsers().subscribe((users: any[]) => {
-      const user = users.find(u => u.username === this.user );
+      const user = users.find(u => u.username === this.user);
       this.userData = user;
-      this.cartList = user.cart;})
-
+      this.cartList = user.cart;
+    });
   }
 
-  onSubmit(){
-    // const productName = this.editForm.get('productName')?.value;
+  onSubmit() {
     const quantity = this.editForm.get('quantity')?.value;
-    console.log("productname", this.editItemName)
-    console.log("quantity", quantity)
-    if (!quantity ) {
-      console.log(" i went here")
-      this.editErrorMessage = 'Please fill out Quantity field.';
-  
+    console.log("productname", this.editItemName);
+    console.log("quantity", quantity);
+
+    if (!quantity) {
+      this.editErrorMessage = 'Please fill out the Quantity field.';
+
       setTimeout(() => {
         this.editErrorMessage = '';
       }, 3000);
-
-      
       return;
     }
 
     if (this.editForm.valid) {
-      console.log("edit form valid")
-      // const {quantity} = this.editForm.value;
-      // console.log("quantity from form:")
+      console.log("edit form valid");
+
       let productItem = this.cartList.find(x => x.productName === this.editItemName);
       productItem.orderQuantity = quantity;
-      console.log("orderQuantity changed?: ", this.cartList)
-
-      // let user = this.cartService.getUsers().find((u: any) => u.username === this.user)
       this.userData.cart = this.cartList;
-      console.log("userid", this.userData.id);
-      console.log("userData", this.userData);
 
-      this.cartService.updateUser(this.userData).subscribe((res) => {
+      this.cartService.updateUser(this.userData).subscribe(() => {
         this.getCartList();
         this.editItemMode = false;
       });
-
-      
     }
   }
 
-  editItem(item:any){
+  editItem(item: any) {
     this.editItemName = item.productName;
     this.editItemMode = true;
     this.editItemQuantity = item.orderQuantity;
   }
 
-  cancelEdit(){
+  cancelEdit() {
     this.editItemMode = false;
   }
 
-  deleteItem(item:any){
-    if(confirm("Are you sure to delete "+ item.productName+"?")) {
+  deleteItem(item: any) {
+    if (confirm("Are you sure to delete " + item.productName + "?")) {
       this.cartList = this.cartList.filter(({ productName }) => productName !== item.productName);
       this.userData.cart = this.cartList;
 
-      this.cartService.updateUser(this.userData).subscribe((res) => {
+      this.cartService.updateUser(this.userData).subscribe(() => {
         this.getCartList();
       });
 
@@ -123,32 +110,28 @@ export class CartComponent {
   }
 
   getProductList() {
-    this.cartService.getProducts().subscribe((products: any[]) => {this.productsList = products;});
-    
-    }
-  
-  getPrice(productName: any){
-    let product = this.productsList.find((p: any) => p.name === productName );
-    console.log(product.price)
-    console.log(product)
-    return product.price
+    this.cartService.getProducts().subscribe((products: any[]) => {
+      this.productsList = products;
+    });
   }
 
-  calculateSubtotal(productName: any){
+  getPrice(productName: string) {
+    let product = this.productsList.find((p: any) => p.name === productName);
+    return product ? product.price : 0;
+  }
+
+  calculateSubtotal(productName: string) {
     let price = this.getPrice(productName);
     let quantity = this.cartList.find(x => x.productName === productName).orderQuantity;
-    return price * quantity
+    return price * quantity;
   }
 
-  getTotalPayment(){
-    let sum = 0;
-    this.cartList.forEach( (element) => {
-      sum += this.calculateSubtotal(element.productName);
-  });
-  return sum
+  getTotalPayment() {
+    return this.cartList.reduce((sum, item) => sum + this.calculateSubtotal(item.productName), 0);
   }
 
+  
+  trackByProductName(index: number, item: any): string {
+    return item.productName;
   }
-
-
-
+}

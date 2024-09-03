@@ -1,3 +1,21 @@
-<h1>Welcome product user!</h1>
+<div class="cart-container">
+  <h2>{{ user }}'s Shopping Cart</h2>
 
-<button (click)="goToUserCart($event)">Cart</button>
+  <div class="cart-items">
+    
+    <div class="cart-item">
+      <div class="item-details">
+        <h4>Product Name</h4>
+        <p>Description of the product.</p>
+      </div>
+      <div class="item-price">
+        <p>₱0.00</p>
+      </div>
+    </div>
+    
+  </div>
+
+  <div class="cart-actions">
+    <button (click)="goToUserCart($event)" class="checkout-button">Go to Cart</button>
+  </div>
+</div>
