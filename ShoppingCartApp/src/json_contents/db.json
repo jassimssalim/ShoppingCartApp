@@ -8,7 +8,12 @@
       "phone": "09345678910",
       "isAdmin": false,
       "cart": [],
-      "pendingOrders": []
+      "pendingOrders": [],
+      "firstname": "",
+      "middlename": "",
+      "lastname": "",
+      "birthdate": "",
+      "interest": ""
     },
     {
       "id": "2",
@@ -18,7 +23,12 @@
       "phone": "09345678910",
       "isAdmin": false,
       "cart": [],
-      "pendingOrders": []
+      "pendingOrders": [],
+      "firstName": "",
+      "middleName": "",
+      "lastName": "",
+      "birthDate": "2024-09-03",
+      "interest": ""
     },
     {
       "id": "3",
@@ -27,9 +37,66 @@
       "email": "test@gmail.com",
       "phone": "09345678910",
       "isAdmin": true
+    },
+    {
+      "id": "4",
+      "username": "newuser2",
+      "password": "mle",
+      "email": "jprizal@gmail.com",
+      "phone": "09345678910",
+      "isAdmin": false,
+      "cart": [],
+      "pendingOrders": [],
+      "firstName": "",
+      "middleName": "",
+      "lastName": "",
+      "birthDate": "2024-09-03",
+      "interest": ""
+    },
+    {
+      "id": "5",
+      "username": "newuser3",
+      "password": "mle",
+      "email": "jprizal@gmail.com",
+      "phone": "09345678910",
+      "isAdmin": false,
+      "cart": [],
+      "pendingOrders": [],
+      "firstName": "",
+      "middleName": "",
+      "lastName": "",
+      "birthDate": "2024-09-03",
+      "interest": ""
+    },
+    {
+      "id": "6",
+      "username": "newuser34",
+      "password": "mle",
+      "email": "jprizal@gmail.com",
+      "phone": "09345678910",
+      "isAdmin": false,
+      "cart": [],
+      "pendingOrders": [],
+      "firstName": "",
+      "middleName": "",
+      "lastName": "",
+      "birthDate": "2024-09-03",
+      "interest": ""
+    },
+    {
+      "id": "7",
+      "username": "newuser4",
+      "password": "mle",
+      "email": "jprizal@gmail.com",
+      "phone": "09345678910",
+      "isAdmin": false,
+      "cart": [],
+      "pendingOrders": [],
+      "firstName": "",
+      "middleName": "",
+      "lastName": "",
+      "birthDate": "2024-09-03",
+      "interest": ""
     }
   ]
-
-
-  
 }
