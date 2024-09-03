@@ -28,7 +28,7 @@ export class UserPageComponent implements OnInit{
 
     console.log('passing username:', username);
   }
-
+ 
 
   // Redirect to the cart page
   goToUserCart(event?: Event): void {

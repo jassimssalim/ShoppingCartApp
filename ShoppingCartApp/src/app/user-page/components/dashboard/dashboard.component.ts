@@ -13,7 +13,9 @@ export class DashboardComponent implements OnInit {
 
   products = [
     { id: '1', name: 'Product 1', category: 'electronics', price: 10 },
-    { id: '2', name: 'Product 2', category: 'clothing', price: 25 }
+    { id: '2', name: 'Product 2', category: 'clothing', price: 25 },
+    { id: '2', name: 'test 3', category: 'test', price: 50 }
+
   ];
 
   filteredProducts = [...this.products];

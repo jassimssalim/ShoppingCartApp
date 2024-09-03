@@ -30,25 +30,14 @@
     },
     {
       "id": "4",
-      "username": "check1",
+      "username": "1",
       "password": "123",
-      "email": "check@gmail.com",
-      "phone": "123",
+      "email": "test@gmail.com",
+      "phone": "21",
       "isAdmin": false
     }
-  ],
-  "products": [
-    {
-      "name": "Product 1",
-      "description": "Description for product 1",
-      "price": 10,
-      "id": "bdbf"
-    },
-    {
-      "name": "Product 2",
-      "description": "Description for product 2",
-      "price": 25,
-      "id": "f968"
-    }
   ]
+
+
+  
 }

@@ -1,7 +1,6 @@
-/* src/app/user-page/components/dashboard/dashboard.component.css */
 :host {
     display: block;
-    background-color: red ;
+    background-color: white  !important ;
     font-family: "Helvetica Now Text Medium", Helvetica, Arial, sans-serif;
 
   }
