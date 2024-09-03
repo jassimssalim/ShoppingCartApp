@@ -10,26 +10,11 @@ import { CartComponent } from './app/user-page/components/cart/cart.component';
 import { CheckoutComponent } from './app/user-page/components/checkout/checkout.component';
 import { DashboardAdminComponent } from './app/admin-page/dashboard-admin.component';
 import { ProfileComponent } from './app/user-page/components/profile/profile.component';
+import { routes } from './app/app.routes'; // Correctly import the routes
 
 bootstrapApplication(AppComponent, {
   providers: [
-    provideRouter([
-      { path: '', component: LoginComponent },
-      
-      { path: 'dashboard-admin', component: DashboardAdminComponent},
-
-      { path: 'register', component: RegisterComponent },
-      {
-        path: 'user-page/:username',
-        component: UserPageComponent,
-        children: [
-          { path: '', component: DashboardComponent }  // Default child route
-        ]
-      },
-      { path: 'user-page/cart/:username', component: CartComponent },
-      { path: 'user-page/profile/:username', component: ProfileComponent },
-      { path: 'user-page/checkout/:username', component: CheckoutComponent}
-    ]),
+    provideRouter(routes), // changing to route 
     provideHttpClient(withFetch())
   ]
 });

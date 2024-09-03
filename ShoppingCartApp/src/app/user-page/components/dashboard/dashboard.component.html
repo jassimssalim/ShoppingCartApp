@@ -6,8 +6,10 @@
 
     <!-- Navigation links -->
     <ul class="nav-links">
-      <li><a href="user-page/cart/:username">MyCart</a></li>
-      <li><a href="user-page/profile/:username">MyProfile</a></li>
+      <li><a [routerLink]="['/user-page', username, 'dashboarduser']">Dashboard</a></li>
+      <li><a [routerLink]="['/user-page', 'cart', username]" routerLinkActive="active">MyCart</a></li>
+
+      <li><a [routerLink]="['/user-page', 'profile', username]" routerLinkActive="active">MyProfile </a></li>
     </ul>
   </div>
 

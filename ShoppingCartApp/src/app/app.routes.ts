@@ -6,36 +6,22 @@ import { CheckoutComponent } from './user-page/components/checkout/checkout.comp
 import { DashboardComponent } from './user-page/components/dashboard/dashboard.component';
 import { DashboardAdminComponent } from './admin-page/dashboard-admin.component';
 import { ProfileComponent } from './user-page/components/profile/profile.component';
+import { LoginComponent } from './login/login.component';
 
 export const routes: Routes = [
-    {
-        path: 'admin-dashboard',
-        component: DashboardAdminComponent 
-    },
-    
-    {
-        path: 'register',
-        component: RegisterComponent 
-    },
-    {
-        path: 'user-page/:username',
-        component: UserPageComponent,
-        children: [
-            { path: '', component: DashboardComponent } 
-        ]
-    },
-    {
-        path: 'user-page/cart/:username',
-        component:CartComponent
-    },
-    {
-        path: 'user-page/profile/:username',
-        component:ProfileComponent
-    },
-    {
-        path: 'user-page/checkout/:username',
-        component:CheckoutComponent
-    }
-    
-
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  { path: 'login', component: LoginComponent },
+  { path: 'admin-dashboard', component: DashboardAdminComponent },
+  { path: 'register', component: RegisterComponent },
+  {
+    path: 'user-page/:username',
+    component: UserPageComponent,
+    children: [
+      { path: 'dashboarduser', component: DashboardComponent }, // Dashboard route
+      { path: '', redirectTo: 'dashboarduser', pathMatch: 'full' } // Default child route
+    ]
+  },
+  { path: 'user-page/cart/:username', component: CartComponent },
+  { path: 'user-page/profile/:username', component: ProfileComponent },
+  { path: 'user-page/checkout/:username', component: CheckoutComponent }
 ];

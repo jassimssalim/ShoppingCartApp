@@ -1,32 +1,36 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterModule, ActivatedRoute } from '@angular/router'; // Import ActivatedRoute
 import { UserService } from '../../user-page.service'; // Adjust path if needed
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './dashboard.component.html',
-  styleUrls: ['./dashboard.component.css']
+  styleUrls: ['./dashboard.component.css'],
 })
 export class DashboardComponent implements OnInit {
-
   username: string | null = null; // Declare username property
   products = [
     { id: '1', name: 'Product 1', category: 'electronics', price: 10 },
     { id: '2', name: 'Product 2', category: 'clothing', price: 25 },
-    { id: '3', name: 'Product 3', category: 'test', price: 50 } // Fixed duplicate id
+    { id: '3', name: 'Product 3', category: 'test', price: 50 }
   ];
 
   filteredProducts = [...this.products];
   quantity: { [key: string]: number } = {}; // Stores quantity for each product
 
-  constructor(private userService: UserService) {} // Inject UserService
+  constructor(
+    private route: ActivatedRoute, // Inject ActivatedRoute
+    private userService: UserService // Inject UserService
+  ) {}
 
   ngOnInit() {
-    this.username = this.userService.getUser(); // Retrieve the username here
-    console.log('Username in DashboardComponent:', this.username); // Debugging statement
+    // Retrieve the username from the route parameters
+    this.username = this.route.parent?.snapshot.params['username'] || null;
+    console.log('Username in DashboardComponent:', this.username); 
   }
 
   filterByCategory(event: Event): void {
@@ -55,5 +59,6 @@ export class DashboardComponent implements OnInit {
   addToCart(product: { id: string, name: string, category: string, price: number }): void {
     const qty = this.quantity[product.id] || 1;
     console.log(`Adding ${qty} of ${product.name} to cart.`);
+    // You might want to implement the actual logic to add the product to the cart here
   }
 }
