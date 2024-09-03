@@ -3,20 +3,11 @@
     {
       "id": "1",
       "username": "user2",
-      "password": "123",
+      "password": "1111",
       "email": "user3@gmail.com",
       "phone": "09345678910",
       "isAdmin": false,
-      "cart": [
-          {
-            "productName": "Product 1",
-            "orderQuantity": 3
-          },
-          {
-            "productName": "Product 2",
-            "orderQuantity": 5
-          }
-        ],
+      "cart": [],
       "pendingOrders": [
         {
           "items": [
@@ -35,6 +26,18 @@
             {
               "productName": "Product 2",
               "orderQuantity": 1
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "productName": "Product 1",
+              "orderQuantity": 3
+            },
+            {
+              "productName": "Product 2",
+              "orderQuantity": 5
             }
           ]
         }
@@ -76,15 +79,15 @@
       "phone": "09345678910",
       "isAdmin": false,
       "cart": [
-          {
-            "productName": "Product 1",
-            "orderQuantity": 3
-          },
-          {
-            "productName": "Product 2",
-            "orderQuantity": 5
-          }
-        ],
+        {
+          "productName": "Product 1",
+          "orderQuantity": 3
+        },
+        {
+          "productName": "Product 2",
+          "orderQuantity": 5
+        }
+      ],
       "pendingOrders": [
         {
           "items": [
@@ -202,6 +205,21 @@
       "lastName": "Manalo",
       "birthDate": "1999-03-04",
       "interest": "comedy"
+    },
+    {
+      "id": "11",
+      "username": "test111",
+      "password": "123222",
+      "email": "user3@gmail.com",
+      "phone": "123",
+      "isAdmin": false,
+      "cart": [],
+      "pendingOrders": [],
+      "firstName": "",
+      "middleName": "",
+      "lastName": "",
+      "birthDate": "2024-09-03",
+      "interest": ""
     }
   ],
   "products": [
@@ -210,14 +228,14 @@
       "description": "Description for product 1",
       "price": 10,
       "id": "bdbf",
-      "quantitySold":0
+      "quantitySold": 0
     },
     {
       "name": "Product 2",
       "description": "Description for product 2",
       "price": 25,
       "id": "f968",
-      "quantitySold":0
+      "quantitySold": 0
     }
   ]
 }
