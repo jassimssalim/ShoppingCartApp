@@ -2,6 +2,7 @@
   "users": [
     {
       "id": "1",
+<<<<<<< HEAD
       "username": "user2",
       "password": "123",
       "email": "user3@gmail.com",
@@ -21,10 +22,60 @@
       "pendingOrders": []
     },
     {
+=======
+      "username": "user1",
+      "password": "456",
+      "email": "test@gmail.com",
+      "isAdmin": true,
+      "cart": [],
+      "pendingOrders": []
+    },
+    {
+      "id": "2",
+      "username": "user2",
+      "password": "456",
+      "email": "user3@gmail.com",
+      "isAdmin": false,
+      "cart": [
+        {
+          "productName": "Product 1",
+          "orderQuantity": 3
+        },
+        {
+          "productName": "Product 2",
+          "orderQuantity": 5
+        }
+      ],
+      "pendingOrders": [
+        {
+          "items": [
+            {
+              "productName": "Product 1",
+              "orderQuantity": 3
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "productName": "Product 1",
+              "orderQuantity": 3
+            },
+            {
+              "productName": "Product 2",
+              "orderQuantity": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+>>>>>>> dev1
       "id": "3",
       "username": "1",
       "password": "123",
       "email": "test@gmail.com",
+<<<<<<< HEAD
       "phone": "123",
       "isAdmin": false,
       "cart": [],
@@ -37,6 +88,32 @@
       "email": "jastest@gmail.com",
       "phone": "123",
       "isAdmin": false
+=======
+      "phone": "09345678910",
+      "isAdmin": false
+    },
+    {
+      "id": "4",
+      "username": "check1",
+      "password": "123",
+      "email": "check@gmail.com",
+      "phone": "123",
+      "isAdmin": false
+    }
+  ],
+  "products": [
+    {
+      "name": "Product 1",
+      "description": "Description for product 1",
+      "price": 10,
+      "id": "bdbf"
+    },
+    {
+      "name": "Product 2",
+      "description": "Description for product 2",
+      "price": 25,
+      "id": "f968"
+>>>>>>> dev1
     }
   ]
 }

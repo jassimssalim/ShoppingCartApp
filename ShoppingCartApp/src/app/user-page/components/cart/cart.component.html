@@ -1,0 +1,55 @@
+<p>cart works!</p>
+
+<div *ngIf="editItemMode;">
+
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+        <div>
+            <label for="productName">Item Name: </label>
+            <input id="productName" type="text" value="{{ editItemName }}" readonly/>
+         
+        </div>
+        <div>
+            <label for="quantity">Quantity: </label>
+            <input id="quantity" formControlName="quantity" type="number" placeholder="{{ editItemQuantity }}"/>
+            <div *ngIf="editForm.get('quantity')?.touched && editForm.get('quantity')?.invalid" class="error">
+                Quantity is required.
+            </div>
+        </div>
+        <button type="submit">Edit</button>
+        <button (click)="cancelEdit()">Cancel</button>
+        <div *ngIf="editErrorMessage" class="error">{{ editErrorMessage }}</div>
+        
+
+      
+       
+    </form>
+    <br><br>
+</div>
+
+<table id="cart-table" >
+    <thead>
+        <tr>
+            <th>Item Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Subtotal</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @for (item of cartList; track item.productName) {
+        <tr>
+            <td>{{ item.productName }}</td>
+            <td>{{ getPrice(item.productName) }}</td>
+            <td>{{ item.orderQuantity }}</td>
+            <td>{{ calculateSubtotal(item.productName) }}</td>
+            <td>
+                <button (click)="editItem(item)">Edit Quantity</button>
+                <button (click)="deleteItem(item)">Delete</button>
+            </td>
+        </tr>
+    }
+    </tbody>
+</table>
+
+<p>Total: {{ getTotalPayment() }} PHP</p>
