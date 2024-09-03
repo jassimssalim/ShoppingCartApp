@@ -55,6 +55,14 @@
       "email": "test@gmail.com",
       "phone": "09345678910",
       "isAdmin": false
+    },
+    {
+      "id": "4",
+      "username": "newuser1",
+      "password": "mle",
+      "email": "newuser1@yahoo.com",
+      "phone": "09345678910",
+      "isAdmin": false
     }
   ],
   "products": [
