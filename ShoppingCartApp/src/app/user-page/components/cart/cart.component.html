@@ -1,55 +1,50 @@
-<p>cart works!</p>
+<p>Cart Works!</p>
 
-<div *ngIf="editItemMode;">
-
-    <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
-        <div>
+<!-- Edit item form, shown when in edit mode -->
+<div *ngIf="editItemMode">
+    <form [formGroup]="editForm" (ngSubmit)="onSubmit()" class="edit-form">
+        <div class="form-group">
             <label for="productName">Item Name: </label>
-            <input id="productName" type="text" value="{{ editItemName }}" readonly/>
-         
+            <input id="productName" type="text" [value]="editItemName" readonly />
         </div>
-        <div>
+        <div class="form-group">
             <label for="quantity">Quantity: </label>
-            <input id="quantity" formControlName="quantity" type="number" placeholder="{{ editItemQuantity }}"/>
+            <input id="quantity" formControlName="quantity" type="number" [placeholder]="editItemQuantity" />
             <div *ngIf="editForm.get('quantity')?.touched && editForm.get('quantity')?.invalid" class="error">
-                Quantity is required.
+                Quantity is required and must be a number.
             </div>
         </div>
-        <button type="submit">Edit</button>
-        <button (click)="cancelEdit()">Cancel</button>
+        <button type="submit" class="btn btn-primary">Edit</button>
+        <button type="button" class="btn btn-secondary" (click)="cancelEdit()">Cancel</button>
         <div *ngIf="editErrorMessage" class="error">{{ editErrorMessage }}</div>
-        
-
-      
-       
     </form>
-    <br><br>
+    <br /><br />
 </div>
 
-<table id="cart-table" >
+<!-- Cart items table -->
+<table id="cart-table">
     <thead>
         <tr>
             <th>Item Name</th>
-            <th>Price</th>
+            <th>Price (PHP)</th>
             <th>Quantity</th>
-            <th>Subtotal</th>
+            <th>Subtotal (PHP)</th>
             <th>Action</th>
         </tr>
     </thead>
     <tbody>
-        @for (item of cartList; track item.productName) {
-        <tr>
+        <tr *ngFor="let item of cartList; trackBy: trackByProductName">
             <td>{{ item.productName }}</td>
             <td>{{ getPrice(item.productName) }}</td>
             <td>{{ item.orderQuantity }}</td>
             <td>{{ calculateSubtotal(item.productName) }}</td>
             <td>
-                <button (click)="editItem(item)">Edit Quantity</button>
-                <button (click)="deleteItem(item)">Delete</button>
+                <button (click)="editItem(item)" class="btn btn-edit">Edit Quantity</button>
+                <button (click)="deleteItem(item)" class="btn btn-delete">Delete</button>
             </td>
         </tr>
-    }
     </tbody>
 </table>
 
+<!-- Total payment summary -->
 <p>Total: {{ getTotalPayment() }} PHP</p>
