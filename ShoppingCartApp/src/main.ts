@@ -3,24 +3,32 @@ import { provideRouter } from '@angular/router';
 import { provideHttpClient, withFetch } from '@angular/common/http';
 import { AppComponent } from './app/app.component';
 import { LoginComponent } from './app/login/login.component';
-import { DashboardAdminComponent } from './app/admin-page/dashboard-admin.component';
-import { UserPageComponent } from './app/user-page/user-page.component';
 import { RegisterComponent } from './app/register/register.component';
+import { UserPageComponent } from './app/user-page/user-page.component';
+import { DashboardComponent } from './app/user-page/components/dashboard/dashboard.component';
 import { CartComponent } from './app/user-page/components/cart/cart.component';
 import { CheckoutComponent } from './app/user-page/components/checkout/checkout.component';
-
-
+import { DashboardAdminComponent } from './app/admin-page/dashboard-admin.component';
+import { ProfileComponent } from './app/user-page/components/profile/profile.component';
 
 bootstrapApplication(AppComponent, {
   providers: [
     provideRouter([
       { path: '', component: LoginComponent },
-      { path: 'register', component: RegisterComponent },
-      { path: 'dashboard', component: DashboardAdminComponent  },
-      { path: 'user-page/:username', component: UserPageComponent},
-      { path: 'user-page/cart/:username', component: CartComponent},
-      { path: 'user-page/checkout/:username', component: CheckoutComponent}
+      
+      { path: 'dashboard-admin', component: DashboardAdminComponent},
 
+      { path: 'register', component: RegisterComponent },
+      {
+        path: 'user-page/:username',
+        component: UserPageComponent,
+        children: [
+          { path: '', component: DashboardComponent }  // Default child route
+        ]
+      },
+      { path: 'user-page/cart/:username', component: CartComponent },
+      { path: 'user-page/profile/:username', component: ProfileComponent },
+      { path: 'user-page/checkout/:username', component: CheckoutComponent}
     ]),
     provideHttpClient(withFetch())
   ]

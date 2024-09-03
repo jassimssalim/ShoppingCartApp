@@ -2,18 +2,10 @@
   "users": [
     {
       "id": "1",
-      "username": "user1",
-      "password": "456",
-      "email": "test@gmail.com",
-      "isAdmin": true,
-      "cart": [],
-      "pendingOrders": []
-    },
-    {
-      "id": "2",
       "username": "user2",
-      "password": "456",
+      "password": "123",
       "email": "user3@gmail.com",
+      "phone": "09345678910",
       "isAdmin": false,
       "cart": [
           {
@@ -46,27 +38,170 @@
             }
           ]
         }
-      ]
+      ],
+      "firstName": "Jose",
+      "middleName": "Protacio",
+      "lastName": "Rizal",
+      "birthDate": "2024-09-19",
+      "interest": "books and net"
     },
     {
-      "id": "3",
+      "id": "2",
       "username": "user9",
       "password": "mle3",
       "email": "test@gmail.com",
       "phone": "09345678910",
       "isAdmin": false,
       "cart": [],
-      "pendingOrders": []
+      "pendingOrders": [],
+      "firstName": "",
+      "middleName": "",
+      "lastName": "",
+      "birthDate": "2024-09-03",
+      "interest": ""
+    },
+    {
+      "id": "3",
+      "username": "1",
+      "password": "123",
+      "email": "test@gmail.com",
+      "phone": "09345678910",
+      "isAdmin": true
     },
     {
       "id": "4",
-      "username": "newuser1",
+      "username": "newuser2",
       "password": "mle",
-      "email": "newuser1@yahoo.com",
+      "email": "jprizal@gmail.com",
+      "phone": "09345678910",
+      "isAdmin": false,
+      "cart": [
+          {
+            "productName": "Product 1",
+            "orderQuantity": 3
+          },
+          {
+            "productName": "Product 2",
+            "orderQuantity": 5
+          }
+        ],
+      "pendingOrders": [
+        {
+          "items": [
+            {
+              "productName": "Product 1",
+              "orderQuantity": 3
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "productName": "Product 1",
+              "orderQuantity": 3
+            },
+            {
+              "productName": "Product 2",
+              "orderQuantity": 1
+            }
+          ]
+        }
+      ],
+      "firstName": "",
+      "middleName": "",
+      "lastName": "",
+      "birthDate": "2024-09-03",
+      "interest": ""
+    },
+    {
+      "id": "5",
+      "username": "newuser3",
+      "password": "mle",
+      "email": "jprizal@gmail.com",
       "phone": "09345678910",
       "isAdmin": false,
       "cart": [],
-      "pendingOrders": []
+      "pendingOrders": [],
+      "firstName": "",
+      "middleName": "",
+      "lastName": "",
+      "birthDate": "2024-09-03",
+      "interest": ""
+    },
+    {
+      "id": "6",
+      "username": "newuser34",
+      "password": "mle",
+      "email": "jprizal@gmail.com",
+      "phone": "09345678910",
+      "isAdmin": false,
+      "cart": [],
+      "pendingOrders": [],
+      "firstName": "",
+      "middleName": "",
+      "lastName": "",
+      "birthDate": "2024-09-03",
+      "interest": ""
+    },
+    {
+      "id": "7",
+      "username": "newuser4",
+      "password": "mle",
+      "email": "jprizal@gmail.com",
+      "phone": "09345678910",
+      "isAdmin": false,
+      "cart": [],
+      "pendingOrders": [],
+      "firstName": "",
+      "middleName": "",
+      "lastName": "",
+      "birthDate": "2024-09-03",
+      "interest": ""
+    },
+    {
+      "id": "8",
+      "username": "newuser5",
+      "password": "mle",
+      "email": "jprizals@gmail.com",
+      "phone": "09345678910",
+      "isAdmin": false,
+      "cart": [],
+      "pendingOrders": [],
+      "firstName": "",
+      "middleName": "",
+      "lastName": "",
+      "birthDate": "2024-09-03",
+      "interest": ""
+    },
+    {
+      "id": "9",
+      "username": "newuser6",
+      "password": "mle",
+      "email": "jprizal@gmail.com",
+      "phone": "0999846461616",
+      "isAdmin": false,
+      "cart": [],
+      "pendingOrders": [],
+      "firstName": "Jose",
+      "middleName": "Protacio",
+      "lastName": "Rizal",
+      "birthDate": "2024-09-08",
+      "interest": "books"
+    },
+    {
+      "id": "10",
+      "username": "newuser7",
+      "password": "mle",
+      "email": "jpmanalo@gmail.com",
+      "phone": "09345678910",
+      "isAdmin": false,
+      "cart": [],
+      "pendingOrders": [],
+      "firstName": "Jose",
+      "middleName": "Protacio",
+      "lastName": "Manalo",
+      "birthDate": "1999-03-04",
+      "interest": "comedy"
     }
   ],
   "products": [
@@ -74,13 +209,15 @@
       "name": "Product 1",
       "description": "Description for product 1",
       "price": 10,
-      "id": "bdbf"
+      "id": "bdbf",
+      "quantitySold":0
     },
     {
       "name": "Product 2",
       "description": "Description for product 2",
       "price": 25,
-      "id": "f968"
+      "id": "f968",
+      "quantitySold":0
     }
   ]
 }

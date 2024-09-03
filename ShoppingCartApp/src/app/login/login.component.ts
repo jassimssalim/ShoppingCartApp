@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { ChangeDetectorRef } from '@angular/core';
 import { RouterModule } from '@angular/router'; 
+import { ProfileService } from '../user-page/components/profile/profile.service';
 
 @Component({
   selector: 'app-login',
@@ -25,6 +26,7 @@ export class LoginComponent {
     private fb: FormBuilder,
     private http: HttpClient,
     private router: Router, 
+    private profileService: ProfileService,
     private cdr: ChangeDetectorRef
   ) {
     // Initialize login form
@@ -62,8 +64,9 @@ export class LoginComponent {
       this.http.get<any[]>('http://localhost:3000/users').subscribe(users => {
         const user = users.find(u => u.username === username && u.password === password);
         if (user) {
+          this.profileService.setCurrentUserId(user.id);
           if (user.isAdmin) {
-            this.router.navigate(['/dashboard']); // Redirect to the dashboard if the user is an admin
+            this.router.navigate(['/dashboard-admin']); // Redirect to the dashboard if the user is an admin
           } else {
             this.router.navigate(['/user-page', username]); // Redirect to the product page if the user is not an admin
           }
