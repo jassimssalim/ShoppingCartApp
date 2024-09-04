@@ -1,43 +1,126 @@
+/* Ensure there are no default margins or paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.edit-profile-page {
+  display: flex;
+  height: 100vh; /* Ensure it takes full viewport height */
+  width: 100%;
+  overflow: hidden; /* Prevent overflow on the main container */
+}
+
+/* Styling for the form container */
 .profile-container {
-    max-width: 600px;
-    margin: auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-  }
-  
-  .profile-container h2 {
-    text-align: center;
-  }
-  
-  .profile-container form div {
-    margin-bottom: 15px;
-  }
-  
-  .profile-container form label {
-    display: block;
-    font-weight: bold;
-  }
-  
-  .profile-container form input {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    box-sizing: border-box;
-  }
-  
-  .profile-container form button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .profile-container form button:hover {
-    background-color: #0056b3;
-  }
-  
+  flex: 1;
+  max-width: 50%;
+  padding: 40px;
+  border-right: 1px solid #ccc;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Header container styling */
+.header-container {
+  display: flex;
+  align-items: center; /* Center items vertically */
+  margin-top: 20px; /* Move the header away from the edge of the browser */
+  margin-bottom: 20px; /* Space below the header */
+  padding: 0 20px; /* Add padding on left and right for better spacing */
+}
+
+/* Arrow button styling */
+.arrow-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-right: 150px; /* Space between the button and header text */
+  padding: 0;
+  display: flex;
+  align-items: center; /* Ensure vertical alignment */
+}
+
+/* Arrow SVG icon styling */
+.arrow-button svg {
+  fill: #333; /* Color of the arrow */
+  width: 24px; /* Adjust width of the arrow icon */
+  height: 24px; /* Adjust height of the arrow icon */
+}
+
+/* Styling for the header inside the form */
+.profile-container h2 {
+  font-family: 'Arial', sans-serif;
+  color: #008000;
+  font-size: 24px; /* Adjust font size as needed */
+  margin: 0; /* Remove default margin */
+}
+
+/* Styling for each form group (label and input) */
+.form-group {
+  margin-bottom: 15px;
+}
+
+/* Styling for the labels */
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #555;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Styling for the input fields */
+.form-group input {
+  width: 100%;
+  padding: 7px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  background-color: #f4f4f4;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Styling for placeholder text */
+.form-group input::placeholder {
+  color: #aaa;
+}
+
+/* Styling for the submit button */
+.btn-primary {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  color: #fff;
+  background-color: #008000;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family: 'Arial', sans-serif;
+  margin-top: 20px;
+}
+
+/* Hover effect for the button */
+.btn-primary:hover {
+  background-color: #005700;
+}
+
+/* Right side section styling */
+.right-side {
+  width: 50%;
+  height: 100vh; /* Ensure it takes full viewport height */
+  background-color: #000;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: fixed;
+  right: 0;
+  top: 0;
+  overflow: hidden; /* Prevent scrollbars on the right-side section */
+  z-index: -1; /* Ensure it stays behind the main content */
+}

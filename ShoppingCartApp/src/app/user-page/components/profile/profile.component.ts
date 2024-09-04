@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterModule, ActivatedRoute } from '@angular/router';
 import { ProfileService } from './profile.service';
 
 @Component({
@@ -12,10 +12,12 @@ import { ProfileService } from './profile.service';
   styleUrls: ['./profile.component.css'],
 })
 export class ProfileComponent implements OnInit {
+  username: string | null = null; // Declare username property
+
   profileForm: FormGroup;
   userData: any;
 
-  constructor(private fb: FormBuilder, private profileService: ProfileService) {
+  constructor(private fb: FormBuilder, private profileService: ProfileService, private route: ActivatedRoute,) {
     this.profileForm = this.fb.group({
       username: [{ value: '', disabled: true }, Validators.required],
       firstName: [''],
@@ -28,7 +30,11 @@ export class ProfileComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.loadCurrentUser();
+    this.route.parent?.paramMap.subscribe(params => {
+      this.username = params.get('username');
+      console.log('Username in ProfileComponent:', this.username);
+      this.loadCurrentUser();
+    });
   }
 
   loadCurrentUser(): void {

@@ -2,8 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, ActivatedRoute } from '@angular/router'; // Import ActivatedRoute
-import { UserService } from '../../user-page.service'; // Adjust path if needed
-
+import { UserService } from '../../user-page.service';
 @Component({
   selector: 'app-dashboard',
   standalone: true,

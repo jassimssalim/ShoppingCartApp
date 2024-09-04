@@ -17,11 +17,11 @@ export const routes: Routes = [
     path: 'user-page/:username',
     component: UserPageComponent,
     children: [
-      { path: 'dashboarduser', component: DashboardComponent }, // Dashboard route
-      { path: '', redirectTo: 'dashboarduser', pathMatch: 'full' } // Default child route
+      { path: 'dashboarduser', component: DashboardComponent },
+      { path: 'profile', component: ProfileComponent }, 
+      { path: 'cart', component: CartComponent },
+      { path: 'checkout', component: CheckoutComponent },
+      { path: '', redirectTo: 'dashboarduser', pathMatch: 'full' }
     ]
-  },
-  { path: 'user-page/cart/:username', component: CartComponent },
-  { path: 'user-page/profile/:username', component: ProfileComponent },
-  { path: 'user-page/checkout/:username', component: CheckoutComponent }
+  }
 ];

@@ -6,6 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class ProfileService {
+
+  
   private apiUrl = 'http://localhost:3000/users';
   private currentUserId: string | null = null;
 
@@ -16,6 +18,7 @@ export class ProfileService {
   }
 
   getCurrentUserId(): string | null {
+    
     return this.currentUserId;
   }
 

@@ -63,7 +63,7 @@ export class LoginComponent {
       if (user) {
         // Set the username in the UserService
         this.userService.setUser(username);
-
+        this.profileService.setCurrentUserId(user.id) //id passing
         // Redirect based on user role
         if (user.isAdmin) {
           this.router.navigate(['/dashboard-admin']);

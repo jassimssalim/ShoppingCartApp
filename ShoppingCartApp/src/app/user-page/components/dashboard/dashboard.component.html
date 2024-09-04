@@ -5,12 +5,12 @@
     <img src="greenicon.png" alt="Green Icon" class="navbar-icon">
 
     <!-- Navigation links -->
-    <ul class="nav-links">
+    <ul class = "nav-links">
       <li><a [routerLink]="['/user-page', username, 'dashboarduser']">Dashboard</a></li>
-      <li><a [routerLink]="['/user-page', 'cart', username]" routerLinkActive="active">MyCart</a></li>
-
-      <li><a [routerLink]="['/user-page', 'profile', username]" routerLinkActive="active">MyProfile </a></li>
+      <li><a [routerLink]="['/user-page', username, 'cart']" routerLinkActive="active">MyCart</a></li>
+      <li><a [routerLink]="['/user-page', username, 'profile']" routerLinkActive="active">MyProfile</a></li>
     </ul>
+    
   </div>
 
 
