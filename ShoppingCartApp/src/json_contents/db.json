@@ -7,7 +7,16 @@
       "email": "user3@gmail.com",
       "phone": "09345678910",
       "isAdmin": false,
-      "cart": [],
+      "cart": [
+        {
+          "productName": "Product 1",
+          "orderQuantity": 1
+        },
+        {
+          "productName": "Product 3",
+          "orderQuantity": 5
+        }
+      ],
       "pendingOrders": [
         {
           "items": [
