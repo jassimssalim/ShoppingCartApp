@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -14,19 +14,17 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css'] 
 })
-export class CartComponent {
-  
-  public user: any; 
+export class CartComponent implements OnInit {
+  username: string | null = null;
+  userData: any;
   cartList: any[] = [];
+  productsList: any[] = [];
+  checkoutDisabled: boolean = true;
   editForm: FormGroup;
   editItemMode = false; 
-  deleteItemMode = false;
   editErrorMessage: string | null = null;
   editItemName: string = "";
   editItemQuantity: number = 0;
-  userData: any;
-  productsList: any[] = [];
-  checkoutDisabled: any;
 
   constructor(
     private router: Router,
@@ -35,47 +33,43 @@ export class CartComponent {
     private cartService: CartService,
     private fb: FormBuilder
   ) {
-    
     this.editForm = this.fb.group({
       quantity: ['', [Validators.required, Validators.pattern("^[0-9]*$"), Validators.min(1)]]
     });
   }
 
   ngOnInit() {
-    const username = this.route.snapshot.paramMap.get('username');
-    this.user = username;
-
-    this.getCartList();
-    this.getProductList();
+    this.route.parent?.paramMap.subscribe(params => {
+      this.username = params.get('username');
+      console.log('Username in cart:', this.username);
+      this.getCartList();
+      this.getProductList();    
+    });
   }
 
   getCartList() {
-    console.log("get cart executed");
+    console.log("getCartList executed");
 
     this.cartService.getUsers().subscribe((users: any[]) => {
-      const user = users.find(u => u.username === this.user);
-      this.userData = user;
-      this.cartList = user.cart;
-      let length = this.cartList.length;
-      console.log ("length: ", length)
-      if (length > 0) {
-        this.checkoutDisabled = false;
-      } else {
-        this.checkoutDisabled = true;
-      };
+      const user = users.find(u => u.username === this.username);
+      if (user) {
+        this.userData = user;
+        this.cartList = user.cart || [];
+        this.checkoutDisabled = this.cartList.length === 0;
+      }
     });
   }
 
   onSubmit() {
     const quantity = this.editForm.get('quantity')?.value;
-    console.log("productname", this.editItemName);
-    console.log("quantity", quantity);
+    console.log("product name:", this.editItemName);
+    console.log("quantity:", quantity);
 
     if (!quantity) {
       this.editErrorMessage = 'Please fill out the Quantity field.';
 
       setTimeout(() => {
-        this.editErrorMessage = '';
+        this.editErrorMessage = null;
       }, 3000);
       return;
     }
@@ -84,13 +78,15 @@ export class CartComponent {
       console.log("edit form valid");
 
       let productItem = this.cartList.find(x => x.productName === this.editItemName);
-      productItem.orderQuantity = quantity;
-      this.userData.cart = this.cartList;
+      if (productItem) {
+        productItem.orderQuantity = quantity;
+        this.userData.cart = this.cartList;
 
-      this.cartService.updateUser(this.userData).subscribe(() => {
-        this.getCartList();
-        this.editItemMode = false;
-      });
+        this.cartService.updateUser(this.userData).subscribe(() => {
+          this.getCartList();
+          this.editItemMode = false;
+        });
+      }
     }
   }
 
@@ -105,7 +101,7 @@ export class CartComponent {
   }
 
   deleteItem(item: any) {
-    if (confirm("Are you sure to delete " + item.productName + "?")) {
+    if (confirm("Are you sure you want to delete " + item.productName + "?")) {
       this.cartList = this.cartList.filter(({ productName }) => productName !== item.productName);
       this.userData.cart = this.cartList;
 
@@ -130,7 +126,7 @@ export class CartComponent {
 
   calculateSubtotal(productName: string) {
     let price = this.getPrice(productName);
-    let quantity = this.cartList.find(x => x.productName === productName).orderQuantity;
+    let quantity = this.cartList.find(x => x.productName === productName)?.orderQuantity || 0;
     return price * quantity;
   }
 
@@ -138,13 +134,12 @@ export class CartComponent {
     return this.cartList.reduce((sum, item) => sum + this.calculateSubtotal(item.productName), 0);
   }
 
-  
   trackByProductName(index: number, item: any): string {
     return item.productName;
   }
 
   goToCheckout(event?: Event): void {
     if (event) event.preventDefault();
-    this.router.navigate(['/user-page/checkout', this.user]);
+    this.router.navigate(['/user-page/checkout', this.username]);
   }
 }
