@@ -29,4 +29,8 @@ export class UserService {
     return this.http.put(`http://localhost:3000/users/${user.id}`, user)
   }
 
+  updateProduct(product:any){
+    return this.http.put(`http://localhost:3000/products/${product.id}`, product)
+  }
+
 }

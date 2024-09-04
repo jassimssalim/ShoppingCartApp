@@ -7,16 +7,7 @@
       "email": "user3@gmail.com",
       "phone": "09345678910",
       "isAdmin": false,
-      "cart": [
-        {
-          "productName": "Product 1",
-          "orderQuantity": 1
-        },
-        {
-          "productName": "Product 3",
-          "orderQuantity": 5
-        }
-      ],
+      "cart": [],
       "pendingOrders": [
         {
           "items": [
@@ -46,6 +37,18 @@
             },
             {
               "productName": "Product 2",
+              "orderQuantity": 5
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "productName": "Product 1",
+              "orderQuantity": 1
+            },
+            {
+              "productName": "Product 3",
               "orderQuantity": 5
             }
           ]
@@ -280,7 +283,7 @@
       "description": "Description for product 1",
       "price": 100,
       "category": "Category 2",
-      "quantitySold": 0
+      "quantitySold": 1
     },
     {
       "name": "Product 2",
@@ -296,7 +299,7 @@
       "price": 25,
       "id": "3",
       "category": "Category 2",
-      "quantitySold": 0
+      "quantitySold": 5
     },
     {
       "name": "Product 4",
