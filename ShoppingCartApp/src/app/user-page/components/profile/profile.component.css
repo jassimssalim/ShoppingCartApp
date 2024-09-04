@@ -15,9 +15,9 @@
 /* Styling for the form container */
 .profile-container {
   flex: 1;
-  max-width: 50%;
+  max-width: 49.4%;
   padding: 40px;
-  border-right: 1px solid #ccc;
+  border-right: 1px none #ccc;
   background-color: white;
   display: flex;
   flex-direction: column;
