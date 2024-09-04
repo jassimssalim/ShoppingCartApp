@@ -34,6 +34,7 @@ export class DashboardComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    
     // Retrieve the username from the route parameters
     this.getProductList();
     this.getCartList();

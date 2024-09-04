@@ -52,6 +52,14 @@
               "orderQuantity": 5
             }
           ]
+        },
+        {
+          "items": [
+            {
+              "productName": "Product 6",
+              "orderQuantity": 9
+            }
+          ]
         }
       ],
       "firstName": "Jose",
@@ -323,7 +331,7 @@
       "description": "Description for product 612",
       "price": 25,
       "category": "Category 2",
-      "quantitySold": 0
+      "quantitySold": 9
     },
     {
       "id": "568",
