@@ -1,0 +1,41 @@
+<app-admin-header></app-admin-header>
+<body>
+    <br>
+    <h1>Product Form</h1>
+    <form [formGroup]="productForm" class="product-form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="name">Product Name</label>&nbsp;
+            <input formControlName="name" id="name" type="text" class="form-control" />
+            <div *ngIf="productForm.get('name')?.touched && productForm.get('name')?.invalid" class="error">
+                Product Name is required.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="desc">Description</label>&nbsp;
+            <input formControlName="description" id="desc" type="text" class="form-control" />
+            <div *ngIf="productForm.get('description')?.touched && productForm.get('description')?.invalid" class="error">
+                Description is required.
+            </div>
+        </div>
+        <div class="form-group"> 
+            <label for="price">Price</label>&nbsp;
+            <input formControlName="price" id="price" type="number" class="form-control" />
+            <div *ngIf="productForm.get('price')?.touched && productForm.get('price')?.invalid" class="error">
+                Price is required.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="category">Category</label>&nbsp;
+            <select formControlName="category" name="category" id="category">
+                <option value="Category 1"  >Category 1</option>
+                <option value="Category 2">Category 2</option>
+            </select>
+            <div *ngIf="productForm.get('category')?.touched && productForm.get('category')?.invalid" class="error">
+                Category is required.
+            </div>
+        </div>
+        <button class="btn btn-secondary " (click)="back()">Back</button> &nbsp;
+        <button class="btn btn-primary" type="submit">Submit</button>
+    </form>
+</body>
+<app-footer></app-footer>

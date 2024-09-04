@@ -27,13 +27,13 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
-                
                 "glob": "**/*",
                 "input": "public"
               }
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/custom-theme.scss"
             ],
             "scripts": [],
             "server": "src/main.server.ts",

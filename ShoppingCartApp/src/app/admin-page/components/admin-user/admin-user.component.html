@@ -1,0 +1,32 @@
+<app-admin-header></app-admin-header>
+<body>
+    <table id="cart-table">
+        <thead>
+            <tr>
+                <th>User Name</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Status</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of paginatedUsers">
+                <td>{{ user?.username }}</td>
+                <td>{{ user?.firstName }}</td>
+                <td>{{ user?.lastName }}</td>
+                <td>{{ user?.email }}</td>
+                <td>{{ user?.phone }}</td>
+                <td>{{ user?.status }}</td>
+                <td>
+                <button (click)="deactivateUser(user.id)"  class="btn btn-delete">Deactivate</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <button class="btn btn-secondary" (click)="goToPreviousPage()" [disabled]="currentPage === 1">Previous Page</button>&nbsp;
+    <button class="btn btn-primary" (click)="goToNextPage()" [disabled]="!hasNextPage">Next Page</button>
+</body>
+<app-footer></app-footer>

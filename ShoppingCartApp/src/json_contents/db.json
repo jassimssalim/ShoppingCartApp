@@ -46,12 +46,13 @@
       "middleName": "Protacio",
       "lastName": "Rizal",
       "birthDate": "2024-09-19",
-      "interest": "books and net"
+      "interest": "books and net",
+      "status": "Inactive"
     },
     {
       "id": "2",
       "username": "user9",
-      "password": "mle3",
+      "password": "12345",
       "email": "test@gmail.com",
       "phone": "09345678910",
       "isAdmin": false,
@@ -61,7 +62,8 @@
       "middleName": "",
       "lastName": "",
       "birthDate": "2024-09-03",
-      "interest": ""
+      "interest": "",
+      "status": "Inactive"
     },
     {
       "id": "3",
@@ -114,7 +116,8 @@
       "middleName": "dsadsa",
       "lastName": "dasdsa",
       "birthDate": "2024-09-03",
-      "interest": "sdadsa"
+      "interest": "",
+      "status": "Inactive"
     },
     {
       "id": "5",
@@ -129,7 +132,8 @@
       "middleName": "",
       "lastName": "",
       "birthDate": "2024-09-03",
-      "interest": ""
+      "interest": "",
+      "status": "Active"
     },
     {
       "id": "6",
@@ -144,7 +148,8 @@
       "middleName": "",
       "lastName": "",
       "birthDate": "2024-09-03",
-      "interest": ""
+      "interest": "",
+      "status": "Inactive"
     },
     {
       "id": "7",
@@ -159,7 +164,8 @@
       "middleName": "",
       "lastName": "",
       "birthDate": "2024-09-03",
-      "interest": ""
+      "interest": "",
+      "status": "Active"
     },
     {
       "id": "8",
@@ -174,7 +180,8 @@
       "middleName": "",
       "lastName": "",
       "birthDate": "2024-09-03",
-      "interest": ""
+      "interest": "",
+      "status": "Active"
     },
     {
       "id": "9",
@@ -189,7 +196,8 @@
       "middleName": "Protacio",
       "lastName": "Rizal",
       "birthDate": "2024-09-08",
-      "interest": "books"
+      "interest": "books",
+      "status": "Active"
     },
     {
       "id": "10",
@@ -204,7 +212,8 @@
       "middleName": "Protacio",
       "lastName": "Manalo",
       "birthDate": "1999-03-04",
-      "interest": "comedy"
+      "interest": "comedy",
+      "status": "Active"
     },
     {
       "id": "11",
@@ -219,15 +228,17 @@
       "middleName": "S",
       "lastName": "Mohammed Salim",
       "birthDate": "2024-09-03",
-      "interest": "test"
+      "interest": "",
+      "status": "Inactive"
     }
   ],
   "products": [
     {
+      "id": "bdbf",
       "name": "Product 1",
       "description": "Description for product 1",
-      "price": 10,
-      "id": "bdbf",
+      "price": 100,
+      "category": "Category 2",
       "quantitySold": 0
     },
     {
@@ -235,6 +246,135 @@
       "description": "Description for product 2",
       "price": 25,
       "id": "f968",
+      "category": "Category 1",
+      "quantitySold": 0
+    },
+    {
+      "name": "Product 3",
+      "description": "Description for product 3",
+      "price": 25,
+      "id": "3",
+      "category": "Category 2",
+      "quantitySold": 0
+    },
+    {
+      "name": "Product 4",
+      "description": "Description for product 4",
+      "price": 25,
+      "id": "4",
+      "category": "Category 1",
+      "quantitySold": 0
+    },
+    {
+      "name": "Product 5",
+      "description": "Description for product 5",
+      "price": 25,
+      "id": "5",
+      "category": "Category 2",
+      "quantitySold": 0
+    },
+    {
+      "id": "6",
+      "name": "Product 6",
+      "description": "Description for product 612",
+      "price": 25,
+      "category": "Category 2",
+      "quantitySold": 0
+    },
+    {
+      "id": "568",
+      "name": "sample",
+      "description": "sample desc",
+      "price": 25,
+      "category": "Category 1",
+      "quantitySold": 0
+    },
+    {
+      "id": "219",
+      "name": "test p",
+      "description": "test desc",
+      "price": 24,
+      "category": "Category 1",
+      "quantitySold": 0
+    },
+    {
+      "id": "724",
+      "name": "a",
+      "description": "a",
+      "price": 1,
+      "category": "Category 1",
+      "quantitySold": 0
+    },
+    {
+      "id": "660",
+      "name": "a",
+      "description": "a",
+      "price": 1,
+      "category": "Category 1",
+      "quantitySold": 0
+    },
+    {
+      "id": "706",
+      "name": "b",
+      "description": "b",
+      "price": 1,
+      "category": "Category 1",
+      "quantitySold": 0
+    },
+    {
+      "id": "261",
+      "name": "a",
+      "description": "1",
+      "price": 1,
+      "category": "Category 1",
+      "quantitySold": 0
+    },
+    {
+      "id": "968",
+      "name": "1",
+      "description": "2",
+      "price": 3,
+      "category": "Category 1",
+      "quantitySold": 0
+    },
+    {
+      "id": "197",
+      "name": "1",
+      "description": "1",
+      "price": 2,
+      "category": "Category 1",
+      "quantitySold": 0
+    },
+    {
+      "id": "994",
+      "name": "2",
+      "description": "2",
+      "price": 1,
+      "category": "Category 1",
+      "quantitySold": 0
+    },
+    {
+      "id": "671",
+      "name": "1",
+      "description": "2",
+      "price": 3,
+      "category": "Category 1",
+      "quantitySold": 0
+    },
+    {
+      "id": "887",
+      "name": "2",
+      "description": "2",
+      "price": 3,
+      "category": "Category 1",
+      "quantitySold": 0
+    },
+    {
+      "id": "591",
+      "name": "1",
+      "description": "2",
+      "price": 3,
+      "category": "Category 1",
       "quantitySold": 0
     }
   ]

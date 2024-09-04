@@ -1,0 +1,48 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0; /* Reduced padding to decrease height */
+  text-align: center;
+  font-family: Arial, sans-serif;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box; /* Ensure padding is included in the element's total width */
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px; /* Ensure there's padding inside the footer */
+  box-sizing: border-box; /* Include padding in the element's total width */
+}
+
+.footer-content p {
+  margin: 5px 0; /* Reduced margin to save space */
+  font-size: 14px;
+}
+
+.footer-content a {
+  color: #4CAF50;
+  text-decoration: none;
+}
+
+.footer-content a:hover {
+  text-decoration: underline;
+}
+
+.contact-us {
+  margin-top: 10px; /* Reduced margin-top to save space */
+}
+
+.contact-us h3 {
+  margin: 0 0 5px; /* Reduced margin to save space */
+  font-size: 16px;
+}
