@@ -230,6 +230,38 @@
       "birthDate": "2024-09-03",
       "interest": "",
       "status": "Inactive"
+    },
+    {
+      "id": "12",
+      "username": "newuser12",
+      "password": "mle",
+      "email": "jprizal@gmail.com",
+      "phone": "09345678910",
+      "isAdmin": false,
+      "cart": [],
+      "pendingOrders": [],
+      "firstName": "",
+      "middleName": "",
+      "lastName": "",
+      "birthDate": "2024-09-04",
+      "interest": "",
+      "status": "Inactive"
+    },
+    {
+      "id": "13",
+      "username": "newuser13",
+      "password": "mle",
+      "email": "jprizal@gmail.com",
+      "phone": "09345678910",
+      "isAdmin": false,
+      "cart": [],
+      "pendingOrders": [],
+      "firstName": "",
+      "middleName": "",
+      "lastName": "",
+      "birthDate": "2024-09-04",
+      "interest": "",
+      "status": "Active"
     }
   ],
   "products": [

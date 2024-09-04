@@ -34,7 +34,8 @@ export class RegisterComponent {
       middleName: "",
       lastName: "",
       birthDate: [new Date().toISOString().split('T')[0]], 
-      interest: ""
+      interest: "",
+      status: "Active"
     });
   }
 
@@ -59,6 +60,7 @@ export class RegisterComponent {
       lastName,
       birthDate,
       interest,
+      status,
     } = this.registerForm.value;
 
     if (password !== confirmPassword) {
@@ -90,6 +92,7 @@ export class RegisterComponent {
             lastName,
             birthDate,
             interest,
+            status,
           };
           this.registerUser(userData);
         })
