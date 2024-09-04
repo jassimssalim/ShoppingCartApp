@@ -1,0 +1,69 @@
+h1 {
+  text-align: center;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 10px; 
+}
+
+.product-form {
+  width: 80%;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 8px; 
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
+  margin-bottom: 4px; 
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"] {
+  width: 95%;
+  padding: 6px; 
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9em; 
+}
+
+select {
+  width: 100%;
+  padding: 6px; 
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 0.9em; 
+}
+
+.btn {
+  padding: 6px 12px; 
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em; 
+}
+
+.btn-primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-secondary {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+.error {
+  color: red;
+  font-size: 0.8em; 
+}
+
+
+@import '~@angular/material/prebuilt-themes/indigo-pink.css';

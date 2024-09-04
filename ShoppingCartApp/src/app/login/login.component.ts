@@ -66,7 +66,7 @@ export class LoginComponent {
         this.profileService.setCurrentUserId(user.id) //id passing
         // Redirect based on user role
         if (user.isAdmin) {
-          this.router.navigate(['/dashboard-admin']);
+          this.router.navigate(['/admin-page']);
         } else {
           this.router.navigate(['/user-page', username]);
         }

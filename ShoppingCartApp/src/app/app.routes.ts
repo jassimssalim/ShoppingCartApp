@@ -4,14 +4,17 @@ import { CartComponent } from './user-page/components/cart/cart.component';
 import { UserPageComponent } from './user-page/user-page.component';
 import { CheckoutComponent } from './user-page/components/checkout/checkout.component';
 import { DashboardComponent } from './user-page/components/dashboard/dashboard.component';
-import { DashboardAdminComponent } from './admin-page/dashboard-admin.component';
 import { ProfileComponent } from './user-page/components/profile/profile.component';
+import { AdminDashboardComponent } from './admin-page/components/admin-dashboard/admin-dashboard.component';
+import { AdminProductComponent } from './admin-page/components/admin-product/admin-product.component';
+import { AdminUserComponent } from './admin-page/components/admin-user/admin-user.component';
+import { AdminProductFormComponent } from './admin-page/components/admin-product-form/admin-product-form.component';
+import { DashboardAdminComponent } from './admin-page/dashboard-admin.component';
 import { LoginComponent } from './login/login.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   { path: 'login', component: LoginComponent },
-  { path: 'admin-dashboard', component: DashboardAdminComponent },
   { path: 'register', component: RegisterComponent },
   {
     path: 'user-page/:username',
@@ -23,5 +26,15 @@ export const routes: Routes = [
       { path: 'checkout', component: CheckoutComponent },
       { path: '', redirectTo: 'dashboarduser', pathMatch: 'full' }
     ]
-  }
-];
+  },
+  { path: 'admin-page', 
+    component: DashboardAdminComponent,
+    children: [
+      { path: 'admin-product', component: AdminProductComponent},
+      { path: 'admin-user', component: AdminUserComponent},
+      { path: 'admin-dashboard', component: AdminDashboardComponent }, 
+      { path: '', redirectTo: 'admin-dashboard', pathMatch: 'full' } 
+    ]
+  },
+  { path: 'product-form', component: AdminProductFormComponent}
+]
