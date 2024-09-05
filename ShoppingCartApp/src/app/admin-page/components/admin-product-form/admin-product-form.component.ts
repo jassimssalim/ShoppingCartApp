@@ -4,7 +4,6 @@ import { AdminService, Product } from '../../services/admin.service';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FooterComponent } from '../../../shared/footer/footer.component';
-import { MatSnackBar } from '@angular/material/snack-bar'
 import { AdminHeaderComponent } from '../../../shared/admin-header/admin-header.component';
 @Component({
   selector: 'app-admin-product-form',
@@ -20,7 +19,7 @@ products: Product[] = [];
 isUpdateMode: boolean = false;
 
   constructor(private fb: FormBuilder, private productService: AdminService,
-    private route: ActivatedRoute, private router: Router, private snackBar: MatSnackBar
+    private route: ActivatedRoute, private router: Router
   ){
     this.productForm = this.fb.group({
       id: this.generateId(),
@@ -48,9 +47,11 @@ isUpdateMode: boolean = false;
       (newProduct) => {
         console.log(newProduct);
         this.productForm.reset(); // Clear form fields
+        alert('Product added successfully!');
       },
       error => {
         console.error('Error adding product', error);
+        alert('There was an error adding the product. Please try again.');
       }
     );
   }
@@ -60,9 +61,11 @@ isUpdateMode: boolean = false;
       (updatedProduct) => {
         console.log(updatedProduct);
         this.productForm.reset(); 
+        alert('Product updated successfully!');
       },
       error => {
         console.error('Error updating product', error);
+        alert('There was an error updating the product. Please try again.');
       }
     );
   }

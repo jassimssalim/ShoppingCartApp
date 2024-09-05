@@ -65,5 +65,9 @@ select {
   font-size: 0.8em; 
 }
 
-
+.form-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
 @import '~@angular/material/prebuilt-themes/indigo-pink.css';

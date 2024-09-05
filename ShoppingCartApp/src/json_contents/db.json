@@ -7,7 +7,12 @@
       "email": "user3@gmail.com",
       "phone": "09345678910",
       "isAdmin": false,
-      "cart": [],
+      "cart": [
+        {
+          "productName": "Product 1",
+          "orderQuantity": 1
+        }
+      ],
       "pendingOrders": [
         {
           "items": [
@@ -237,7 +242,7 @@
       "lastName": "Manalo",
       "birthDate": "1999-03-04",
       "interest": "comedy",
-      "status": "Active"
+      "status": "Inactive"
     },
     {
       "id": "11",
@@ -285,17 +290,25 @@
       "lastName": "",
       "birthDate": "2024-09-04",
       "interest": "",
-      "status": "Active"
+      "status": "Inactive"
     }
   ],
   "products": [
+    {
+      "id": "53",
+      "name": "Product 6",
+      "description": "Description for product 6",
+      "price": 100,
+      "category": "Category 2",
+      "quantitySold": 3
+    },
     {
       "id": "bdbf",
       "name": "Product 1",
       "description": "Description for product 1",
       "price": 100,
       "category": "Category 2",
-      "quantitySold": 1
+      "quantitySold": 10
     },
     {
       "name": "Product 2",
@@ -303,7 +316,7 @@
       "price": 25,
       "id": "f968",
       "category": "Category 1",
-      "quantitySold": 0
+      "quantitySold": 7
     },
     {
       "name": "Product 3",
@@ -319,117 +332,37 @@
       "price": 25,
       "id": "4",
       "category": "Category 1",
-      "quantitySold": 0
-    },
-    {
-      "name": "Product 5",
-      "description": "Description for product 5",
-      "price": 25,
-      "id": "5",
-      "category": "Category 2",
-      "quantitySold": 0
-    },
-    {
-      "id": "6",
-      "name": "Product 6",
-      "description": "Description for product 612",
-      "price": 25,
-      "category": "Category 2",
-      "quantitySold": 9
-    },
-    {
-      "id": "568",
-      "name": "sample",
-      "description": "sample desc",
-      "price": 25,
-      "category": "Category 1",
-      "quantitySold": 0
+      "quantitySold": 15
     },
     {
       "id": "219",
-      "name": "test p",
+      "name": "test p121",
       "description": "test desc",
       "price": 24,
       "category": "Category 1",
-      "quantitySold": 0
+      "quantitySold": 20
     },
     {
-      "id": "724",
-      "name": "a",
-      "description": "a",
-      "price": 1,
+      "id": "319",
+      "name": "test p1",
+      "description": "test desc1",
+      "price": 24,
+      "category": "Category 2",
+      "quantitySold": 8
+    },
+    {
+      "id": "373",
+      "name": "sample pro",
+      "description": "sample desc",
+      "price": 123,
       "category": "Category 1",
       "quantitySold": 0
     },
     {
-      "id": "660",
-      "name": "a",
-      "description": "a",
-      "price": 1,
-      "category": "Category 1",
-      "quantitySold": 0
-    },
-    {
-      "id": "706",
-      "name": "b",
-      "description": "b",
-      "price": 1,
-      "category": "Category 1",
-      "quantitySold": 0
-    },
-    {
-      "id": "261",
-      "name": "a",
-      "description": "1",
-      "price": 1,
-      "category": "Category 1",
-      "quantitySold": 0
-    },
-    {
-      "id": "968",
-      "name": "1",
-      "description": "2",
-      "price": 3,
-      "category": "Category 1",
-      "quantitySold": 0
-    },
-    {
-      "id": "197",
-      "name": "1",
-      "description": "1",
-      "price": 2,
-      "category": "Category 1",
-      "quantitySold": 0
-    },
-    {
-      "id": "994",
-      "name": "2",
-      "description": "2",
-      "price": 1,
-      "category": "Category 1",
-      "quantitySold": 0
-    },
-    {
-      "id": "671",
-      "name": "1",
-      "description": "2",
-      "price": 3,
-      "category": "Category 1",
-      "quantitySold": 0
-    },
-    {
-      "id": "887",
-      "name": "2",
-      "description": "2",
-      "price": 3,
-      "category": "Category 1",
-      "quantitySold": 0
-    },
-    {
-      "id": "591",
-      "name": "1",
-      "description": "2",
-      "price": 3,
+      "id": "240",
+      "name": "test produc",
+      "description": "dummy",
+      "price": 567,
       "category": "Category 1",
       "quantitySold": 0
     }
