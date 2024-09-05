@@ -6,7 +6,6 @@
   padding: 0;
 }
 
-/* Make sure the body and html have no margin */
 body, html {
   margin: 0;
   padding: 0;
@@ -90,10 +89,27 @@ body, html {
   
 }
 
+/*search bar*/
 .addcart {
-  margin-left: 50%; 
-  margin-right: 20px;
+  width: 300px;
+  padding: 10px 15px;
+  border: 1px solid #ddd; 
+  border-radius: 25px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  font-size: 16px; 
+  outline: none; 
+  transition: all 0.3s ease; 
 }
+
+.addcart:focus {
+  border-color: #004d00;
+}
+
+.addcart::placeholder {
+  color: #aaa; 
+  opacity: 1; 
+}
+
 
 
 .dashboard-container {
@@ -157,7 +173,7 @@ body, html {
 }
 
 .quantity-container input {
-  width: 100%;
+  width: 50%;
   padding: 8px;
   border-radius: 4px;
   border: 1px solid #ccc;
@@ -165,7 +181,7 @@ body, html {
 
 /* Button styling */
 .add-to-cart-btn {
-  background-color: #007bff;
+  background-color: #008000;
   color: white;
   border: none;
   padding: 10px 15px;
@@ -176,7 +192,7 @@ body, html {
 }
 
 .add-to-cart-btn:hover {
-  background-color: #0056b3;
+  background-color: #004d00;
 }
 
 
@@ -226,4 +242,65 @@ body, html {
 
 .my-profile {
   margin-bottom: 10px; 
+}
+
+
+
+/* footer */
+.footer {
+  width: 100vw;
+  background-color: #333;
+  color: white;
+  padding: 40px 0;
+  text-align: center;
+  margin-left: calc(-50vw + 50%);
+  margin-top: 100px;
+  
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-section h2 {
+  margin-bottom: 15px;
+}
+
+.footer-section p,
+.footer-section ul {
+  margin: 0;
+  padding: 0;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin: 10px 0;
+}
+
+.footer-section ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  margin-top: 15px;
+  border-top: 1px solid #444;
+  padding-top: 12px;
+  width: 100%;
+}
+.team p{
+  font-size: 14px;
 }

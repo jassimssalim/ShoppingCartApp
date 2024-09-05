@@ -1,12 +1,10 @@
 <div class="dashboard-container">
   <div class="navbar">
-    <!-- Icon on the left side -->
     <h1>CartiFy!</h1>
     <img src="greenicon.png" alt="Green Icon" class="navbar-icon">
 
-    <!-- Navigation links -->
     <ul class="nav-links">
-      <li><a [routerLink]="['/user-page', username, 'dashboarduser']" routerLinkActive = "active">Dashboard</a></li>
+      <li><a [routerLink]="['/user-page', username, 'dashboarduser']" routerLinkActive="active">Dashboard</a></li>
       <li><a [routerLink]="['/user-page', username, 'cart']" routerLinkActive="active">MyCart</a></li>
       <li><a [routerLink]="['/user-page', username, 'profile']" routerLinkActive="active">MyProfile</a></li>
       <li class="dropdown">
@@ -18,42 +16,40 @@
     </ul>
   </div>
 
-<<<<<<< HEAD
-  <!-- Welcome User -->
   <div class="wc">
     <h1>Welcome {{ username }}!</h1>
-    <h4 class="addcart">Add to cart items ongoing</h4>
+    <input class="addcart" type="search" placeholder="Search products..." (input)="searchProducts($event)" />
+
   </div>
-=======
-
-      <!-- Welcome User -->
-      <div class="wc">
-        <h1>Welcome {{ username }}!</h1>
-        <h4 class="addcart">filter by price range not working</h4>
-      </div>
-
- 
->>>>>>> dev1
 
   <!-- Filter Section -->
   <div class="filter-section">
     <div class="filter">
       <h5>Filter by Category</h5>
-      <select (change)="filterByCategory($event)" ng-options="item for item in productCategories">
+      <select (change)="filterByCategory($event)">
         <option value="all">All Categories</option>
         <option *ngFor="let category of productCategories" [value]="category">
-        {{category}}
+          {{ category }}
         </option>
-
       </select>
     </div>
+
     <div class="filter">
       <h5>Filter by Price Range</h5>
       <select (change)="filterByPriceRange($event)">
         <option value="all">All Price Ranges</option>
-        <option value="10">Under $10</option>
-        <option value="25">$11 - $25</option>
-        <option value="50">$26 - $50</option>
+        <option value="under10">Under ₱10</option>
+        <option value="11-25">₱11 - ₱25</option>
+        <option value="26-50">₱26 - ₱50</option>
+        <option value="51+">Above ₱50</option>
+      </select>
+    </div>
+
+    <div class="filter">
+      <h5>Sort by Name</h5>
+      <select (change)="sortByName($event)">
+        <option value="asc">Ascending</option>
+        <option value="desc">Descending</option>
       </select>
     </div>
   </div>
@@ -64,7 +60,7 @@
       <div class="product-details">
         <h5>{{ product.name }}</h5>
         <p>Category: {{ product.category }}</p>
-        <p>Price: ${{ product.price }}</p>
+        <p>Price: ₱{{ product.price }}</p>
         <div class="quantity-container">
           <label for="quantity-{{ product.id }}">Quantity</label>
           <input id="quantity-{{ product.id }}" type="number" [(ngModel)]="quantity[product.id]" min="1" placeholder="Quantity" />
@@ -73,4 +69,37 @@
       </div>
     </div>
   </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-section about">
+        <h2 style='color: #89eb89;'>About CartiFy</h2>
+        <p>
+          CartiFy is your one-stop online shop for the best deals and latest products. 
+          We bring you the best shopping experience right to your home.
+        </p>
+      </div>
+      <div class="footer-section team">
+        <h2 style='color: #89eb89;'>Our Team</h2>
+        <p>
+          <strong>Mc Leonard Ledda</strong> - UI/Developer <br>
+          <strong>Jassim S. Mohammed Salim</strong> - UI/Developer<br>
+          <strong>Pauline Pangilinan</strong> - UI/Developer<br>
+          <strong>Jeffrey D. Torres</strong> - UI/Developer
+        </p>
+      </div>
+      <div class="footer-section links">
+        <h2 style='color: #89eb89;'>Our Links</h2>
+        <ul>
+          <li><a href="#">Contact Us</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms & Conditions</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2024 CartiFy | Designed with passion by Team 2.
+    </div>
+  </footer>
 </div>

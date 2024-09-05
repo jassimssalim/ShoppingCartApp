@@ -103,11 +103,15 @@
       "cart": [
         {
           "productName": "Product 1",
-          "orderQuantity": 3
+          "orderQuantity": 146
         },
         {
           "productName": "Product 2",
           "orderQuantity": 5
+        },
+        {
+          "productName": "Product 3",
+          "orderQuantity": 1
         }
       ],
       "pendingOrders": [
