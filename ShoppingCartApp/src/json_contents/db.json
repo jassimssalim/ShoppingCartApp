@@ -40,6 +40,26 @@
               "orderQuantity": 5
             }
           ]
+        },
+        {
+          "items": [
+            {
+              "productName": "Product 1",
+              "orderQuantity": 1
+            },
+            {
+              "productName": "Product 3",
+              "orderQuantity": 5
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "productName": "Product 6",
+              "orderQuantity": 9
+            }
+          ]
         }
       ],
       "firstName": "Jose",
@@ -230,6 +250,38 @@
       "birthDate": "2024-09-03",
       "interest": "",
       "status": "Inactive"
+    },
+    {
+      "id": "12",
+      "username": "newuser12",
+      "password": "mle",
+      "email": "jprizal@gmail.com",
+      "phone": "09345678910",
+      "isAdmin": false,
+      "cart": [],
+      "pendingOrders": [],
+      "firstName": "",
+      "middleName": "",
+      "lastName": "",
+      "birthDate": "2024-09-04",
+      "interest": "",
+      "status": "Inactive"
+    },
+    {
+      "id": "13",
+      "username": "newuser13",
+      "password": "mle",
+      "email": "jprizal@gmail.com",
+      "phone": "09345678910",
+      "isAdmin": false,
+      "cart": [],
+      "pendingOrders": [],
+      "firstName": "",
+      "middleName": "",
+      "lastName": "",
+      "birthDate": "2024-09-04",
+      "interest": "",
+      "status": "Active"
     }
   ],
   "products": [
@@ -239,7 +291,7 @@
       "description": "Description for product 1",
       "price": 100,
       "category": "Category 2",
-      "quantitySold": 0
+      "quantitySold": 1
     },
     {
       "name": "Product 2",
@@ -255,7 +307,7 @@
       "price": 25,
       "id": "3",
       "category": "Category 2",
-      "quantitySold": 0
+      "quantitySold": 5
     },
     {
       "name": "Product 4",
@@ -279,7 +331,7 @@
       "description": "Description for product 612",
       "price": 25,
       "category": "Category 2",
-      "quantitySold": 0
+      "quantitySold": 9
     },
     {
       "id": "568",
