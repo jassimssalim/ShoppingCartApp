@@ -18,21 +18,33 @@
     </ul>
   </div>
 
+<<<<<<< HEAD
   <!-- Welcome User -->
   <div class="wc">
     <h1>Welcome {{ username }}!</h1>
     <h4 class="addcart">Add to cart items ongoing</h4>
   </div>
+=======
+
+      <!-- Welcome User -->
+      <div class="wc">
+        <h1>Welcome {{ username }}!</h1>
+        <h4 class="addcart">filter by price range not working</h4>
+      </div>
+
+ 
+>>>>>>> dev1
 
   <!-- Filter Section -->
   <div class="filter-section">
     <div class="filter">
       <h5>Filter by Category</h5>
-      <select (change)="filterByCategory($event)">
+      <select (change)="filterByCategory($event)" ng-options="item for item in productCategories">
         <option value="all">All Categories</option>
-        <option value="electronics">Electronics</option>
-        <option value="clothing">Clothing</option>
-        <option value="test">Test</option>
+        <option *ngFor="let category of productCategories" [value]="category">
+        {{category}}
+        </option>
+
       </select>
     </div>
     <div class="filter">

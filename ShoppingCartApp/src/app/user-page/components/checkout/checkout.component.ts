@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { CheckoutService } from './checkout.service';
+import { UserService } from '../../user-page.service';
 import { Router } from '@angular/router';
 import { RouterModule } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
@@ -26,15 +26,22 @@ export class CheckoutComponent {
     private router: Router,
     private http: HttpClient,
     private route: ActivatedRoute,
-    private checkoutService: CheckoutService
+    private checkoutService: UserService
   ) {}
 
   ngOnInit() {
-    const username = this.route.snapshot.paramMap.get('username');
-    this.username = username;
+    this.route.parent?.paramMap.subscribe(params => {
+      this.username = params.get('username');
+      console.log('Username in checkout:', this.username);
+      this.getCartList();
+      this.getProductList();    
+    });
+    // const username = this.route.snapshot.paramMap.get('username');
+    // this.username = username;
+    // console.log("username at checkout:",username)
 
-    this.getCartList();
-    this.getProductList();
+    // this.getCartList();
+    // this.getProductList();
   }
 
   getCartList() {
@@ -74,6 +81,17 @@ export class CheckoutComponent {
 
   confirmOrder() {
     if (confirm("Confirm order?")) {
+
+      for (let index = 0; index < this.cartList.length; index++) {
+        const element = this.cartList[index];
+        let product = this.productsList.find((p: any) => p.name === element.productName);
+        product.quantitySold += element.orderQuantity;     
+
+        this.checkoutService.updateProduct(product).subscribe(() => {
+          this.getProductList();
+        });
+      }
+
       let json_put = {"items": this.cartList};
       let empty_cart: any[]= [];
       

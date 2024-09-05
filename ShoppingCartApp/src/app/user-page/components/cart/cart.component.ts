@@ -140,6 +140,6 @@ export class CartComponent implements OnInit {
 
   goToCheckout(event?: Event): void {
     if (event) event.preventDefault();
-    this.router.navigate(['/user-page/checkout', this.username]);
+    this.router.navigate(['/user-page', this.username, 'checkout']);
   }
 }
