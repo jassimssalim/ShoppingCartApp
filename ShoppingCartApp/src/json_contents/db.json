@@ -113,14 +113,6 @@
         {
           "productName": "Product 2",
           "orderQuantity": 5
-        },
-        {
-          "productName": "Product 3",
-          "orderQuantity": 1
-        },
-        {
-          "productName": "a",
-          "orderQuantity": 1
         }
       ],
       "pendingOrders": [
@@ -150,7 +142,7 @@
       "lastName": "dasdsa",
       "birthDate": "2024-09-03",
       "interest": "sdadsa",
-      "status": "Inactive"
+      "status": "Active"
     },
     {
       "id": "5",

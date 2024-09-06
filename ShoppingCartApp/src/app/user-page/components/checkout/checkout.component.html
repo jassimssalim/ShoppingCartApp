@@ -1,28 +1,36 @@
-<p>checkout works!</p>
-
-<!-- Cart items table -->
-<table id="cart-table">
-    <thead>
+<div class="checkout-page">
+   <strong>Confirm your checkout</strong>
+  
+    <!-- Cart items table -->
+    <table id="cart-table">
+      <thead>
         <tr>
-            <th>Item Name</th>
-            <th>Price (PHP)</th>
-            <th>Quantity</th>
-            <th>Subtotal (PHP)</th>
+          <th>Item Name</th>
+          <th>Price (PHP)</th>
+          <th>Quantity</th>
+          <th>Subtotal (PHP)</th>
         </tr>
-    </thead>
-    <tbody>
+      </thead>
+      <tbody>
         <tr *ngFor="let item of cartList; trackBy: trackByProductName">
-            <td>{{ item.productName }}</td>
-            <td>{{ getPrice(item.productName) }}</td>
-            <td>{{ item.orderQuantity }}</td>
-            <td>{{ calculateSubtotal(item.productName) }}</td>
+          <td>{{ item.productName }}</td>
+          <td>{{ getPrice(item.productName) }}</td>
+          <td>{{ item.orderQuantity }}</td>
+          <td>{{ calculateSubtotal(item.productName) }}</td>
         </tr>
-    </tbody>
-</table>
+      </tbody>
+    </table>
+  
+    <!-- Total payment summary -->
+    <div class="cart-summary">
+      <p>Total Payment: <span>{{ getTotalPayment() }} PHP</span></p>
+    </div>
+  
+    <!-- Confirm order button -->
+    <div class="cart-actions">
+      <button (click)="confirmOrder()" class="checkout-button">Confirm Order</button>
+      <button class = "back-button" [routerLink]="['/user-page', username, 'cart']"> Go Back</button>
 
-<!-- Total payment summary -->
-<p>Total: {{ getTotalPayment() }} PHP</p>
-
-<div class="cart-actions">
-    <button (click)="confirmOrder()" class="checkout-button">Confirm Order</button>
+    </div>
   </div>
+  

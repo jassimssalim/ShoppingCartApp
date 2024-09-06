@@ -1,24 +1,28 @@
-<p>Cart Works!</p>
+<p>My Cart</p>
 
-<!-- Edit item form, shown when in edit mode -->
-<div *ngIf="editItemMode">
-    <form [formGroup]="editForm" (ngSubmit)="onSubmit()" class="edit-form">
-        <div class="form-group">
-            <label for="productName">Item Name: </label>
-            <input id="productName" type="text" [value]="editItemName" readonly />
-        </div>
-        <div class="form-group">
-            <label for="quantity">Quantity: </label>
-            <input id="quantity" formControlName="quantity" type="number" [placeholder]="editItemQuantity" />
-            <div *ngIf="editForm.get('quantity')?.touched && editForm.get('quantity')?.invalid" class="error">
-                Quantity must be greater than 0.
+
+<div *ngIf="editItemMode" class="modal">
+    <div class="modal-content">
+        <h3>Edit Item</h3>
+        <form [formGroup]="editForm" (ngSubmit)="onSubmit()" class="edit-form">
+            <div class="form-group">
+                <label for="productName"><strong>Item Name: </strong> </label>
+                <input id="productName" type="text" [value]="editItemName" readonly />
             </div>
-        </div>
-        <button type="submit" class="btn btn-primary">Edit</button>
-        <button type="button" class="btn btn-secondary" (click)="cancelEdit()">Cancel</button>
-        <div *ngIf="editErrorMessage" class="error">{{ editErrorMessage }}</div>
-    </form>
-    <br /><br />
+            <div class="form-group">
+                <label for="quantity" ><strong> Quantity: </strong> </label>
+                <input id="quantity" formControlName="quantity" type="number" [placeholder]="editItemQuantity" />
+                <div *ngIf="editForm.get('quantity')?.touched && editForm.get('quantity')?.invalid" class="error">
+                    Quantity must be greater than 0.
+                </div>
+            </div>
+            <div class="modal-buttons">
+                <button type="submit" class="btn btn-primary">Save Changes</button>
+                <button type="button" class="btn btn-secondary" (click)="cancelEdit()">Cancel</button>
+            </div>
+            <div *ngIf="editErrorMessage" class="error">{{ editErrorMessage }}</div>
+        </form>
+    </div>
 </div>
 
 <!-- Cart items table -->
@@ -39,7 +43,7 @@
             <td>{{ item.orderQuantity }}</td>
             <td>{{ calculateSubtotal(item.productName) }}</td>
             <td>
-                <button (click)="editItem(item)" class="btn btn-edit">Edit Quantity</button>
+                <button (click)="editItem(item)" class="btn btn-edit">Edit</button>
                 <button (click)="deleteItem(item)" class="btn btn-delete">Delete</button>
             </td>
         </tr>
@@ -47,10 +51,10 @@
 </table>
 
 <!-- Total payment summary -->
-<p>Total: {{ getTotalPayment() }} PHP</p>
+<div class="cart-summary">
+    <p>Total: <span>{{ getTotalPayment() }} PHP</span></p>
+    <button class = " btn  back-button" [routerLink]="['/user-page', username, 'dashboarduser']" >Go Back</button>
 
-<div class="cart-actions">
-    <button [disabled]="checkoutDisabled" (click)="goToCheckout($event)" class="checkout-button">Checkout</button>
-  </div>
-
+    <button [disabled]="checkoutDisabled" (click)="goToCheckout($event)" class="btn checkout-button">Checkout</button>
+</div>
 
