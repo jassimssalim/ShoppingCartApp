@@ -22,6 +22,7 @@ export class LoginComponent {
   forgotPasswordErrorMessage: string | null = null;
   isLoginMode = true; 
   isShowPop = false;
+  isShowPopLogin = false;
 
   constructor(
     private fb: FormBuilder,
@@ -60,10 +61,22 @@ export class LoginComponent {
     this.http.get<any[]>('http://localhost:3000/users').subscribe(users => {
       const user = users.find(u => u.username === username && u.password === password);
 
-      if (user) {
+
+      //user inactive
+      if (user )  {
+        if (user.status === 'Inactive') {
+          this.isShowPopLogin = true;
+          this.cdr.detectChanges(); 
+
+          setTimeout(() => this.isShowPopLogin = false, 3000);
+
+          return;
+        }
+
         // Set the username in the UserService
         this.userService.setUser(username);
-        this.profileService.setCurrentUserId(user.id) //id passing
+        this.profileService.setCurrentUserId(user.id); // Pass id
+
         // Redirect based on user role
         if (user.isAdmin) {
           this.router.navigate(['/admin-page']);

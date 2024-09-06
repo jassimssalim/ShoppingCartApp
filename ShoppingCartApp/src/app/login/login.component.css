@@ -151,5 +151,16 @@ a {
   }
   
   
+  .toasterLog {
+    position: fixed;
+    top: 20px; /* Position at the top */
+    right: 28%; /* Adjust horizontal position as needed */
+    background-color: red;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    z-index: 1000; /* Ensure it appears above other elements */
+    display: block; /* Ensure it is visible */
+  }
   
   

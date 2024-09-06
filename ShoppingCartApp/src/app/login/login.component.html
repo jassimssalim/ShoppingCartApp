@@ -74,9 +74,16 @@
       </ng-template>
   </div>
 
+  <div id="toaster" class="toasterLog" *ngIf="isShowPopLogin;">
+    <p id="toaster-message">Your account is inactive. Please contact the admins to activate your account.</p>
+  </div>
+
   <div id="toaster" class="toaster" *ngIf="isShowPop;">
     <p id="toaster-message">Your password has been changed. You can now log in with your new password..</p>
   </div>
+
+
+  
   
   <div class="black-side">
     <img src="shop.svg" alt="Logo"style="width: auto; height: 600px; margin-top: 48px" />

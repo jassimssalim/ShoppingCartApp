@@ -101,7 +101,7 @@
     {
       "id": "4",
       "username": "newuser2",
-      "password": "mle",
+      "password": "mle1",
       "email": "jprizal@gmail.com",
       "phone": "09345678910",
       "isAdmin": false,
