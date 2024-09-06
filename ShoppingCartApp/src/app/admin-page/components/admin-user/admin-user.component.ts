@@ -16,7 +16,7 @@ export class AdminUserComponent implements OnInit{
   userData: User [] = [];
   paginatedUsers: User [] = [];
   currentPage: number = 1;
-  itemsPerPage: number = 5;
+  itemsPerPage: number = 8;
 constructor(private userService: AdminService){}
 
 ngOnInit(): void {
@@ -66,9 +66,12 @@ deactivateUser(userId: any): void {
         user.id === userId ? { ...user, status: "Inactive" } : user
       );
       console.log("User has been deactivated successfully")
+      alert("User has been deactivated successfully!")
+      this.ngOnInit()
     },
     error: (error) => {
       console.error('Error deactivating user:', error);
+      alert('Error deactivating user, Please try again later!')
     }
   });
 }

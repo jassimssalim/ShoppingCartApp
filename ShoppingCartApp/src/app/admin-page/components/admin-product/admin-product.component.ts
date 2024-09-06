@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { AdminService, Product } from '../../services/admin.service';
-import { CommonModule } from '@angular/common';
+import { CommonModule, } from '@angular/common';
 import { Router } from '@angular/router';
 import { FooterComponent } from '../../../shared/footer/footer.component';
 import { AdminHeaderComponent } from '../../../shared/admin-header/admin-header.component';
-
 @Component({
   selector: 'app-admin-product',
   standalone: true,
@@ -16,7 +15,7 @@ export class AdminProductComponent implements OnInit{
   products: Product[] = [];
   paginatedProducts: Product[] = [];
   currentPage: number = 1;
-  itemsPerPage: number = 5;
+  itemsPerPage: number = 8;
   constructor(private productService: AdminService, private router: Router){}
 
   ngOnInit(): void {
@@ -63,11 +62,17 @@ export class AdminProductComponent implements OnInit{
     this.router.navigate(['/product-form'], { queryParams: { id: product.id } })
   }
 
-  onDelete = (product: Product) => {
+  onDelete(product: Product) {
     this.productService.deleteProduct(product.id).subscribe(
       () => {
-        this.products = this.products.filter(data => product.id !== data.id)
+        this.products = this.products.filter(p => p.id !== product.id);
+        alert('Product has been deleted');
+        this.ngOnInit();
+      },
+      (error) => {
+        alert('Failed to delete product. Please try again.');
+        console.error('Error deleting product:', error);
       }
-    )
+    );
   }
 }
