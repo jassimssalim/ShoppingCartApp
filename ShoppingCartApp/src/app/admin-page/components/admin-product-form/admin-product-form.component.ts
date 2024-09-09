@@ -28,7 +28,7 @@ isUpdateMode: boolean = false;
       price: ['', [Validators.required]],
       category: ['', [Validators.required]],
       quantitySold: 0
-    })
+    }, { validator: this.checkDuplicateName() });
   }
 
   ngOnInit(): void {
@@ -39,7 +39,10 @@ isUpdateMode: boolean = false;
         this.loadProduct(this.productId);
         }
       }
-    )
+    );
+    this.productService.getProducts().subscribe((products: Product[]) => {
+      this.products = products;
+    });
   }
 
   addProduct(newProduct: Product) {
@@ -102,6 +105,23 @@ isUpdateMode: boolean = false;
     )
   }
 
+  checkDuplicateName() {
+    return (formGroup: FormGroup) => {
+      const nameControl = formGroup.get('name');
+      if (nameControl) {
+        const name = nameControl.value.toLowerCase();
+        const isDuplicate = this.products.some(
+          (product) => product.name.toLowerCase() === name && product.id !== this.productId
+        );
+        
+        if (isDuplicate) {
+          nameControl.setErrors({ duplicateName: true });
+        } else {
+          nameControl.setErrors(null);
+        }
+      }
+    };
+  }
   back(): void{
     this.router.navigate(['/admin-page/admin-product'])
   }

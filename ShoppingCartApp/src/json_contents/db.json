@@ -377,6 +377,22 @@
       "price": 7,
       "category": "Category 1",
       "quantitySold": null
+    },
+    {
+      "id": "744",
+      "name": "product 4",
+      "description": "Description for product 4",
+      "price": 1,
+      "category": "Category 2",
+      "quantitySold": 0
+    },
+    {
+      "id": "898",
+      "name": "product 5",
+      "description": "Description for product 4",
+      "price": 1,
+      "category": "Category 2",
+      "quantitySold": 0
     }
   ]
 }

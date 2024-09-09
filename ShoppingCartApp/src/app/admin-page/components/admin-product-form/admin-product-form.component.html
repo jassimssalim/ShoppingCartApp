@@ -10,6 +10,9 @@
                 Product Name is required.
             </div>
         </div>
+        <div *ngIf="productForm.get('name')?.hasError('duplicateName')" class="error">
+            Product name already exists. Please choose a different name.
+        </div>
         <div class="form-group">
             <label for="desc">Description</label>&nbsp;
             <input formControlName="description" id="desc" type="text" class="form-control" />
