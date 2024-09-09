@@ -5,8 +5,7 @@ import { HttpClient } from '@angular/common/http';
   providedIn: 'root'
 })
 export class UserService {
-  private username: string | null = null; // This should be initialized or set somewhere
-
+  private username: string | null = null; 
   constructor(private http: HttpClient) { }
 
   setUser(user: string): void {

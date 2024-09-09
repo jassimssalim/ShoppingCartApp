@@ -20,6 +20,10 @@ export class DashboardComponent implements OnInit {
   userData: any;
   filteredProducts: any[] = [];
   quantity: { [key: string]: number } = {};
+  
+  // Stores selected filters
+  selectedCategory: string = 'all';
+  selectedPriceRange: string = 'all';
 
   constructor(
     private route: ActivatedRoute,
@@ -42,43 +46,50 @@ export class DashboardComponent implements OnInit {
   searchProducts(event: Event): void {
     const target = event.target as HTMLInputElement;
     const searchTerm = target.value.toLowerCase();
-
-    this.filteredProducts = this.products.filter((product) =>
-      product.name.toLowerCase().includes(searchTerm)
-    );
+    this.applyFilters(searchTerm);
   }
 
-  // Filter category
+  // Filter by Category
   filterByCategory(event: Event): void {
     const target = event.target as HTMLSelectElement;
-    const category = target.value;
-
-    this.filteredProducts = this.products.filter((product) =>
-      category === 'all' || product.category === category
-    );
+    this.selectedCategory = target.value;
+    this.applyFilters();
   }
 
-  // Filter price range
+  // Filter by Price Range
   filterByPriceRange(event: Event): void {
     const target = event.target as HTMLSelectElement;
-    const range = target.value;
+    this.selectedPriceRange = target.value;
+    this.applyFilters();
+  }
 
-    this.filteredProducts = this.products.filter((product) => {
-      switch (range) {
-        case 'all':
-          return true;
-        case 'under10':
-          return product.price < 10;
-        case '11-25':
-          return product.price >= 11 && product.price <= 25;
-        case '26-50':
-          return product.price >= 26 && product.price <= 50;
-        case '51+':
-          return product.price > 50;
-        default:
-          return true;
-      }
+  // Apply all filters (search term, category, and price range)
+  applyFilters(searchTerm: string = ''): void {
+    this.filteredProducts = this.products.filter(product => {
+      const matchesCategory = this.selectedCategory === 'all' || product.category === this.selectedCategory;
+      const matchesPriceRange = this.checkPriceRange(product.price);
+      const matchesSearch = product.name.toLowerCase().includes(searchTerm);
+
+      return matchesCategory && matchesPriceRange && matchesSearch;
     });
+  }
+
+  // Helper method to check price range
+  checkPriceRange(price: number): boolean {
+    switch (this.selectedPriceRange) {
+      case 'all':
+        return true;
+      case 'under10':
+        return price < 10;
+      case '11-25':
+        return price >= 11 && price <= 25;
+      case '26-50':
+        return price >= 26 && price <= 50;
+      case '51+':
+        return price > 50;
+      default:
+        return true;
+    }
   }
 
   // Sort products based on name
@@ -99,7 +110,7 @@ export class DashboardComponent implements OnInit {
   addToCart(product: { id: string; name: string; category: string; price: number }): void {
     const qty = this.quantity[product.id] || 1;
     console.log(`Adding ${qty} of ${product.name} to cart.`);
-    alert("You added your quantity please check at my cart.");
+    alert("You added your quantity, please check at My Cart.");
 
     let add_product = this.cartList.find((p) => p.productName === product.name) || { productName: product.name, orderQuantity: 0 };
     add_product.orderQuantity += qty;
@@ -118,7 +129,7 @@ export class DashboardComponent implements OnInit {
     this.userService.getProducts().subscribe((products: any[]) => {
       this.products = products;
       this.productCategories = [...new Set(products.map((obj) => obj.category))].sort();
-      this.filteredProducts = [...this.products]; // Initialize filteredProducts
+      this.filteredProducts = [...this.products];
     });
   }
 

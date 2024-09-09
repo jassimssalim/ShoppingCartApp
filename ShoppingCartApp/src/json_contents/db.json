@@ -342,7 +342,7 @@
       "id": "319",
       "name": "test p1",
       "description": "test desc1",
-      "price": 24,
+      "price": 10,
       "category": "Category 2",
       "quantitySold": 8
     },
@@ -361,6 +361,22 @@
       "price": 567,
       "category": "Category 1",
       "quantitySold": 0
+    },
+    {
+      "id": "856",
+      "name": "jassim product",
+      "description": "happy weekend",
+      "price": 1,
+      "category": "Category 1",
+      "quantitySold": 0
+    },
+    {
+      "id": null,
+      "name": "jassim product 2",
+      "description": "happy weekend 2",
+      "price": 7,
+      "category": "Category 1",
+      "quantitySold": null
     }
   ]
 }
