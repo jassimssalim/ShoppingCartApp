@@ -7,12 +7,7 @@
       "email": "user3@gmail.com",
       "phone": "09345678910",
       "isAdmin": false,
-      "cart": [
-        {
-          "productName": "Product 1",
-          "orderQuantity": 1
-        }
-      ],
+      "cart": [],
       "pendingOrders": [
         {
           "items": [
@@ -63,6 +58,14 @@
             {
               "productName": "Product 6",
               "orderQuantity": 9
+            }
+          ]
+        },
+        {
+          "items": [
+            {
+              "productName": "Product 1",
+              "orderQuantity": 2
             }
           ]
         }
@@ -142,7 +145,7 @@
       "lastName": "dasdsa",
       "birthDate": "2024-09-03",
       "interest": "sdadsa",
-      "status": "Active"
+      "status": "Inactive"
     },
     {
       "id": "5",
@@ -279,7 +282,12 @@
       "email": "jprizal@gmail.com",
       "phone": "09345678910",
       "isAdmin": false,
-      "cart": [],
+      "cart": [
+        {
+          "productName": "Product 1",
+          "orderQuantity": 1
+        }
+      ],
       "pendingOrders": [],
       "firstName": "",
       "middleName": "",
@@ -304,7 +312,7 @@
       "description": "Description for product 1",
       "price": 100,
       "category": "Category 2",
-      "quantitySold": 10
+      "quantitySold": 12
     },
     {
       "name": "Product 2",
@@ -329,14 +337,6 @@
       "id": "4",
       "category": "Category 1",
       "quantitySold": 15
-    },
-    {
-      "id": "219",
-      "name": "test p121",
-      "description": "test desc",
-      "price": 24,
-      "category": "Category 1",
-      "quantitySold": 20
     },
     {
       "id": "319",
