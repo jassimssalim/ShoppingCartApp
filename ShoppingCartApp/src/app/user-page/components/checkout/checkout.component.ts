@@ -5,12 +5,14 @@ import { RouterModule } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { NavUserComponent } from '../../../shared/nav-user/nav-user.component';
+
 
 
 @Component({
   selector: 'app-checkout',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, NavUserComponent],
   templateUrl: './checkout.component.html',
   styleUrl: './checkout.component.css'
 })
