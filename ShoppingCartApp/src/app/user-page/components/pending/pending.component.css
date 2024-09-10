@@ -1,6 +1,6 @@
 body {
   font-family: 'Roboto', sans-serif;
-  background-color: #f4f4f4;
+  background-color: #f4f4f4 !important;
 }
 
 /* Pending orders page container */
@@ -46,7 +46,7 @@ body {
 
 /* Title */
 .title-cart {
-  font-size: 25px;
+  font-size: 22px;
   color: #218838;
 }
 

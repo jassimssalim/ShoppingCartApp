@@ -11,7 +11,6 @@ body, html {
   padding: 0;
 }
 
-/* General container for the dashboard */
 .dashboard-container {
   padding: 20px;
   background-color: #f4f4f4;
@@ -205,4 +204,19 @@ body, html {
 }
 .team p{
   font-size: 14px;
+}
+
+
+/* toaster message */ 
+
+.toaster {
+  position: fixed;
+  top: 20px; 
+  right: 35%; 
+  background-color: #003380;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  z-index: 1000; 
+  display: block; 
 }

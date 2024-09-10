@@ -50,7 +50,27 @@
       "cart": [
         {
           "productName": "Product 6",
-          "orderQuantity": 2
+          "orderQuantity": 4
+        },
+        {
+          "productName": "Product 3",
+          "orderQuantity": 3
+        },
+        {
+          "productName": "product 4",
+          "orderQuantity": 23
+        },
+        {
+          "productName": "Product 1",
+          "orderQuantity": 17
+        },
+        {
+          "productName": "jassim product",
+          "orderQuantity": 1111
+        },
+        {
+          "productName": "jassim product 2",
+          "orderQuantity": 111
         }
       ],
       "pendingOrders": [
@@ -81,6 +101,36 @@
               "orderQuantity": 1,
               "price": 100,
               "subtotal": 100
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "total": 200,
+          "items": [
+            {
+              "productName": "Product 6",
+              "orderQuantity": 2,
+              "price": 100,
+              "subtotal": 200
+            }
+          ]
+        },
+        {
+          "id": 4,
+          "total": 450,
+          "items": [
+            {
+              "productName": "Product 1",
+              "orderQuantity": 4,
+              "price": 100,
+              "subtotal": 400
+            },
+            {
+              "productName": "Product 2",
+              "orderQuantity": 2,
+              "price": 25,
+              "subtotal": 50
             }
           ]
         }
@@ -298,7 +348,7 @@
       "description": "Description for product 6",
       "price": 100,
       "category": "Category 2",
-      "quantitySold": 6
+      "quantitySold": 8
     },
     {
       "id": "bdbf",
@@ -306,7 +356,7 @@
       "description": "Description for product 1",
       "price": 100,
       "category": "Category 2",
-      "quantitySold": 168
+      "quantitySold": 172
     },
     {
       "name": "Product 2",
@@ -314,7 +364,7 @@
       "price": 25,
       "id": "f968",
       "category": "Category 1",
-      "quantitySold": 15
+      "quantitySold": 17
     },
     {
       "name": "Product 3",

@@ -3,11 +3,12 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angula
 import { CommonModule } from '@angular/common';
 import { RouterModule, ActivatedRoute } from '@angular/router';
 import { ProfileService } from './profile.service';
+import { NavUserComponent } from '../../../shared/nav-user/nav-user.component';
 
 @Component({
   selector: 'app-profile',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, RouterModule],
+  imports: [ReactiveFormsModule, CommonModule, RouterModule, NavUserComponent],
   templateUrl: './profile.component.html',
   styleUrls: ['./profile.component.css'],
 })
