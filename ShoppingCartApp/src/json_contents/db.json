@@ -49,15 +49,42 @@
       "isAdmin": false,
       "cart": [
         {
-          "productName": "Product 1",
-          "orderQuantity": 146
-        },
-        {
-          "productName": "Product 2",
-          "orderQuantity": 5
+          "productName": "Product 6",
+          "orderQuantity": 1
         }
       ],
-      "pendingOrders": [],
+      "pendingOrders": [
+        {
+          "id": 1,
+          "total": 14725,
+          "items": [
+            {
+              "productName": "Product 1",
+              "orderQuantity": 146,
+              "price": 100,
+              "subtotal": 14600
+            },
+            {
+              "productName": "Product 2",
+              "orderQuantity": 5,
+              "price": 25,
+              "subtotal": 125
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "total": 100,
+          "items": [
+            {
+              "productName": "Product 1",
+              "orderQuantity": 1,
+              "price": 100,
+              "subtotal": 100
+            }
+          ]
+        }
+      ],
       "firstName": "dsadsa",
       "middleName": "dsadsa",
       "lastName": "dasdsa",
@@ -279,7 +306,7 @@
       "description": "Description for product 1",
       "price": 100,
       "category": "Category 2",
-      "quantitySold": 21
+      "quantitySold": 168
     },
     {
       "name": "Product 2",
@@ -287,7 +314,7 @@
       "price": 25,
       "id": "f968",
       "category": "Category 1",
-      "quantitySold": 10
+      "quantitySold": 15
     },
     {
       "name": "Product 3",

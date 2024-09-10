@@ -4,11 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, ActivatedRoute } from '@angular/router';
 import { UserService } from '../../user-page.service';
 import { HttpClient } from '@angular/common/http';
+import { NavUserComponent } from '../../../shared/nav-user/nav-user.component';
+
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule],
+  imports: [CommonModule, FormsModule, RouterModule, NavUserComponent],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
 })
