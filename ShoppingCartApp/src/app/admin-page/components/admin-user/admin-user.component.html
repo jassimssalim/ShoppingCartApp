@@ -27,7 +27,7 @@
         </tbody>
     </table>
     <div class="button-container">
-        
+        <button class="btn btn-primary" (click)="addUser()">Add New User</button>
         <div class="pagination-controls">
             <button class="btn btn-secondary" (click)="goToPreviousPage()" [disabled]="currentPage === 1">Previous Page</button>
             <button class="btn btn-primary" (click)="goToNextPage()" [disabled]="!hasNextPage">Next Page</button>

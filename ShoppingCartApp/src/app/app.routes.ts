@@ -12,6 +12,7 @@ import { AdminProductFormComponent } from './admin-page/components/admin-product
 import { DashboardAdminComponent } from './admin-page/dashboard-admin.component';
 import { LoginComponent } from './login/login.component';
 import { PendingComponent } from './user-page/components/pending/pending.component';
+import { AdminUserFormComponent } from './admin-page/components/admin-user-form/admin-user-form.component';
 
 export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
@@ -35,6 +36,8 @@ export const routes: Routes = [
       { path: 'admin-product', component: AdminProductComponent},
       { path: 'admin-user', component: AdminUserComponent},
       { path: 'admin-dashboard', component: AdminDashboardComponent }, 
+      { path: 'admin-dashboard', component: AdminDashboardComponent }, 
+      { path: 'admin-user-form', component: AdminUserFormComponent },
       { path: '', redirectTo: 'admin-dashboard', pathMatch: 'full' } 
     ]
   },

@@ -1,0 +1,56 @@
+<app-admin-header></app-admin-header>
+<body>
+    <br>
+    <h1>Add User</h1>
+    <form [formGroup]="registerForm" class="user-form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+            <label for="username">Username</label>
+            <input formControlName="username" id="username" type="text" placeholder="Enter your username" class="form-control" />
+            <div *ngIf="registerForm.get('username')?.touched && registerForm.get('username')?.invalid" class="error">
+                Username is required.
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input id="email" formControlName="email" type="email" placeholder="Enter your email" class="form-control" />
+            <div *ngIf="registerForm.get('email')?.touched && registerForm.get('email')?.invalid" class="error">
+                Valid email is required.
+            </div>
+        </div>
+        <div class="form-group"> 
+            <label for="phone">Phone Number</label>
+          <input id="phone" formControlName="phone" type="tel" placeholder="Enter your phone number" class="form-control" />
+          <div *ngIf="registerForm.get('phone')?.touched && registerForm.get('phone')?.invalid" class="error">
+            Phone number is required.
+          </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="password">Password</label>
+          <input id="password" formControlName="password" type="password" placeholder="Enter your password" class="form-control" />
+          <div *ngIf="registerForm.get('password')?.touched && registerForm.get('password')?.invalid" class="error">
+            Password is required.
+          </div>
+        </div>
+
+        <div class="form-group">
+            <label for="confirmPassword">Confirm Password</label>
+          <input id="confirmPassword" formControlName="confirmPassword" type="password" placeholder="Confirm your password" class="form-control" />
+          <div *ngIf="registerForm.get('confirmPassword')?.touched && registerForm.get('confirmPassword')?.invalid" class="error">
+            Confirmation password is required.
+          </div>
+        </div>
+
+           <!-- Hidden field for isAdmin -->
+           <input type="hidden" formControlName="isAdmin" value="false" />
+
+           <div *ngIf="errorMessage" class="error">{{ errorMessage }}</div>
+
+
+        <div class="form-actions">
+        <button class="btn btn-secondary " (click)="back()">Back</button> &nbsp;
+        <button class="btn btn-primary" type="submit">Submit</button>
+        </div>
+    </form>
+</body>
+<app-footer></app-footer>

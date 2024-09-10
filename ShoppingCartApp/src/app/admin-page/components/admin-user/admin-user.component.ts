@@ -75,5 +75,7 @@ deactivateUser(userId: any): void {
     }
   });
 }
-
+addUser(): void{
+  this.router.navigate(['/admin-page/admin-user-form'])
+}
 }
