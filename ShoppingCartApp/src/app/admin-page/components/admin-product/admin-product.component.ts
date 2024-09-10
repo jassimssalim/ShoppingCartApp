@@ -15,7 +15,7 @@ export class AdminProductComponent implements OnInit{
   products: Product[] = [];
   paginatedProducts: Product[] = [];
   currentPage: number = 1;
-  itemsPerPage: number = 8;
+  itemsPerPage: number = 5;
   constructor(private productService: AdminService, private router: Router){}
 
   ngOnInit(): void {

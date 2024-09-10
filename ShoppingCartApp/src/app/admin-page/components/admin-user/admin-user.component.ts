@@ -16,8 +16,8 @@ export class AdminUserComponent implements OnInit{
   userData: User [] = [];
   paginatedUsers: User [] = [];
   currentPage: number = 1;
-  itemsPerPage: number = 8;
-constructor(private userService: AdminService){}
+  itemsPerPage: number = 5;
+constructor(private userService: AdminService, private router: Router, ){}
 
 ngOnInit(): void {
     this.getUsers()

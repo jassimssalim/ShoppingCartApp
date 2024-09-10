@@ -26,7 +26,12 @@
             </tr>
         </tbody>
     </table>
-    <button class="btn btn-secondary" (click)="goToPreviousPage()" [disabled]="currentPage === 1">Previous Page</button>&nbsp;
-    <button class="btn btn-primary" (click)="goToNextPage()" [disabled]="!hasNextPage">Next Page</button>
+    <div class="button-container">
+        
+        <div class="pagination-controls">
+            <button class="btn btn-secondary" (click)="goToPreviousPage()" [disabled]="currentPage === 1">Previous Page</button>
+            <button class="btn btn-primary" (click)="goToNextPage()" [disabled]="!hasNextPage">Next Page</button>
+        </div>
+    </div>
 </body>
 <app-footer></app-footer>
