@@ -81,22 +81,38 @@ export class CheckoutComponent {
 
   confirmOrder() {
     if (confirm("Confirm order?")) {
+      let items_list = [];
+      let items_total = 0;
+      let id = 0;
 
       for (let index = 0; index < this.cartList.length; index++) {
         const element = this.cartList[index];
         let product = this.productsList.find((p: any) => p.name === element.productName);
+        let items_put = element;
+        
+        items_put.price = product.price;
+        items_put.subtotal = items_put.orderQuantity * items_put.price;
+        items_total += items_put.subtotal;
+
+        items_list.push(items_put);
         product.quantitySold += element.orderQuantity;     
 
         this.checkoutService.updateProduct(product).subscribe(() => {
           this.getProductList();
         });
       }
+     
 
-      let json_put = {"items": this.cartList};
       let empty_cart: any[]= [];
+
+      if (this.userData.pendingOrders.length == 0) {
+        id = 1;
+      } else {
+        id = this.userData.pendingOrders[this.userData.pendingOrders.length - 1].id + 1;
+      }
       
       this.userData.cart = empty_cart;
-      this.userData.pendingOrders.push(json_put);
+      this.userData.pendingOrders.push({"id":id, "total":items_total, "items":items_list});
       console.log(this.userData);
 
       this.checkoutService.updateUser(this.userData).subscribe(() => {

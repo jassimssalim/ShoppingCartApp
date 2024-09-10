@@ -1,0 +1,57 @@
+<div class="pending-page">
+   <strong class = "title-cart">Pending Orders</strong>
+  
+    <!-- Cart items table -->
+    <table id="cart-table">
+      <thead>
+        <tr>
+          <th>No.</th>
+          <th>Items</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Subtotal (PHP)</th>
+          <th>Total (PHP)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let pending of pendingList; trackBy: trackById">
+          <td>{{ pending.id }}</td>
+          <td>
+              <table>
+                <tr *ngFor="let item of pending.items; trackBy: trackByProductName">
+                  <td>{{ item.productName }}</td>
+                </tr>
+              </table>
+          </td>
+          <td>
+              <table>
+                <tr *ngFor="let item of pending.items; trackBy: trackByProductName">
+                  <td>{{ item.price }}</td>
+                </tr>
+              </table>
+          </td>
+          <td>
+              <table>
+                <tr *ngFor="let item of pending.items; trackBy: trackByProductName">
+                  <td>{{ item.orderQuantity }}</td>
+                </tr>
+              </table>
+          </td>
+          <td>
+              <table>
+                <tr *ngFor="let item of pending.items; trackBy: trackByProductName">
+                  <td>{{ item.subtotal }}</td>
+                </tr>
+              </table>
+          </td>
+          <td>{{ pending.total }}</td>
+
+        </tr>
+      </tbody>
+    </table>
+  
+
+  
+   
+  </div>
+  

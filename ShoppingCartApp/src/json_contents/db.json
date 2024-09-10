@@ -8,68 +8,7 @@
       "phone": "09345678910",
       "isAdmin": false,
       "cart": [],
-      "pendingOrders": [
-        {
-          "items": [
-            {
-              "productName": "Product 1",
-              "orderQuantity": 3
-            }
-          ]
-        },
-        {
-          "items": [
-            {
-              "productName": "Product 1",
-              "orderQuantity": 3
-            },
-            {
-              "productName": "Product 2",
-              "orderQuantity": 1
-            }
-          ]
-        },
-        {
-          "items": [
-            {
-              "productName": "Product 1",
-              "orderQuantity": 3
-            },
-            {
-              "productName": "Product 2",
-              "orderQuantity": 5
-            }
-          ]
-        },
-        {
-          "items": [
-            {
-              "productName": "Product 1",
-              "orderQuantity": 1
-            },
-            {
-              "productName": "Product 3",
-              "orderQuantity": 5
-            }
-          ]
-        },
-        {
-          "items": [
-            {
-              "productName": "Product 6",
-              "orderQuantity": 9
-            }
-          ]
-        },
-        {
-          "items": [
-            {
-              "productName": "Product 1",
-              "orderQuantity": 2
-            }
-          ]
-        }
-      ],
+      "pendingOrders": [],
       "firstName": "Jose",
       "middleName": "Protacio",
       "lastName": "Rizal",
@@ -118,28 +57,7 @@
           "orderQuantity": 5
         }
       ],
-      "pendingOrders": [
-        {
-          "items": [
-            {
-              "productName": "Product 1",
-              "orderQuantity": 3
-            }
-          ]
-        },
-        {
-          "items": [
-            {
-              "productName": "Product 1",
-              "orderQuantity": 3
-            },
-            {
-              "productName": "Product 2",
-              "orderQuantity": 1
-            }
-          ]
-        }
-      ],
+      "pendingOrders": [],
       "firstName": "dsadsa",
       "middleName": "dsadsa",
       "lastName": "dasdsa",
@@ -155,7 +73,56 @@
       "phone": "09345678910",
       "isAdmin": false,
       "cart": [],
-      "pendingOrders": [],
+      "pendingOrders": [
+        {
+          "id": 1,
+          "total": 125,
+          "items": [
+            {
+              "productName": "Product 6",
+              "orderQuantity": 1,
+              "price": 100,
+              "subtotal": 100
+            },
+            {
+              "productName": "Product 2",
+              "orderQuantity": 1,
+              "price": 25,
+              "subtotal": 25
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "total": 400,
+          "items": [
+            {
+              "productName": "Product 1",
+              "orderQuantity": 4,
+              "price": 100,
+              "subtotal": 400
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "total": 575,
+          "items": [
+            {
+              "productName": "Product 1",
+              "orderQuantity": 5,
+              "price": 100,
+              "subtotal": 500
+            },
+            {
+              "productName": "Product 4",
+              "orderQuantity": 3,
+              "price": 25,
+              "subtotal": 75
+            }
+          ]
+        }
+      ],
       "firstName": "",
       "middleName": "",
       "lastName": "",
@@ -304,7 +271,7 @@
       "description": "Description for product 6",
       "price": 100,
       "category": "Category 2",
-      "quantitySold": 3
+      "quantitySold": 6
     },
     {
       "id": "bdbf",
@@ -312,7 +279,7 @@
       "description": "Description for product 1",
       "price": 100,
       "category": "Category 2",
-      "quantitySold": 12
+      "quantitySold": 21
     },
     {
       "name": "Product 2",
@@ -320,7 +287,7 @@
       "price": 25,
       "id": "f968",
       "category": "Category 1",
-      "quantitySold": 7
+      "quantitySold": 10
     },
     {
       "name": "Product 3",
@@ -336,7 +303,7 @@
       "price": 25,
       "id": "4",
       "category": "Category 1",
-      "quantitySold": 15
+      "quantitySold": 18
     },
     {
       "id": "319",
