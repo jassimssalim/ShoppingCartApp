@@ -1,126 +1,106 @@
-/* Ensure there are no default margins or paddings */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+}
+
 .edit-profile-page {
   display: flex;
-  height: 100vh; /* Ensure it takes full viewport height */
-  width: 100%;
-  overflow: hidden; /* Prevent overflow on the main container */
-}
-
-/* Styling for the form container */
-.profile-container {
-  flex: 1;
-  max-width: 49.4%;
-  padding: 40px;
-  border-right: 1px none #ccc;
-  background-color: white;
-  display: flex;
   flex-direction: column;
-  justify-content: center;
+  height: 100%;
+  width: 100%;
+  justify-content: center; 
+  align-items: center; 
+  background-color: #F4F4F4; 
+  padding-top: 70px; 
 }
 
-/* Header container styling */
+.profile-container {
+  width: 100%;
+  max-width: 1300px; 
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 8px; 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  display: grid;
+  grid-template-columns: 1fr; 
+  gap: 20px; 
+  padding-top: 30px; 
+}
+
 .header-container {
-  display: flex;
-  align-items: center; /* Center items vertically */
-  margin-top: 20px; /* Move the header away from the edge of the browser */
-  margin-bottom: 20px; /* Space below the header */
-  padding: 0 20px; /* Add padding on left and right for better spacing */
+  grid-column: span 1; 
+  margin-bottom: 15px; 
 }
 
-/* Arrow button styling */
-.arrow-button {
-  background: none;
-  border: none;
-  cursor: pointer;
-  margin-right: 150px; /* Space between the button and header text */
-  padding: 0;
-  display: flex;
-  align-items: center; /* Ensure vertical alignment */
-}
-
-/* Arrow SVG icon styling */
-.arrow-button svg {
-  fill: #333; /* Color of the arrow */
-  width: 24px; /* Adjust width of the arrow icon */
-  height: 24px; /* Adjust height of the arrow icon */
-}
-
-/* Styling for the header inside the form */
 .profile-container h2 {
-  font-family: 'Arial', sans-serif;
   color: #008000;
-  font-size: 24px; /* Adjust font size as needed */
-  margin: 0; /* Remove default margin */
+  font-size: 20px;
+  margin-bottom: 10px;
 }
 
-/* Styling for each form group (label and input) */
+.profile-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+
+.form-fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 12px;
 }
 
-/* Styling for the labels */
 .form-group label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
   font-weight: bold;
-  color: #555;
-  font-family: 'Arial', sans-serif;
+  color: #444;
 }
 
-/* Styling for the input fields */
 .form-group input {
   width: 100%;
-  padding: 7px;
-  font-size: 16px;
+  padding: 8px;
+  font-size: 14px;
   border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-  background-color: #f4f4f4;
-  font-family: 'Arial', sans-serif;
+  border-radius: 4px;
+  background-color: #fafafa;
 }
 
-/* Styling for placeholder text */
 .form-group input::placeholder {
-  color: #aaa;
+  color: #888;
 }
 
-/* Styling for the submit button */
+.form-actions {
+  grid-column: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
 .btn-primary {
-  display: block;
-  width: 100%;
-  padding: 12px;
-  font-size: 16px;
+  padding: 10px;
+  font-size: 14px;
   color: #fff;
   background-color: #008000;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
   cursor: pointer;
-  font-family: 'Arial', sans-serif;
-  margin-top: 20px;
+  height: 50px;
+  width: 200px;
 }
 
-/* Hover effect for the button */
 .btn-primary:hover {
-  background-color: #005700;
-}
-
-/* Right side section styling */
-.right-side {
-  width: 50%;
-  height: 100vh; /* Ensure it takes full viewport height */
-  background-color: #000;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: fixed;
-  right: 0;
-  top: 0;
-  overflow: hidden; /* Prevent scrollbars on the right-side section */
-  z-index: -1; /* Ensure it stays behind the main content */
+  background-color: #004d00;
 }

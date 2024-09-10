@@ -6,11 +6,18 @@ import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { CartService } from './cart.service';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from '../../../shared/footer/footer.component';
+
+
+
+import { NavUserComponent } from '../../../shared/nav-user/nav-user.component';
+
+
 
 @Component({
   selector: 'app-cart',
   standalone: true,
-  imports: [ReactiveFormsModule, CommonModule, RouterModule],
+  imports: [ReactiveFormsModule, CommonModule, RouterModule, NavUserComponent,FooterComponent],
   templateUrl: './cart.component.html',
   styleUrls: ['./cart.component.css'] 
 })

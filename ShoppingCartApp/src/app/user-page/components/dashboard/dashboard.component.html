@@ -1,21 +1,9 @@
-<div class="dashboard-container">
-  <div class="navbar">
-    <h1>CartiFy!</h1>
-    <img src="greenicon.png" alt="Green Icon" class="navbar-icon">
+<app-nav-user></app-nav-user>
 
-    <ul class="nav-links">
-      <li><a [routerLink]="['/user-page', username, 'dashboarduser']" routerLinkActive="active">Dashboard</a></li>
-      <li><a [routerLink]="['/user-page', username, 'cart']" routerLinkActive="active">MyCart</a></li>
-      <li><a [routerLink]="['/user-page', username, 'profile']" routerLinkActive="active">MyProfile</a></li>
-      <li><a [routerLink]="['/user-page', username, 'pending']" routerLinkActive="active">PendingOrders</a></li>
-      <li class="dropdown">
-        <i class='fas fa-angle-down' style='font-size: 20px; color: white;'></i>
-        <div class="dropdown-content">
-          <button class="logout-btn" [routerLink]="['/login']">Log Out</button>
-        </div>
-      </li>
-    </ul>
-  </div>
+
+
+<div class="dashboard-container">
+ 
 
   <div class="wc">
     <h1>Welcome {{ username }}!</h1>
@@ -103,4 +91,10 @@
       &copy; 2024 CartiFy | Designed with passion by Team 2.
     </div>
   </footer>
+
+<!-- message add to cart-->
+  <div id="toaster" class="toaster" *ngIf="isShowPop;">
+    <p id="toaster-message">You successfully added items in your cart.</p>
+  </div>
+
 </div>

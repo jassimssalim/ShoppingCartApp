@@ -1,12 +1,16 @@
+<app-nav-user></app-nav-user>
+
 <div class="pending-page">
-   <strong class = "title-cart">Pending Orders</strong>
-  
-    <!-- Cart items table -->
+  <strong class="title-cart">Here's the summary of your pending order/s</strong>
+
+  <!-- Check if there are pending orders -->
+  <div *ngIf="pendingList.length > 0; else noOrders">
+    <!-- Pending orders table -->
     <table id="cart-table">
       <thead>
         <tr>
           <th>No.</th>
-          <th>Items</th>
+          <th>Item Name</th>
           <th>Price</th>
           <th>Quantity</th>
           <th>Subtotal (PHP)</th>
@@ -17,41 +21,34 @@
         <tr *ngFor="let pending of pendingList; trackBy: trackById">
           <td>{{ pending.id }}</td>
           <td>
-              <table>
-                <tr *ngFor="let item of pending.items; trackBy: trackByProductName">
-                  <td>{{ item.productName }}</td>
-                </tr>
-              </table>
+            <div *ngFor="let item of pending.items; trackBy: trackByProductName">
+              {{ item.productName }}<br />
+            </div>
           </td>
           <td>
-              <table>
-                <tr *ngFor="let item of pending.items; trackBy: trackByProductName">
-                  <td>{{ item.price }}</td>
-                </tr>
-              </table>
+            <div *ngFor="let item of pending.items; trackBy: trackByProductName">
+              {{ item.price }}<br />
+            </div>
           </td>
           <td>
-              <table>
-                <tr *ngFor="let item of pending.items; trackBy: trackByProductName">
-                  <td>{{ item.orderQuantity }}</td>
-                </tr>
-              </table>
+            <div *ngFor="let item of pending.items; trackBy: trackByProductName">
+              {{ item.orderQuantity }}<br />
+            </div>
           </td>
           <td>
-              <table>
-                <tr *ngFor="let item of pending.items; trackBy: trackByProductName">
-                  <td>{{ item.subtotal }}</td>
-                </tr>
-              </table>
+            <div *ngFor="let item of pending.items; trackBy: trackByProductName">
+              {{ item.subtotal }}<br />
+            </div>
           </td>
           <td>{{ pending.total }}</td>
-
         </tr>
       </tbody>
     </table>
-  
-
-  
-   
   </div>
-  
+
+  <!-- Template for displaying a message when there are no pending orders -->
+  <ng-template #noOrders>
+    <p class="no-items-message">You have no pending orders.</p>
+    <button class="back-button" [routerLink]="['/user-page', username, 'dashboard']">Go Back</button>
+  </ng-template>
+</div>

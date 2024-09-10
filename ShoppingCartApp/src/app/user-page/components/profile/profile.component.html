@@ -1,54 +1,45 @@
+<app-nav-user></app-nav-user>
+
 <div class="edit-profile-page">
   <div class="profile-container">
-
-     <div class="header-container">
-     <a class="arrow-button" [routerLink]="['/user-page', username, 'dashboarduser']">
-  <!-- Arrow SVG icon -->
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M15 19L9 12L15 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-  </svg>
-</a>
+    <div class="header-container">
       <h2>Edit Your Profile</h2>
     </div>
 
-
-    <form [formGroup]="profileForm" (ngSubmit)="onSave()">
-      <div class="form-group">
-        <label for="username">Username</label>
-        <input id="username" formControlName="username" readonly />
+    <form [formGroup]="profileForm" (ngSubmit)="onSave()" class="profile-form">
+      <div class="form-fields">
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input id="username" formControlName="username" readonly />
+        </div>
+        <div class="form-group">
+          <label for="firstName">First Name</label>
+          <input id="firstName" formControlName="firstName" placeholder="Enter your first name" />
+        </div>
+        <div class="form-group">
+          <label for="middleName">Middle Name</label>
+          <input id="middleName" formControlName="middleName" placeholder="Enter your middle name" />
+        </div>
+        <div class="form-group">
+          <label for="lastName">Last Name</label>
+          <input id="lastName" formControlName="lastName" placeholder="Enter your last name" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input id="email" type="email" formControlName="email" placeholder="Enter your email" />
+        </div>
+        <div class="form-group">
+          <label for="birthDate">Birth Date</label>
+          <input id="birthDate" type="date" formControlName="birthDate" />
+        </div>
+        <div class="form-group">
+          <label for="interest">Interests</label>
+          <input id="interest" formControlName="interest" placeholder="Enter your interests" />
+        </div>
       </div>
-      <div class="form-group">
-        <label for="firstName">First Name</label>
-        <input id="firstName" formControlName="firstName" placeholder="Enter your first name" />
-      </div>
-      <div class="form-group">
-        <label for="middleName">Middle Name</label>
-        <input id="middleName" formControlName="middleName" placeholder="Enter your middle name" />
-      </div>
-      <div class="form-group">
-        <label for="lastName">Last Name</label>
-        <input id="lastName" formControlName="lastName" placeholder="Enter your last name" />
-      </div>
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input id="email" type="email" formControlName="email" placeholder="Enter your email" />
-      </div>
-      <div class="form-group">
-        <label for="birthDate">Birth Date</label>
-        <input id="birthDate" type="date" formControlName="birthDate" />
-      </div>
-      <div class="form-group">
-        <label for="interest">Interests</label>
-        <input id="interest" formControlName="interest" placeholder="Enter your interests" />
-      </div>
-      <div class="form-group">
+      <div class="form-actions">
         <button type="submit" class="btn-primary">Save Changes</button>
       </div>
     </form>
-  </div>
-  <div class="right-side">
-    <img src="profiledetails.svg" alt="Logo"style="width: auto; height: 600px; margin-top: 48px" />
-
-
   </div>
 </div>

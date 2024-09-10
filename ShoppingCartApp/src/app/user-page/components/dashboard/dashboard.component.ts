@@ -4,11 +4,13 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule, ActivatedRoute } from '@angular/router';
 import { UserService } from '../../user-page.service';
 import { HttpClient } from '@angular/common/http';
+import { NavUserComponent } from '../../../shared/nav-user/nav-user.component';
+
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule],
+  imports: [CommonModule, FormsModule, RouterModule, NavUserComponent],
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
 })
@@ -20,6 +22,8 @@ export class DashboardComponent implements OnInit {
   userData: any;
   filteredProducts: any[] = [];
   quantity: { [key: string]: number } = {};
+  isShowPop = false;
+
   
   // Stores selected filters
   selectedCategory: string = 'all';
@@ -110,11 +114,15 @@ export class DashboardComponent implements OnInit {
   addToCart(product: { id: string; name: string; category: string; price: number }): void {
     const qty = this.quantity[product.id] || 1;
     console.log(`Adding ${qty} of ${product.name} to cart.`);
-    alert("You added your quantity, please check at My Cart.");
+    
+
+    
+
+
 
     let add_product = this.cartList.find((p) => p.productName === product.name) || { productName: product.name, orderQuantity: 0 };
     add_product.orderQuantity += qty;
-
+    
     if (add_product.orderQuantity === qty) {
       this.cartList.push(add_product);
     }
@@ -123,6 +131,9 @@ export class DashboardComponent implements OnInit {
     this.userService.updateUser(this.userData).subscribe(() => {
       this.getCartList();
     });
+
+    this.isShowPop = true;
+    setTimeout(() => this.isShowPop = false, 3000);
   }
 
   getProductList() {
@@ -142,4 +153,6 @@ export class DashboardComponent implements OnInit {
       }
     });
   }
+
+  
 }

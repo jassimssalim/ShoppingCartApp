@@ -1,15 +1,45 @@
-/* General container and typography */
+
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f4;
+}
+
+
 p {
   font-size: 1.5rem;
   font-weight: bold;
   text-align: center;
 }
 
-body {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f7f7f7;
+
+.no-items-message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #777;
+  margin-top: 20px;
 }
 
+
+
+/* Navbar styling */
+app-nav-user {
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000; 
+}
+
+/* Content container to handle spacing */
+.content-container {
+  
+  margin-top: 100px; }
+
+.content-container h2  {
+margin-left: 80px;
+     color: #28a745;
+  }
 /* Modal styles */
 .modal {
   display: flex;
@@ -167,4 +197,8 @@ input[type="number"] {
 .error {
   color: red;
   font-size: 0.9rem;
+}
+
+p {
+  color: #000;
 }
