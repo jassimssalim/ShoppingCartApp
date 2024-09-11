@@ -2,19 +2,19 @@
   "users": [
     {
       "id": "1",
-      "username": "user2",
+      "username": "Jassim",
       "password": "1111",
-      "email": "user3@gmail.com",
+      "email": "cartifyJassim@gmail.com",
       "phone": "09345678910",
       "isAdmin": false,
       "cart": [],
       "pendingOrders": [],
-      "firstName": "Jose",
-      "middleName": "Protacio",
-      "lastName": "Rizal",
-      "birthDate": "2024-09-19",
-      "interest": "books and net",
-      "status": "Inactive"
+      "firstName": "",
+      "middleName": "",
+      "lastName": "",
+      "birthDate": "",
+      "interest": "",
+      "status": "Active"
     },
     {
       "id": "2",
