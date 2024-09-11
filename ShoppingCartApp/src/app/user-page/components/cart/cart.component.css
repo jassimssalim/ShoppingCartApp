@@ -38,7 +38,7 @@ app-nav-user {
 
 .content-container h2  {
 margin-left: 80px;
-     color: #28a745;
+     color: #008000;
   }
 /* Modal styles */
 .modal {
@@ -173,7 +173,7 @@ input[type="number"] {
 }
 
 .cart-summary span {
-  color: #28a745;
+  color: #008000;
 }
 
 .checkout-button {
