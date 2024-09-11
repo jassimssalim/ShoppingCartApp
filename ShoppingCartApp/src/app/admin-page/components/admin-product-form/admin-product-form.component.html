@@ -30,15 +30,17 @@
         <div class="form-group">
             <label for="category">Category</label>&nbsp;
             <select formControlName="category" name="category" id="category">
-                <option value="Category 1"  >Category 1</option>
-                <option value="Category 2">Category 2</option>
+                <option value="Foods">Foods</option>
+                <option value="Grocery">Grocery</option>
+                <option value="Clothes">Clothes</option>
+                <option value="Appliances">Appliances</option>
             </select>
             <div *ngIf="productForm.get('category')?.touched && productForm.get('category')?.invalid" class="error">
                 Category is required.
             </div>
         </div>
         <div class="form-actions">
-        <button class="btn btn-secondary " (click)="back()">Back</button> &nbsp;
+        <button class="btn btn-secondary" (click)="back()">Back</button> &nbsp;
         <button class="btn btn-primary" type="submit">Submit</button>
         </div>
     </form>
