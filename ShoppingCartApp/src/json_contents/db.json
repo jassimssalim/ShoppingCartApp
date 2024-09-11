@@ -8,7 +8,68 @@
       "phone": "0902121",
       "isAdmin": false,
       "cart": [],
-      "pendingOrders": [],
+      "pendingOrders": [
+        {
+          "id": 1,
+          "total": 1610,
+          "items": [
+            {
+              "productName": "Barong Tagalog",
+              "orderQuantity": 1,
+              "price": 550,
+              "subtotal": 550
+            },
+            {
+              "productName": "Sinigang Mix",
+              "orderQuantity": 2,
+              "price": 30,
+              "subtotal": 60
+            },
+            {
+              "productName": "Bibingka",
+              "orderQuantity": 5,
+              "price": 200,
+              "subtotal": 1000
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "total": 1100,
+          "items": [
+            {
+              "productName": "Philippine Flag Dress",
+              "orderQuantity": 1,
+              "price": 700,
+              "subtotal": 700
+            },
+            {
+              "productName": "Bibingka",
+              "orderQuantity": 2,
+              "price": 200,
+              "subtotal": 400
+            }
+          ]
+        },
+        {
+          "id": 3,
+          "total": 11400,
+          "items": [
+            {
+              "productName": "Rice Cooker",
+              "orderQuantity": 2,
+              "price": 900,
+              "subtotal": 1800
+            },
+            {
+              "productName": "Blender",
+              "orderQuantity": 12,
+              "price": 800,
+              "subtotal": 9600
+            }
+          ]
+        }
+      ],
       "firstName": "",
       "middleName": "",
       "lastName": "",
@@ -83,6 +144,164 @@
   ],
   "products": [
     {
+      "id": "1",
+      "name": "Adobo Seasoning",
+      "description": "Classic seasoning for Filipino Adobo.",
+      "price": 50,
+      "category": "Foods",
+      "quantitySold": 0
+    },
+    {
+      "id": "2",
+      "name": "Sinigang Mix",
+      "description": "Sour soup mix for Sinigang.",
+      "price": 30,
+      "category": "Foods",
+      "quantitySold": 2
+    },
+    {
+      "id": "3",
+      "name": "Pancit Canton",
+      "description": "Instant Pancit Canton noodles.",
+      "price": 15,
+      "category": "Foods",
+      "quantitySold": 0
+    },
+    {
+      "id": "4",
+      "name": "Lechon Sauce",
+      "description": "Savory sauce for Lechon.",
+      "price": 70,
+      "category": "Foods",
+      "quantitySold": 0
+    },
+    {
+      "id": "5",
+      "name": "Bagoong",
+      "description": "Fermented shrimp paste.",
+      "price": 25,
+      "category": "Foods",
+      "quantitySold": 0
+    },
+    {
+      "id": "6",
+      "name": "Mangga (Mango)",
+      "description": "Fresh Filipino mango.",
+      "price": 120,
+      "category": "Grocery",
+      "quantitySold": 0
+    },
+    {
+      "id": "7",
+      "name": "Suman",
+      "description": "Rice cake wrapped in leaves.",
+      "price": 90,
+      "category": "Grocery",
+      "quantitySold": 0
+    },
+    {
+      "id": "8",
+      "name": "Bibingka",
+      "description": "Rice cake traditionally baked in clay pots.",
+      "price": 200,
+      "category": "Grocery",
+      "quantitySold": 7
+    },
+    {
+      "id": "9",
+      "name": "Taho",
+      "description": "Silken tofu dessert with syrup and pearls.",
+      "price": 65,
+      "category": "Grocery",
+      "quantitySold": 0
+    },
+    {
+      "id": "10",
+      "name": "Halo-Halo",
+      "description": "Popular Filipino mixed dessert.",
+      "price": 150,
+      "category": "Grocery",
+      "quantitySold": 0
+    },
+    {
+      "id": "11",
+      "name": "Barong Tagalog",
+      "description": "Traditional Filipino formal shirt.",
+      "price": 550,
+      "category": "Clothes",
+      "quantitySold": 1
+    },
+    {
+      "id": "12",
+      "name": "T-shirt with Jeepney Print",
+      "description": "Casual t-shirt featuring a jeepney print.",
+      "price": 300,
+      "category": "Clothes",
+      "quantitySold": 0
+    },
+    {
+      "id": "13",
+      "name": "Philippine Flag Dress",
+      "description": "Dress featuring the Philippine flag design.",
+      "price": 700,
+      "category": "Clothes",
+      "quantitySold": 1
+    },
+    {
+      "id": "14",
+      "name": "Kuba Hat",
+      "description": "Traditional Filipino hat made from rattan.",
+      "price": 450,
+      "category": "Clothes",
+      "quantitySold": 0
+    },
+    {
+      "id": "15",
+      "name": "Summer Sarong",
+      "description": "Lightweight sarong for summer wear.",
+      "price": 350,
+      "category": "Clothes",
+      "quantitySold": 0
+    },
+    {
+      "id": "16",
+      "name": "Rice Cooker",
+      "description": "Automatic rice cooker.",
+      "price": 900,
+      "category": "Appliances",
+      "quantitySold": 2
+    },
+    {
+      "id": "17",
+      "name": "Blender",
+      "description": "High-speed blender for smoothies and sauces.",
+      "price": 800,
+      "category": "Appliances",
+      "quantitySold": 12
+    },
+    {
+      "id": "18",
+      "name": "Electric Fan",
+      "description": "Portable electric fan.",
+      "price": 150,
+      "category": "Appliances",
+      "quantitySold": 0
+    },
+    {
+      "id": "19",
+      "name": "Toaster",
+      "description": "2-slice toaster with adjustable settings.",
+      "price": 250,
+      "category": "Appliances",
+      "quantitySold": 0
+    },
+    {
+      "id": "20",
+      "name": "Microwave Oven",
+      "description": "Compact microwave oven for quick heating.",
+      "price": 1200,
+      "category": "Appliances",
+      "quantitySold": 0
     }
   ]
 }
