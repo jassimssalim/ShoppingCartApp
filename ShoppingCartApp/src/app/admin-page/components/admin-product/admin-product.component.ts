@@ -63,16 +63,18 @@ export class AdminProductComponent implements OnInit{
   }
 
   onDelete(product: Product) {
-    this.productService.deleteProduct(product.id).subscribe(
-      () => {
-        this.products = this.products.filter(p => p.id !== product.id);
-        alert('Product has been deleted');
-        this.ngOnInit();
-      },
-      (error) => {
-        alert('Failed to delete product. Please try again.');
-        console.error('Error deleting product:', error);
-      }
-    );
+    if (window.confirm('Are you sure you want to delete this product?')) {
+      this.productService.deleteProduct(product.id).subscribe(
+        () => {
+          this.products = this.products.filter(p => p.id !== product.id);
+          alert('Product has been deleted');
+          this.ngOnInit();
+        },
+        (error) => {
+          alert('Failed to delete product. Please try again.');
+          console.error('Error deleting product:', error);
+        }
+      );
+    }
   }
 }

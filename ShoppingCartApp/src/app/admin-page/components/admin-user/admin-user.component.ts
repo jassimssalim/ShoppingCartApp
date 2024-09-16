@@ -60,20 +60,22 @@ get hasNextPage(): boolean {
 }
 
 deactivateUser(userId: any): void {
-  this.userService.deactivateUser(userId).subscribe({
-    next: () => {
-      this.userData = this.userData.map(user =>
-        user.id === userId ? { ...user, status: "Inactive" } : user
-      );
-      console.log("User has been deactivated successfully")
-      alert("User has been deactivated successfully!")
-      this.ngOnInit()
-    },
-    error: (error) => {
-      console.error('Error deactivating user:', error);
-      alert('Error deactivating user, Please try again later!')
-    }
-  });
+  if (window.confirm('Are you sure you want to deactivate this user?')) {
+    this.userService.deactivateUser(userId).subscribe({
+      next: () => {
+        this.userData = this.userData.map(user =>
+          user.id === userId ? { ...user, status: "Inactive" } : user
+        );
+        console.log("User has been deactivated successfully");
+        alert("User has been deactivated successfully!");
+        this.ngOnInit();
+      },
+      error: (error) => {
+        console.error('Error deactivating user:', error);
+        alert('Error deactivating user. Please try again later!');
+      }
+    });
+  }
 }
 addUser(): void{
   this.router.navigate(['/admin-page/admin-user-form'])
