@@ -23,6 +23,10 @@
         {
           "productName": "Bibingka",
           "orderQuantity": 2000000
+        },
+        {
+          "productName": "Barong Tagalog",
+          "orderQuantity": 1
         }
       ],
       "pendingOrders": [
@@ -200,7 +204,7 @@
       "price": 30,
       "category": "Foods",
       "quantitySold": 100000000004,
-      "imageURL":"https://assets.unileversolutions.com/v1/1648400.png"
+      "imageURL": "https://assets.unileversolutions.com/v1/1648400.png"
     },
     {
       "id": "3",
@@ -209,7 +213,7 @@
       "price": 15,
       "category": "Foods",
       "quantitySold": 0,
-      "imageURL":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTagpYFNH6u5qqvz2vRBLeQU1V1MkxsqEf24g&s"
+      "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTagpYFNH6u5qqvz2vRBLeQU1V1MkxsqEf24g&s"
     },
     {
       "id": "4",
@@ -218,7 +222,7 @@
       "price": 70,
       "category": "Foods",
       "quantitySold": 0,
-      "imageURL":"https://d2t3trus7wwxyy.cloudfront.net/catalog/product/m/a/mang-tomas-lechon-sauce-regular-12-oz_1.jpg"
+      "imageURL": "https://d2t3trus7wwxyy.cloudfront.net/catalog/product/m/a/mang-tomas-lechon-sauce-regular-12-oz_1.jpg"
     },
     {
       "id": "5",
@@ -227,7 +231,7 @@
       "price": 25,
       "category": "Foods",
       "quantitySold": 0,
-      "imageURL":"https://csistore.ph/wp-content/uploads/2020/07/JE-BAGOONG-CLASSIC-RED-320ML.jpg"
+      "imageURL": "https://csistore.ph/wp-content/uploads/2020/07/JE-BAGOONG-CLASSIC-RED-320ML.jpg"
     },
     {
       "id": "6",
@@ -244,7 +248,8 @@
       "description": ": Fresh, crisp organic apples grown without synthetic pesticides. Perfect for snacking or adding to salads.",
       "price": 90,
       "category": "Grocery",
-      "quantitySold": 0
+      "quantitySold": 0,
+      "imageURL": "https://digitalcontent.api.tesco.com/v2/media/ghs/fcfd5f59-f37e-4030-9942-74925be64c9f/48bcd837-a395-4ffb-a007-729ccb42e80b_1295391216.jpeg?h=960&w=960"
     },
     {
       "id": "8",
@@ -252,7 +257,8 @@
       "description": "100% whole wheat bread with a hearty, nutty flavor. Great for sandwiches or toasting.",
       "price": 200,
       "category": "Grocery",
-      "quantitySold": 7
+      "quantitySold": 7,
+      "imageURL": "https://cdn.gardengrocer.com/attachments/photos/high_res/317.jpg?3322"
     },
     {
       "id": "9",
@@ -260,7 +266,8 @@
       "description": "Creamy and smooth almond milk, a perfect dairy-free alternative for smoothies, cereal, or coffee.",
       "price": 65,
       "category": "Grocery",
-      "quantitySold": 0
+      "quantitySold": 0,
+      "imageURL": "https://shop.healthyoptions.com.ph/cdn/shop/products/041570054161BREEZEUNSWTVANGF32OZ.jpg?v=1598237569"
     },
     {
       "id": "10",
@@ -268,7 +275,8 @@
       "description": "Tender and juicy boneless, skinless chicken breasts. Ideal for grilling, baking, or sautéing.",
       "price": 150,
       "category": "Grocery",
-      "quantitySold": 0
+      "quantitySold": 0,
+      "imageURL": "https://s3.ap-southeast-1.amazonaws.com/control-center.builtamart.com/public/products/6208-004-12-2023-150424-618.jpg?rand=0.3287433114759557"
     },
     {
       "id": "11",
@@ -276,7 +284,8 @@
       "description": "Traditional Filipino formal shirt.",
       "price": 550,
       "category": "Clothes",
-      "quantitySold": 1
+      "quantitySold": 1,
+      "imageURL": "https://data1.ororama.online/assets/uploads/-ff64259414b1ba8fd55f606d88acfcf5.jpg"
     },
     {
       "id": "12",
@@ -284,31 +293,35 @@
       "description": "Casual t-shirt featuring a jeepney print.",
       "price": 300,
       "category": "Clothes",
-      "quantitySold": 0
+      "quantitySold": 0,
+      "imageURL": "https://standpointamerica.com/cdn/shop/products/handprinted-black-philippines-jeepney-tshirt-1_720x.jpg?v=1628891423"
     },
     {
       "id": "13",
-      "name": "Philippine Flag Dress",
-      "description": "Dress featuring the Philippine flag design.",
+      "name": "Long Tee Shirt",
+      "description": "Dress fashion design long tee",
       "price": 700,
       "category": "Clothes",
-      "quantitySold": 1
+      "quantitySold": 1,
+      "imageURL": "https://underarmour.scene7.com/is/image/Underarmour/PS1248196-001_HF?rp=standard-0pad|pdpMainDesktop&scl=1&fmt=jpg&qlt=85&resMode=sharp2&cache=on,on&bgc=F0F0F0&wid=566&hei=708&size=566,708"
     },
     {
       "id": "14",
-      "name": "Kuba Hat",
-      "description": "Traditional Filipino hat made from rattan.",
+      "name": "Polo Shirt",
+      "description": "Polo shirt for office.",
       "price": 450,
       "category": "Clothes",
-      "quantitySold": 0
+      "quantitySold": 0,
+      "imageURL": "https://shopmetro.ph/lapulapu-departmentstore/wp-content/uploads/2022/07/DS10569561_10569562_10569563_10569564-7.jpg"
     },
     {
       "id": "15",
-      "name": "Summer Sarong",
-      "description": "Lightweight sarong for summer wear.",
+      "name": "Work Shirt for Women",
+      "description": "for office shirts.",
       "price": 350,
       "category": "Clothes",
-      "quantitySold": 0
+      "quantitySold": 0,
+      "imageURL": "https://static.zara.net/assets/public/0bd7/892d/8d0d49f381a2/8655e0023bd3/08372307043-e1/08372307043-e1.jpg?ts=1725627839274&w=824"
     },
     {
       "id": "16",
@@ -316,7 +329,8 @@
       "description": "Automatic rice cooker.",
       "price": 900,
       "category": "Appliances",
-      "quantitySold": 2
+      "quantitySold": 2,
+      "imageURL": "https://www.kyowa.com.ph/cdn/shop/files/KW-2007_2014_2013_2016.jpg?v=1692239663&width=1080"
     },
     {
       "id": "17",
@@ -324,7 +338,8 @@
       "description": "High-speed blender for smoothies and sauces.",
       "price": 800,
       "category": "Appliances",
-      "quantitySold": 12
+      "quantitySold": 12,
+      "imageURL": "https://www.smappliance.com/cdn/shop/products/10146689-BL-211G1.5LGLASSBLENDER_800x.jpg?v=1620879546"
     },
     {
       "id": "18",
@@ -332,7 +347,8 @@
       "description": "Portable electric fan.",
       "price": 150,
       "category": "Appliances",
-      "quantitySold": 0
+      "quantitySold": 0,
+      "imageURL": "https://www.shop-mideaphilippines.com/cdn/shop/products/Midea2-in-1ConvertibleElectricFan_2.jpg?v=1713412418"
     },
     {
       "id": "19",
@@ -340,7 +356,8 @@
       "description": "2-slice toaster with adjustable settings.",
       "price": 250,
       "category": "Appliances",
-      "quantitySold": 0
+      "quantitySold": 0,
+      "imageURL": "https://i5.walmartimages.com/seo/Hamilton-Beach-2-Slice-Toaster-Extra-Wide-Slots-Chrome-Plated-Lever-Black-22217_29568682-aaa6-4dfc-b7f1-156470a9325c.304bff9cceaf4f153364d34a050c17c2.jpeg"
     },
     {
       "id": "20",
@@ -348,15 +365,8 @@
       "description": "Compact microwave oven for quick heating.",
       "price": 1200,
       "category": "Appliances",
-      "quantitySold": 0
-    },
-    {
-      "id": "140",
-      "name": "test1",
-      "description": "test",
-      "price": 100,
-      "category": "Foods",
-      "quantitySold": 0
+      "quantitySold": 0,
+      "imageURL": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJ-XR8UhVdzfJS2DxNElsjeXrDOPySfdbrPw&s"
     }
   ]
 }
