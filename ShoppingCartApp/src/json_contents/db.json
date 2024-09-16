@@ -7,7 +7,24 @@
       "email": "jassim_cartify@email.com",
       "phone": "0902121",
       "isAdmin": false,
-      "cart": [],
+      "cart": [
+        {
+          "productName": "Pancit Canton",
+          "orderQuantity": 1
+        },
+        {
+          "productName": "Sinigang Mix",
+          "orderQuantity": 301
+        },
+        {
+          "productName": "Lechon Sauce",
+          "orderQuantity": 4
+        },
+        {
+          "productName": "Bibingka",
+          "orderQuantity": 2000000
+        }
+      ],
       "pendingOrders": [
         {
           "id": 1,
@@ -68,6 +85,30 @@
               "subtotal": 9600
             }
           ]
+        },
+        {
+          "id": 4,
+          "total": 60,
+          "items": [
+            {
+              "productName": "Sinigang Mix",
+              "orderQuantity": 2,
+              "price": 30,
+              "subtotal": 60
+            }
+          ]
+        },
+        {
+          "id": 5,
+          "total": 3000000000000,
+          "items": [
+            {
+              "productName": "Sinigang Mix",
+              "orderQuantity": 100000000000,
+              "price": 30,
+              "subtotal": 3000000000000
+            }
+          ]
         }
       ],
       "firstName": "",
@@ -107,7 +148,7 @@
       "lastName": "",
       "birthDate": "2024-09-11",
       "interest": "",
-      "status": "Active"
+      "status": "Inactive"
     },
     {
       "id": "4",
@@ -123,7 +164,7 @@
       "lastName": "",
       "birthDate": "2024-09-11",
       "interest": "",
-      "status": "Active"
+      "status": "Inactive"
     },
     {
       "id": "5",
@@ -157,7 +198,7 @@
       "description": "Sour soup mix for Sinigang.",
       "price": 30,
       "category": "Foods",
-      "quantitySold": 2
+      "quantitySold": 100000000004
     },
     {
       "id": "3",
@@ -302,7 +343,14 @@
       "price": 1200,
       "category": "Appliances",
       "quantitySold": 0
+    },
+    {
+      "id": "140",
+      "name": "test1",
+      "description": "test",
+      "price": 100,
+      "category": "Foods",
+      "quantitySold": 0
     }
-   
   ]
 }
