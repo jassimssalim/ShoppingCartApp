@@ -190,7 +190,8 @@
       "description": "Classic seasoning for Filipino Adobo.",
       "price": 50,
       "category": "Foods",
-      "quantitySold": 0
+      "quantitySold": 0,
+      "imageURL": "https://i5.walmartimages.com/seo/Goya-Adobo-with-Pepper-All-Purpose-Seasoning-28-OZ-Large-Pack-of-2_33b07ce7-334e-4d04-9bba-e5ca7ba82df8.319e6a9c3d9a2175ac6071fd9e009823.jpeg"
     },
     {
       "id": "2",
@@ -198,7 +199,8 @@
       "description": "Sour soup mix for Sinigang.",
       "price": 30,
       "category": "Foods",
-      "quantitySold": 100000000004
+      "quantitySold": 100000000004,
+      "imageURL":"https://assets.unileversolutions.com/v1/1648400.png"
     },
     {
       "id": "3",
@@ -206,7 +208,8 @@
       "description": "Instant Pancit Canton noodles.",
       "price": 15,
       "category": "Foods",
-      "quantitySold": 0
+      "quantitySold": 0,
+      "imageURL":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTagpYFNH6u5qqvz2vRBLeQU1V1MkxsqEf24g&s"
     },
     {
       "id": "4",
@@ -214,7 +217,8 @@
       "description": "Savory sauce for Lechon.",
       "price": 70,
       "category": "Foods",
-      "quantitySold": 0
+      "quantitySold": 0,
+      "imageURL":"https://d2t3trus7wwxyy.cloudfront.net/catalog/product/m/a/mang-tomas-lechon-sauce-regular-12-oz_1.jpg"
     },
     {
       "id": "5",
@@ -222,7 +226,8 @@
       "description": "Fermented shrimp paste.",
       "price": 25,
       "category": "Foods",
-      "quantitySold": 0
+      "quantitySold": 0,
+      "imageURL":"https://csistore.ph/wp-content/uploads/2020/07/JE-BAGOONG-CLASSIC-RED-320ML.jpg"
     },
     {
       "id": "6",
@@ -230,36 +235,37 @@
       "description": "Fresh Filipino mango.",
       "price": 120,
       "category": "Grocery",
-      "quantitySold": 0
+      "quantitySold": 0,
+      "imageURL": "https://zbga.shopsuki.ph/cdn/shop/products/4806521329875_1024x.jpg?v=1716359826"
     },
     {
       "id": "7",
-      "name": "Suman",
-      "description": "Rice cake wrapped in leaves.",
+      "name": "Organic Apples",
+      "description": ": Fresh, crisp organic apples grown without synthetic pesticides. Perfect for snacking or adding to salads.",
       "price": 90,
       "category": "Grocery",
       "quantitySold": 0
     },
     {
       "id": "8",
-      "name": "Bibingka",
-      "description": "Rice cake traditionally baked in clay pots.",
+      "name": "Whole Wheat Bread",
+      "description": "100% whole wheat bread with a hearty, nutty flavor. Great for sandwiches or toasting.",
       "price": 200,
       "category": "Grocery",
       "quantitySold": 7
     },
     {
       "id": "9",
-      "name": "Taho",
-      "description": "Silken tofu dessert with syrup and pearls.",
+      "name": "Almond Milk",
+      "description": "Creamy and smooth almond milk, a perfect dairy-free alternative for smoothies, cereal, or coffee.",
       "price": 65,
       "category": "Grocery",
       "quantitySold": 0
     },
     {
       "id": "10",
-      "name": "Halo-Halo",
-      "description": "Popular Filipino mixed dessert.",
+      "name": "Chicken Breast",
+      "description": "Tender and juicy boneless, skinless chicken breasts. Ideal for grilling, baking, or sautéing.",
       "price": 150,
       "category": "Grocery",
       "quantitySold": 0

@@ -1,14 +1,9 @@
 <app-nav-user></app-nav-user>
 
-
-
 <div class="dashboard-container">
- 
-
   <div class="wc">
     <h1>Welcome {{ username }}!</h1>
     <input class="addcart" type="search" placeholder="Search products..." (input)="searchProducts($event)" />
-
   </div>
 
   <!-- Filter Section -->
@@ -46,6 +41,7 @@
   <!-- Products Section -->
   <div class="products-section">
     <div class="product-card" *ngFor="let product of filteredProducts">
+      <img [src]="product.imageURL" *ngIf="product.imageURL" alt="{{ product.name }}" class="product-image" />
       <div class="product-details">
         <h5>{{ product.name }}</h5>
         <p>Category: {{ product.category }}</p>
@@ -92,9 +88,8 @@
     </div>
   </footer>
 
-<!-- message add to cart-->
+  <!-- Message add to cart -->
   <div id="toaster" class="toaster" *ngIf="isShowPop;">
     <p id="toaster-message">You successfully added items in your cart.</p>
   </div>
-
 </div>
