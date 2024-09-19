@@ -15,9 +15,9 @@
     </div>
     <div class="form-group">
       <label for="contactNumber"><strong>Contact Number: </strong></label>
-      <input id="contactNumber" formControlName="contactNumber" type="text" [placeholder]="09XXXXXXXXX" />
+      <input id="contactNumber" formControlName="contactNumber" type="text" />
       <div *ngIf="checkoutForm.get('contactNumber')?.touched && checkoutForm.get('contactNumber')?.invalid" class="error">
-        Enter a valid phone number.
+        Enter a valid phone number in the format 09XXXXXXXXX.
       </div>
     </div>
     <div class="form-group">

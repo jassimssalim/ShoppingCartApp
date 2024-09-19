@@ -35,7 +35,7 @@
           "total": 1610,
           "contactPerson": "Jane Smith",
           "contactNumber": "09123456789",
-          "address":"123 St. Some City",
+          "address": "123 St. Some City",
           "items": [
             {
               "productName": "Barong Tagalog",
@@ -62,7 +62,7 @@
           "total": 1100,
           "contactPerson": "Jane Smith",
           "contactNumber": "09123456789",
-          "address":"123 St. Some City",
+          "address": "123 St. Some City",
           "items": [
             {
               "productName": "Philippine Flag Dress",
@@ -83,7 +83,7 @@
           "total": 11400,
           "contactPerson": "Jane Smith",
           "contactNumber": "09123456789",
-          "address":"123 St. Some City",
+          "address": "123 St. Some City",
           "items": [
             {
               "productName": "Rice Cooker",
@@ -177,13 +177,40 @@
           "total": 100,
           "contactPerson": "Jane Smith",
           "contactNumber": "09123456789",
-          "address":"123 St. Some City",
+          "address": "123 St. Some City",
           "items": [
             {
               "productName": "Adobo Seasoning",
               "orderQuantity": 2,
               "price": 50,
               "subtotal": 100
+            }
+          ]
+        },
+        {
+          "id": 2,
+          "total": 460,
+          "contactPerson": "Pauline P",
+          "contactNumber": "09123456789",
+          "address": "Streat St., City ",
+          "items": [
+            {
+              "productName": "Adobo Seasoning",
+              "orderQuantity": 1,
+              "price": 50,
+              "subtotal": 50
+            },
+            {
+              "productName": "Sinigang Mix",
+              "orderQuantity": 2,
+              "price": 30,
+              "subtotal": 60
+            },
+            {
+              "productName": "Lechon Sauce",
+              "orderQuantity": 5,
+              "price": 70,
+              "subtotal": 350
             }
           ]
         }
@@ -193,7 +220,7 @@
       "lastName": "",
       "birthDate": "1998-05-14",
       "interest": "",
-      "status": "Inactive"
+      "status": "Active"
     },
     {
       "id": "5",
@@ -219,7 +246,7 @@
       "description": "Classic seasoning for Filipino Adobo.",
       "price": 50,
       "category": "Foods",
-      "quantitySold": 0,
+      "quantitySold": 1,
       "imageURL": "https://i5.walmartimages.com/seo/Goya-Adobo-with-Pepper-All-Purpose-Seasoning-28-OZ-Large-Pack-of-2_33b07ce7-334e-4d04-9bba-e5ca7ba82df8.319e6a9c3d9a2175ac6071fd9e009823.jpeg"
     },
     {
@@ -228,7 +255,7 @@
       "description": "Sour soup mix for Sinigang.",
       "price": 30,
       "category": "Foods",
-      "quantitySold": 100000000004,
+      "quantitySold": 100000000006,
       "imageURL": "https://assets.unileversolutions.com/v1/1648400.png"
     },
     {
@@ -246,7 +273,7 @@
       "description": "Savory sauce for Lechon.",
       "price": 70,
       "category": "Foods",
-      "quantitySold": 0,
+      "quantitySold": 5,
       "imageURL": "https://d2t3trus7wwxyy.cloudfront.net/catalog/product/m/a/mang-tomas-lechon-sauce-regular-12-oz_1.jpg"
     },
     {
