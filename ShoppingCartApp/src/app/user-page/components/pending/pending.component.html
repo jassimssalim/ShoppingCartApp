@@ -10,6 +10,7 @@
       <thead>
         <tr>
           <th>No.</th>
+          <th>Delivery Details</th>
           <th>Item Name</th>
           <th>Price</th>
           <th>Quantity</th>
@@ -20,6 +21,11 @@
       <tbody>
         <tr *ngFor="let pending of pendingList; trackBy: trackById">
           <td>{{ pending.id }}</td>
+          <td>
+            Contact Person : {{ pending.contactPerson }}
+            Contact Number: {{ pending.contactNumber }}
+            Address: {{ pending.address }}
+          </td>
           <td>
             <div *ngFor="let item of pending.items; trackBy: trackByProductName">
               {{ item.productName }}<br />

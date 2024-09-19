@@ -6,13 +6,14 @@ import { HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { NavUserComponent } from '../../../shared/nav-user/nav-user.component';
+import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from '@angular/forms';
 
 
 
 @Component({
   selector: 'app-checkout',
   standalone: true,
-  imports: [CommonModule, RouterModule, NavUserComponent],
+  imports: [CommonModule, RouterModule, NavUserComponent, ReactiveFormsModule],
   templateUrl: './checkout.component.html',
   styleUrl: './checkout.component.css'
 })
@@ -22,14 +23,23 @@ export class CheckoutComponent {
   cartList: any[] = [];
   productsList: any[] = [];
   userData: any;
+  checkoutForm: FormGroup;
+  editErrorMessage: string | null = null;
 
 
   constructor(
     private router: Router,
     private http: HttpClient,
     private route: ActivatedRoute,
-    private checkoutService: UserService
-  ) {}
+    private checkoutService: UserService,
+    private fb: FormBuilder
+  )  {
+    this.checkoutForm = this.fb.group({
+      contactPerson:['', [Validators.required]],
+      contactNumber:['', [Validators.required, Validators.pattern("09[0-9]{9}")]],
+      address:['', [Validators.required]]
+    });
+  }
 
   ngOnInit() {
     this.route.parent?.paramMap.subscribe(params => {
@@ -82,49 +92,67 @@ export class CheckoutComponent {
   }
 
   confirmOrder() {
+    
     if (confirm("Confirm order?")) {
-      let items_list = [];
-      let items_total = 0;
-      let id = 0;
+      const contactPerson = this.checkoutForm.get('contactPerson')?.value;
+      const contactNumber = this.checkoutForm.get('contactNumber')?.value;
+      const address = this.checkoutForm.get('address')?.value;
 
-      for (let index = 0; index < this.cartList.length; index++) {
-        const element = this.cartList[index];
-        let product = this.productsList.find((p: any) => p.name === element.productName);
-        let items_put = element;
-        
-        items_put.price = product.price;
-        items_put.subtotal = items_put.orderQuantity * items_put.price;
-        items_total += items_put.subtotal;
-
-        items_list.push(items_put);
-        product.quantitySold += element.orderQuantity;     
-
-        this.checkoutService.updateProduct(product).subscribe(() => {
-          this.getProductList();
-        });
-      }
-     
-
-      let empty_cart: any[]= [];
-
-      if (this.userData.pendingOrders.length == 0) {
-        id = 1;
-      } else {
-        id = this.userData.pendingOrders[this.userData.pendingOrders.length - 1].id + 1;
+      if (!contactPerson || !contactNumber || !address) {
+        this.editErrorMessage = 'Please fill out all fields.';
+  
+        setTimeout(() => {
+          this.editErrorMessage = null;
+        }, 3000);
+        return;
       }
       
-      this.userData.cart = empty_cart;
-      this.userData.pendingOrders.push({"id":id, "total":items_total, "items":items_list});
-      console.log(this.userData);
+      if (this.checkoutForm.valid) {
+        let items_list = [];
+        let items_total = 0;
+        let id = 0;
 
-      this.checkoutService.updateUser(this.userData).subscribe(() => {
-        this.getCartList();
-      });
+        for (let index = 0; index < this.cartList.length; index++) {
+          const element = this.cartList[index];
+          let product = this.productsList.find((p: any) => p.name === element.productName);
+          let items_put = element;
+          
+          items_put.price = product.price;
+          items_put.subtotal = items_put.orderQuantity * items_put.price;
+          items_total += items_put.subtotal;
 
-      console.log("Cart transferred to pending orders");
-      alert("Thank you for your order!");
-      this.router.navigate(['/user-page', this.username]);
+          items_list.push(items_put);
+          product.quantitySold += element.orderQuantity;     
+
+          this.checkoutService.updateProduct(product).subscribe(() => {
+            this.getProductList();
+          });
+        }
+      
+
+        let empty_cart: any[]= [];
+
+        if (this.userData.pendingOrders.length == 0) {
+          id = 1;
+        } else {
+          id = this.userData.pendingOrders[this.userData.pendingOrders.length - 1].id + 1;
+        }
+        
+        this.userData.cart = empty_cart;
+        this.userData.pendingOrders.push({"id":id, "total":items_total, "contactPerson": contactPerson, "contactNumber":contactNumber, "address":address, "items":items_list});
+        console.log(this.userData);
+
+        this.checkoutService.updateUser(this.userData).subscribe(() => {
+          this.getCartList();
+        });
+
+        console.log("Cart transferred to pending orders");
+        alert("Thank you for your order!");
+        this.router.navigate(['/user-page', this.username]);
+      }
     }
   }
+
+
 
 }

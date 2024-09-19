@@ -12,6 +12,9 @@
         {
           "id": 1,
           "total": 1610,
+          "contactPerson": "Jane Smith",
+          "contactNumber": "09123456789",
+          "address":"123 St. Some City",
           "items": [
             {
               "productName": "Barong Tagalog",
@@ -36,6 +39,9 @@
         {
           "id": 2,
           "total": 1100,
+          "contactPerson": "Jane Smith",
+          "contactNumber": "09123456789",
+          "address":"123 St. Some City",
           "items": [
             {
               "productName": "Philippine Flag Dress",
@@ -54,6 +60,9 @@
         {
           "id": 3,
           "total": 11400,
+          "contactPerson": "Jane Smith",
+          "contactNumber": "09123456789",
+          "address":"123 St. Some City",
           "items": [
             {
               "productName": "Rice Cooker",
@@ -117,11 +126,27 @@
       "phone": "0902121",
       "isAdmin": false,
       "cart": [],
-      "pendingOrders": [],
+      "pendingOrders": [
+        {
+          "id": 1,
+          "total": 100,
+          "contactPerson": "Jane Smith",
+          "contactNumber": "09123456789",
+          "address":"123 St. Some City",
+          "items": [
+            {
+              "productName": "Adobo Seasoning",
+              "orderQuantity": 2,
+              "price": 50,
+              "subtotal": 100
+            }
+          ]
+        }
+      ],
       "firstName": "",
       "middleName": "",
       "lastName": "",
-      "birthDate": "2024-09-11",
+      "birthDate": "1998-05-14",
       "interest": "",
       "status": "Active"
     },
@@ -149,7 +174,7 @@
       "description": "Classic seasoning for Filipino Adobo.",
       "price": 50,
       "category": "Foods",
-      "quantitySold": 0
+      "quantitySold": 2
     },
     {
       "id": "2",
@@ -303,6 +328,5 @@
       "category": "Appliances",
       "quantitySold": 0
     }
-   
   ]
 }

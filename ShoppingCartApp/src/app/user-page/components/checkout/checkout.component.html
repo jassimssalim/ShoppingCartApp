@@ -2,45 +2,78 @@
 <body>    
 <div class="checkout-page">
   <strong class="title-cart">Please Confirm Your Checkout</strong>
-  
-  <!-- Check if there are items in the cart -->
-  <div *ngIf="cartList.length > 0; else noItems">
-    <!-- Cart items table -->
-    <table id="cart-table">
-      <thead>
-        <tr>
-          <th>Item Name</th>
-          <th>Price (PHP)</th>
-          <th>Quantity</th>
-          <th>Subtotal (PHP)</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let item of cartList; trackBy: trackByProductName">
-          <td>{{ item.productName }}</td>
-          <td>{{ getPrice(item.productName) }}</td>
-          <td>{{ item.orderQuantity }}</td>
-          <td>{{ calculateSubtotal(item.productName) }}</td>
-        </tr>
-      </tbody>
-    </table>
 
-    <!-- Total payment summary -->
-    <div class="cart-summary">
-      <p>Total Payment: <span>{{ getTotalPayment() }} PHP</span></p>
+  
+  <form [formGroup]="checkoutForm" (ngSubmit)="confirmOrder()" class="edit-form">
+    <h3>Delivery Details</h3>
+    <div class="form-group">
+      <label for="contactPerson"><strong>Contact Person: </strong></label>
+      <input id="contactPerson" type="text" formControlName="contactPerson"/>
+      <div *ngIf="checkoutForm.get('contactPerson')?.touched && checkoutForm.get('contactPerson')?.invalid" class="error">
+        Contact Person is a required field.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="contactNumber"><strong>Contact Number: </strong></label>
+      <input id="contactNumber" formControlName="contactNumber" type="text" [placeholder]="09XXXXXXXXX" />
+      <div *ngIf="checkoutForm.get('contactNumber')?.touched && checkoutForm.get('contactNumber')?.invalid" class="error">
+        Enter a valid phone number.
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="address"><strong>Address: </strong></label>
+      <input id="address" formControlName="address" type="text" />
+      <div *ngIf="checkoutForm.get('address')?.touched && checkoutForm.get('address')?.invalid" class="error">
+        Address is a required field.
+      </div>
     </div>
 
-    <!-- Confirm order button -->
-    <div class="cart-actions">
-      <button (click)="confirmOrder()" class="checkout-button">Confirm Order</button>
+    <h3>Order Details</h3>
+    <!-- Check if there are items in the cart -->
+    <div *ngIf="cartList.length > 0; else noItems">
+      <!-- Cart items table -->
+      <table id="cart-table">
+        <thead>
+          <tr>
+            <th>Item Name</th>
+            <th>Price (PHP)</th>
+            <th>Quantity</th>
+            <th>Subtotal (PHP)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of cartList; trackBy: trackByProductName">
+            <td>{{ item.productName }}</td>
+            <td>{{ getPrice(item.productName) }}</td>
+            <td>{{ item.orderQuantity }}</td>
+            <td>{{ calculateSubtotal(item.productName) }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Total payment summary -->
+      <div class="cart-summary">
+        <p>Total Payment: <span>{{ getTotalPayment() }} PHP</span></p>
+      </div>
+
+      <!-- Confirm order button -->
+      <div class="cart-actions">
+        <button type="submit" class="checkout-button">Confirm Order</button>
+        <button class="back-button" [routerLink]="['/user-page', username, 'cart']">Go Back</button>
+      </div>
+    </div>
+    
+    <!-- Template for displaying a message when there are no items -->
+    <ng-template #noItems>
+      <p class="no-items-message">You have no items in your cart to checkout.</p>
       <button class="back-button" [routerLink]="['/user-page', username, 'cart']">Go Back</button>
-    </div>
-  </div>
+    </ng-template>
   
-  <!-- Template for displaying a message when there are no items -->
-  <ng-template #noItems>
-    <p class="no-items-message">You have no items in your cart to checkout.</p>
-    <button class="back-button" [routerLink]="['/user-page', username, 'cart']">Go Back</button>
-  </ng-template>
-</div>
+
+
+
+    <div *ngIf="editErrorMessage" class="error">{{ editErrorMessage }}</div>
+  </form>
+  
+</div>  
 </body>
